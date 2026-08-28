@@ -95,7 +95,25 @@ function homePage(ctx, contexts) {
       <p class="hero__lede">${esc(page.lede)}</p>
       ${profileLinks(ctx)}
     </div>
-    <div class="hero__viz" aria-hidden="true"><canvas data-solar-canvas></canvas></div>
+    <figure class="hero__viz">
+      <div class="cadastre" data-cadastre data-src="/data/cadastre.json">
+        <canvas class="cadastre__canvas" role="img"
+          aria-label="${esc(ctx.t.cadastreTitle)}"></canvas>
+        <div class="cadastre__readout" data-cadastre-readout hidden>
+          <span class="cadastre__threshold"></span>
+          <span class="cadastre__count"></span>
+        </div>
+        <div class="cadastre__scale" data-cadastre-scale hidden>
+          <span class="cadastre__scale-min"></span>
+          <span class="cadastre__scale-bar"></span>
+          <span class="cadastre__scale-max"></span>
+        </div>
+      </div>
+      <figcaption class="hero__caption">
+        <strong>${esc(ctx.t.cadastreTitle)}</strong> — ${esc(ctx.t.cadastreCaption)}
+        <span class="hero__source">${esc(ctx.t.cadastreSource)}</span>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
@@ -309,6 +327,12 @@ function main() {
   emit('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: https://${site.domain}/sitemap.xml\n`);
   emit('CNAME', `${site.domain}\n`);
   emit('.nojekyll', '');
+
+  // The hero reads the cadastre extract at runtime rather than inlining it.
+  if (existsSync('data/cadastre.json')) {
+    mkdirSync(join(OUT, 'data'), { recursive: true });
+    cpSync('data/cadastre.json', join(OUT, 'data/cadastre.json'));
+  }
 
   for (const dir of ['css', 'js', 'fonts', 'img']) {
     const from = join('static', dir);

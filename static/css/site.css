@@ -286,6 +286,57 @@ b, strong { font-weight: 600; }
 .hero__viz canvas { width: 100%; height: 100%; display: block; }
 @media (max-width: 58rem) { .hero__viz { aspect-ratio: 16 / 9; } }
 
+/* The hero figure: a real solar cadastre, with its readout and scale. */
+.hero__viz { margin: 0; }
+
+.cadastre {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+}
+@media (max-width: 58rem) { .cadastre { aspect-ratio: 16 / 10; } }
+
+.cadastre__canvas { width: 100%; height: 100%; display: block; }
+
+.cadastre__readout {
+  position: absolute; top: 0.75rem; left: 0.85rem;
+  display: flex; flex-direction: column; gap: 0.1rem;
+  font-size: 0.75rem; line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+.cadastre__threshold { font-weight: 600; color: var(--ink); }
+.cadastre__count { color: var(--ink-3); }
+
+.cadastre__scale {
+  position: absolute; right: 0.85rem; bottom: 0.75rem; left: 0.85rem;
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.6875rem; color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+.cadastre__scale-bar {
+  flex: 1; height: 4px; border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--ink-3) 30%, transparent),
+    color-mix(in srgb, var(--accent) 45%, transparent),
+    var(--accent)
+  );
+}
+
+.hero__caption {
+  margin-top: 0.85rem;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--ink-3);
+}
+.hero__caption strong { color: var(--ink-2); font-weight: 600; }
+.hero__source { display: block; margin-top: 0.2rem; font-size: 0.75rem; }
+
 /* --------------------------------------------------------------- sections */
 
 .main { padding-bottom: var(--gap-lg); }

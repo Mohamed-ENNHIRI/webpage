@@ -107,51 +107,59 @@
 
   /* ----------------------------------------------------- the hero visual */
 
-  const canvas = document.querySelector('[data-solar-canvas]');
-  if (canvas) startSolarCadastre(canvas);
+  const cadastre = document.querySelector('[data-cadastre]');
+  if (cadastre) drawCadastre(cadastre);
 
   /**
-   * An abstract solar cadastre.
+   * Draw a real rooftop solar cadastre.
    *
-   * A block of city seen from above: each footprint is shaded by how much sun
-   * its roof receives, and taller neighbours cast shadows that move as the sun
-   * comes round. It is the subject of the research, drawn rather than
-   * described — and it is decorative, so it is hidden from assistive software
-   * and stands still when the visitor asks for reduced motion.
+   * Each shape is an actual roof surface in one Geneva neighbourhood, taken
+   * from the published roof-solar dataset, coloured by the annual irradiation
+   * it genuinely receives. A threshold sweeps across the range, dimming the
+   * roofs below it — which is the question a solar cadastre exists to answer:
+   * given a cut-off, which roofs are worth equipping?
    *
-   * @param {HTMLCanvasElement} canvas The canvas to draw into.
+   * @param {Element} root The [data-cadastre] container.
    */
-  function startSolarCadastre(canvas) {
-    const context = canvas.getContext('2d', { alpha: true });
+  async function drawCadastre(root) {
+    const canvas = root.querySelector('canvas');
+    const context = canvas?.getContext('2d');
     if (!context) return;
 
-    const COLS = 30;
-    const ROWS = 22;
-
-    // A fixed seed keeps the skyline identical on every visit and every build.
-    let seed = 20260828;
-    const random = () => {
-      seed = (seed * 1664525 + 1013904223) % 4294967296;
-      return seed / 4294967296;
-    };
-
-    // Lay out blocks separated by streets, then give each block a height.
-    const heights = Array.from({ length: ROWS }, () => new Array(COLS).fill(0));
-    for (let row = 0; row < ROWS; row += 1) {
-      for (let col = 0; col < COLS; col += 1) {
-        const street = row % 6 === 0 || col % 7 === 0 || (col % 7 === 3 && row % 11 > 6);
-        heights[row][col] = street ? 0 : 0.25 + random() * random() * 3.4;
-      }
+    let data;
+    try {
+      const response = await fetch(root.dataset.src, { cache: 'force-cache' });
+      if (!response.ok) throw new Error(String(response.status));
+      data = await response.json();
+    } catch {
+      // The picture is illustrative; the page is fine without it.
+      root.setAttribute('hidden', '');
+      return;
     }
+
+    const roofs = data.roofs ?? [];
+    if (!roofs.length) { root.setAttribute('hidden', ''); return; }
+
+    const lo = data.min ?? Math.min(...roofs.map((r) => r.i));
+    const hi = data.max ?? Math.max(...roofs.map((r) => r.i));
+
+    const readout = root.querySelector('[data-cadastre-readout]');
+    const scale = root.querySelector('[data-cadastre-scale]');
+    if (scale) {
+      scale.querySelector('.cadastre__scale-min').textContent = String(lo);
+      scale.querySelector('.cadastre__scale-max').textContent = `${hi} ${data.unit ?? ''}`;
+      scale.hidden = false;
+    }
+    if (readout) readout.hidden = false;
 
     let palette = readPalette();
     let width = 0;
     let height = 0;
-    let cell = 0;
-    let originX = 0;
-    let originY = 0;
+    let scaleFactor = 1;
+    let offsetX = 0;
+    let offsetY = 0;
 
-    /** Read the colours from CSS so the drawing follows the theme. */
+    /** Colours come from the stylesheet, so the drawing follows the theme. */
     function readPalette() {
       const styles = getComputedStyle(document.documentElement);
       const get = (name, fallback) => (styles.getPropertyValue(name) || fallback).trim();
@@ -159,9 +167,18 @@
         accent: get('--accent', '#b8500c'),
         ink: get('--ink', '#14161a'),
         line: get('--line', '#e7e3db'),
-        low: get('--ink-3', '#8b919a'),
+        muted: get('--ink-3', '#8b919a'),
+        surface: get('--surface-2', '#f6f4f0'),
       };
     }
+
+    /**
+     * Position on the colour ramp for one irradiation value.
+     *
+     * @param {number} value Annual irradiation, kWh/m²/yr.
+     * @returns {number} 0 at the lowest roof, 1 at the highest.
+     */
+    const ramp = (value) => Math.max(0, Math.min(1, (value - lo) / Math.max(1, hi - lo)));
 
     function resize() {
       const rect = canvas.getBoundingClientRect();
@@ -172,89 +189,69 @@
       canvas.height = Math.round(height * ratio);
       context.setTransform(ratio, 0, 0, ratio, 0, 0);
 
-      cell = Math.min(width / (COLS + 2), height / (ROWS + 2));
-      originX = (width - cell * COLS) / 2;
-      originY = (height - cell * ROWS) / 2;
+      // Fit the extent, preserving its aspect ratio, with a small margin.
+      const spanX = data.extent?.spanX ?? 1;
+      const spanY = data.extent?.spanY ?? 1;
+      const margin = 0.04;
+      scaleFactor = Math.min(width / spanX, height / spanY) * (1 - margin * 2);
+      offsetX = (width - spanX * scaleFactor) / 2;
+      offsetY = (height - spanY * scaleFactor) / 2;
     }
 
-    /**
-     * How much sun a roof receives, given where the sun is.
-     *
-     * A crude ray march: step towards the sun and see whether anything tall
-     * enough gets in the way. Enough to make the picture behave like a real
-     * shading map, without pretending to be one.
-     */
-    function irradiance(row, col, sunX, sunY, elevation) {
-      const own = heights[row][col];
-      if (own === 0) return -1;
-
-      let shaded = 0;
-      for (let step = 1; step <= 6; step += 1) {
-        const r = Math.round(row + sunY * step);
-        const c = Math.round(col + sunX * step);
-        if (r < 0 || r >= ROWS || c < 0 || c >= COLS) break;
-
-        const blocker = heights[r][c] - own;
-        const needed = step * elevation;
-        if (blocker > needed) shaded = Math.max(shaded, Math.min(1, (blocker - needed) / 2));
-      }
-
-      // Taller roofs see more sky, so they collect a little more.
-      const openness = 0.55 + Math.min(own, 3.5) / 9;
-      return Math.max(0, Math.min(1, openness * (1 - shaded * 0.85)));
-    }
-
-    /** Blend between the muted and the accent colour. */
-    function shade(value) {
-      const alpha = 0.12 + value * 0.85;
-      return { fill: palette.accent, alpha };
-    }
-
-    function draw(time) {
+    function draw(threshold) {
       context.clearRect(0, 0, width, height);
-      if (cell <= 0) return;
 
-      // The sun goes round slowly; a fixed angle when motion is reduced.
-      const angle = reducedMotion.matches ? 2.2 : (time / 26000) % (Math.PI * 2);
-      const sunX = Math.cos(angle);
-      const sunY = Math.sin(angle) * 0.55;
-      const elevation = 0.55 + Math.sin(angle * 2) * 0.18;
+      let above = 0;
 
-      const inset = cell * 0.11;
-
-      for (let row = 0; row < ROWS; row += 1) {
-        for (let col = 0; col < COLS; col += 1) {
-          const value = irradiance(row, col, sunX, sunY, elevation);
-          const x = originX + col * cell;
-          const y = originY + row * cell;
-
-          if (value < 0) {
-            // Street: a faint grid line, so the fabric of the block reads.
-            context.fillStyle = palette.line;
-            context.globalAlpha = 0.5;
-            context.fillRect(x + cell * 0.42, y + cell * 0.42, cell * 0.16, cell * 0.16);
-            continue;
-          }
-
-          const { fill, alpha } = shade(value);
-          const lift = Math.min(heights[row][col], 3.5) * cell * 0.055;
-
-          context.globalAlpha = 0.16;
-          context.fillStyle = palette.ink;
-          context.fillRect(x + inset + lift * 0.5, y + inset + lift * 0.9, cell - inset * 2, cell - inset * 2);
-
-          context.globalAlpha = alpha;
-          context.fillStyle = fill;
-          context.fillRect(x + inset - lift * 0.15, y + inset - lift * 0.55, cell - inset * 2, cell - inset * 2);
+      for (const roof of roofs) {
+        const points = roof.p;
+        context.beginPath();
+        context.moveTo(offsetX + points[0][0] * scaleFactor, offsetY + points[0][1] * scaleFactor);
+        for (let i = 1; i < points.length; i += 1) {
+          context.lineTo(offsetX + points[i][0] * scaleFactor, offsetY + points[i][1] * scaleFactor);
         }
+        context.closePath();
+
+        const qualifies = roof.i >= threshold;
+        if (qualifies) above += 1;
+
+        const t = ramp(roof.i);
+        if (qualifies) {
+          // Warmer and more opaque the more sun the roof receives.
+          context.globalAlpha = 0.25 + t * 0.75;
+          context.fillStyle = palette.accent;
+        } else {
+          context.globalAlpha = 0.16;
+          context.fillStyle = palette.muted;
+        }
+        context.fill();
+
+        context.globalAlpha = qualifies ? 0.35 : 0.18;
+        context.strokeStyle = palette.ink;
+        context.lineWidth = 0.4;
+        context.stroke();
       }
 
       context.globalAlpha = 1;
+
+      if (readout) {
+        const pct = Math.round((above / roofs.length) * 100);
+        readout.querySelector('.cadastre__threshold').textContent =
+          `≥ ${Math.round(threshold)} ${data.unit ?? ''}`;
+        readout.querySelector('.cadastre__count').textContent =
+          `${above} / ${roofs.length} · ${pct}%`;
+      }
     }
 
     let frame = 0;
+    let running = false;
+
     function loop(time) {
-      draw(time);
+      // A slow sweep across the middle of the range, where the decision sits.
+      const low = lo + (hi - lo) * 0.35;
+      const high = lo + (hi - lo) * 0.92;
+      const phase = (Math.sin(time / 7000) + 1) / 2;
+      draw(low + (high - low) * phase);
       frame = requestAnimationFrame(loop);
     }
 
@@ -262,23 +259,27 @@
       cancelAnimationFrame(frame);
       resize();
       if (reducedMotion.matches) {
-        draw(0);
+        // A conventional suitability cut-off, held still.
+        draw(Math.min(1000, lo + (hi - lo) * 0.7));
+        running = false;
       } else {
+        running = true;
         frame = requestAnimationFrame(loop);
       }
     }
 
-    // Only animate while the hero is actually on screen.
+    function stop() {
+      cancelAnimationFrame(frame);
+      running = false;
+    }
+
     if ('IntersectionObserver' in window) {
       new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) start();
-          else cancelAnimationFrame(frame);
-        });
+        entries.forEach((entry) => (entry.isIntersecting ? start() : stop()));
       }, { threshold: 0 }).observe(canvas);
     }
 
-    window.addEventListener('resize', start, { passive: true });
+    window.addEventListener('resize', () => { resize(); if (!running) start(); }, { passive: true });
     window.addEventListener('themechange', () => { palette = readPalette(); });
     reducedMotion.addEventListener('change', start);
 
