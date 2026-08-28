@@ -16,9 +16,9 @@
   const themeToggle = document.querySelector('.theme-toggle');
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
+      // The site opens light, so an unset theme means light.
       const root = document.documentElement;
-      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const current = root.dataset.theme || (systemDark ? 'dark' : 'light');
+      const current = root.dataset.theme === 'dark' ? 'dark' : 'light';
       const next = current === 'dark' ? 'light' : 'dark';
 
       root.dataset.theme = next;
@@ -280,7 +280,6 @@
 
     window.addEventListener('resize', start, { passive: true });
     window.addEventListener('themechange', () => { palette = readPalette(); });
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { palette = readPalette(); });
     reducedMotion.addEventListener('change', start);
 
     start();

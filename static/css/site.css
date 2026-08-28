@@ -81,6 +81,10 @@
   color-scheme: light;
 }
 
+/*
+ * Dark is opt-in, not automatic: the site opens light whatever the system
+ * setting, and the header toggle switches it. The choice is remembered.
+ */
 :root[data-theme="dark"] {
   --paper:      #0d0f12;
   --surface:    #14171b;
@@ -97,23 +101,6 @@
   color-scheme: dark;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper:      #0d0f12;
-    --surface:    #14171b;
-    --surface-2:  #1a1e23;
-    --ink:        #eceef1;
-    --ink-2:      #a2a9b3;
-    --ink-3:      #737a84;
-    --line:       #242931;
-    --line-2:     #333a44;
-    --accent:     #f0913a;
-    --accent-2:   #f7ab63;
-    --accent-dim: #1f1710;
-    --shadow: 0 1px 2px rgb(0 0 0 / 30%), 0 12px 32px -16px rgb(0 0 0 / 60%);
-    color-scheme: dark;
-  }
-}
 
 /* ------------------------------------------------------------------ base */
 
@@ -228,10 +215,6 @@ b, strong { font-weight: 600; }
 .theme-toggle__moon { display: none; }
 :root[data-theme="dark"] .theme-toggle__sun { display: none; }
 :root[data-theme="dark"] .theme-toggle__moon { display: block; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-toggle__sun { display: none; }
-  :root:not([data-theme="light"]) .theme-toggle__moon { display: block; }
-}
 
 .nav-toggle { display: none; }
 

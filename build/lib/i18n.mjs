@@ -1,13 +1,27 @@
 /**
- * Interface strings.
+ * Interface strings, and which languages the site is built in.
  *
  * These are labels the site itself needs — "Journal articles", "Read more" —
  * as distinct from content, which lives in Markdown. Keeping them here rather
  * than in the CMS means Martin is never asked to translate a button.
  */
 
-export const LANGUAGES = ['en', 'fr'];
-export const DEFAULT_LANGUAGE = 'en';
+import { readFileSync } from 'node:fs';
+
+/*
+ * The default language sits at the site root; the other lives under its own
+ * prefix. Both are read from data/site.json so the choice is made in one place,
+ * outside the code.
+ */
+const site = JSON.parse(readFileSync('data/site.json', 'utf8'));
+
+export const DEFAULT_LANGUAGE = site.default_language ?? 'fr';
+
+/** Default first: that order drives the URL layout and the switcher. */
+export const LANGUAGES = [
+  DEFAULT_LANGUAGE,
+  ...Object.keys(site.languages).filter((code) => code !== DEFAULT_LANGUAGE),
+];
 
 const STRINGS = {
   en: {
