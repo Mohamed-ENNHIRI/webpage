@@ -1,7 +1,7 @@
 ---
 name: Farzaneh Changizi
 slug: farzaneh-changizi
-order: 30
+order: 20
 role: phd
 topic: Multi-objective optimisation of photovoltaic integration in residential buildings,
   across energy, economic, environmental and flexibility indicators.
