@@ -1,0 +1,17 @@
+node_modules/
+_site/
+
+# Operational notes: deployment, DNS, the admin editor's OAuth setup, and the
+# editing guide written for Martin. None of it is secret, but none of it is
+# part of the website either, and it does not belong in a public repository.
+private/
+
+# The abandoned WordPress attempt, kept on disk for reference only.
+archive/
+
+# Development server leftovers
+dev-server.log
+.dev.pid
+
+.DS_Store
+Thumbs.db
