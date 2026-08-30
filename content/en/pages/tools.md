@@ -3,6 +3,6 @@ order: 5
 nav: Tools
 title: Tools & data
 slug: tools
-lede: The code, datasets and platforms that came out of this work, openly available. A cadastre
-  is only useful if it reaches the people who decide.
+lede: The code, datasets and platforms from this work, openly available. A cadastre serves
+  no purpose if the people who decide never see the results.
 ---

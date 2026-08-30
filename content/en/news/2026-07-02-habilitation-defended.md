@@ -5,6 +5,6 @@ slug: habilitation-defended
 image: ''
 ---
 
-I defended my habilitation (HDR) at Université Savoie Mont Blanc, on modelling, analysing and integrating solar energy in territories. It draws together ten years of work, from the air moving behind a ventilated façade to the question of which roofs a whole agglomeration should equip first.
+I defended my habilitation at Université Savoie Mont Blanc. The subject is the modelling, analysis and integration of solar energy in territories.
 
-The manuscript is openly available on HAL.
+The manuscript draws together ten years of work. The span runs from the air moving behind a ventilated façade to the choice of which roofs an agglomeration equips first. You will find the text openly available on HAL.

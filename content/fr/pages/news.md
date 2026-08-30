@@ -3,5 +3,5 @@ order: 7
 nav: Actualités
 title: Actualités
 slug: actualites
-lede: Communications, articles, soutenances, et les personnes qui rejoignent ou quittent l’équipe.
+lede: Communications, articles, soutenances, arrivées et départs.
 ---

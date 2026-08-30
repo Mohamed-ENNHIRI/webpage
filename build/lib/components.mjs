@@ -93,7 +93,7 @@ export function publicationList(pubs, ctx, { groupByYear = true, filters = false
 
   const byYear = new Map();
   for (const pub of pubs) {
-    const year = pub.year ?? '—';
+    const year = pub.year ?? ctx.t.undated;
     if (!byYear.has(year)) byYear.set(year, []);
     byYear.get(year).push(pub);
   }

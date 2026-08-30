@@ -5,6 +5,6 @@ slug: rooftop-pv-detection
 image: ''
 ---
 
-Our building-wise detection of rooftop photovoltaic systems across heterogeneous French urban and rural territories is published in *Applied Energy*.
+Our building-by-building detection of rooftop photovoltaic systems is published in Applied Energy. The method covers heterogeneous French urban and rural territories.
 
-Planning what to install next is much easier when you know what is already there. The method applies convolutional neural networks to aerial imagery, building by building, at national scale.
+Planning what to install next gets easier once you know what stands today. The method applies convolutional neural networks to aerial imagery at national scale.

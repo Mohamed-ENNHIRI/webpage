@@ -3,8 +3,8 @@ title: Recensement PV
 slug: recensement-pv
 order: 10
 kind: platform
-excerpt: 'The public site that disseminates the detection results: where rooftop photovoltaic
-  systems are, municipality by municipality, for local authorities and decision-makers.'
+excerpt: The public site releases the detection results. Where rooftop photovoltaic systems
+  stand, municipality by municipality.
 year: '2025'
 url: https://recensement-pv.univ-smb.fr/
 doi: ''

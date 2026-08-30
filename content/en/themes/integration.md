@@ -3,13 +3,13 @@ title: Integrating solar into territorial energy planning
 key: integration
 order: 30
 featured: true
-excerpt: A municipality cannot equip every roof at once. It has to choose — and that choice
-  involves far more than sunlight.
+excerpt: A municipality cannot equip every roof at once. You have to choose. The choice involves
+  far more than sunlight.
 image: ''
 ---
 
-Massive photovoltaic deployment rarely runs into a shortage of resource: the sunlight is abundant and the available surface sufficient. It runs into the decision. Which roofs, in what order, on what criteria, and decided by whom.
+Massive photovoltaic deployment rarely runs short of resource. Sunlight is abundant and the available surface suffices. The problem sits in the decision. Which roofs, in what order, on what criteria, decided by whom.
 
-Those criteria share no common unit: irradiation, usable area, self-consumption potential, roof complexity, payback period, heritage constraints, grid capacity, social acceptance. This axis applies multicriteria decision aiding to the problem — eliciting what stakeholders actually value, aggregating criteria in a way they can inspect and contest, and sorting large building stocks into ordered categories rather than producing a single opaque score. The approach, built on ELECTRE TRI, was applied to the Greater Geneva agglomeration — some 265,000 buildings — and then to mountainous French territories.
+The criteria share no common unit. Irradiation, usable area, self-consumption potential, roof complexity, payback period, heritage constraints, grid capacity, social acceptance. This axis applies multicriteria decision aiding to the problem. We elicit what stakeholders value. We aggregate the criteria in a form they inspect and contest. We sort large building stocks into ordered categories, instead of producing one opaque score. The method builds on ELECTRE TRI. We applied the method to Greater Geneva, some 265,000 buildings, and then to mountainous French territories.
 
-Planning what to install next also means knowing what is already there. Convolutional neural networks applied to aerial imagery detect existing photovoltaic installations building by building across French territories, validated against distribution grid operator records. The datasets, the code and a public dissemination site are all open: a cadastre is only useful if it reaches the people who decide.
+Planning what comes next means knowing what stands today. Convolutional neural networks applied to aerial imagery detect existing photovoltaic installations building by building across French territory. We validate the results against distribution grid operator records. The datasets, the code and a public dissemination site are open. A cadastre serves no purpose if the people who decide never see the results.

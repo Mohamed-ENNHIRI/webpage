@@ -102,7 +102,7 @@ function homePage(ctx, contexts) {
           aria-label="${esc(ctx.t.sunPathTitle)}"></canvas>
       </div>
       <figcaption class="hero__caption">
-        <strong>${esc(ctx.t.sunPathTitle)}</strong> — ${esc(ctx.t.sunPathCaption)}
+        <strong>${esc(ctx.t.sunPathTitle)}.</strong> ${esc(ctx.t.sunPathCaption)}
       </figcaption>
     </figure>
   </div>
@@ -281,7 +281,7 @@ function main() {
           // Without a stated topic, say who they are rather than repeat the name.
           description: plain(
             person.topic
-            || `${person.name} — ${roleLabel(ctx.lang, person.role)}, ${ctx.site.languages[ctx.lang].affiliation}`,
+            || `${person.name}, ${roleLabel(ctx.lang, person.role)}, ${ctx.site.languages[ctx.lang].affiliation}`,
           ),
         }));
     }
@@ -393,7 +393,7 @@ function feed(ctx) {
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
-  <title>${esc(ctx.site.name)} — ${esc(ctx.pages.news.title)}</title>
+  <title>${esc(ctx.site.name)} · ${esc(ctx.pages.news.title)}</title>
   <link>https://${ctx.site.domain}${ctx.url.page('news')}</link>
   <description>${esc(ctx.site.languages[ctx.lang].position)}</description>
   <language>${esc(ctx.lang)}</language>${items}

@@ -1,10 +1,10 @@
 ---
-title: Le solaire photovoltaïque en France — une expertise collective
+title: Le solaire photovoltaïque en France, une expertise collective
 slug: solaire-pv-france
 order: 30
 featured: false
-excerpt: Un rapport collectif du CNRS qui répond, sources à l’appui, aux questions auxquelles
-  le débat public sur le photovoltaïque revient sans cesse.
+excerpt: Un rapport collectif du CNRS. Répondre, sources à l'appui, aux questions récurrentes
+  du débat public sur le photovoltaïque.
 role: Co-auteur
 start_year: '2023'
 end_year: ''
@@ -20,6 +20,6 @@ themes:
 image: ''
 ---
 
-Le photovoltaïque suscite un grand nombre de questions publiques récurrentes — usage des sols, matériaux, temps de retour carbone, intermittence, recyclage — qui méritent des réponses fondées sur la littérature plutôt que sur des prises de position. Ce document collectif du CNRS, rédigé avec des chercheuses et chercheurs de l’ensemble de la communauté photovoltaïque française, expose la réalité, le potentiel et les difficultés réelles de l’énergie solaire photovoltaïque en France.
+Le photovoltaïque suscite les mêmes questions publiques année après année. Usage des sols, matériaux, temps de retour carbone, intermittence, recyclage. Ces questions méritent des réponses fondées sur la littérature, pas sur des prises de position.
 
-Le rapport a été mis à jour et enrichi au fil de versions successives et reste librement accessible.
+Ce document collectif du CNRS réunit des chercheuses et des chercheurs de la communauté photovoltaïque française. Il expose la réalité, le potentiel et les difficultés du solaire photovoltaïque en France. Le rapport a été mis à jour au fil de versions successives et reste librement accessible.

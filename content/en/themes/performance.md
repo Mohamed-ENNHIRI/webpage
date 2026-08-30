@@ -3,15 +3,15 @@ title: Performance of photovoltaic systems in their environment
 key: performance
 order: 20
 featured: true
-excerpt: A module in a dense, warm city does not behave like the same module on a test bench.
-  Quantifying that gap matters for anyone sizing an installation.
+excerpt: A module in a dense, warm city does not produce like the same module on a test bench.
+  The gap matters if you size an installation.
 image: ''
 ---
 
-Photovoltaic output falls as cell temperature rises. Cities are warmer than their surroundings, mounting configurations trap heat to different degrees, and the climate itself is changing. Each of these shifts the yield an installation will actually deliver.
+Photovoltaic output falls as cell temperature rises. Cities run warmer than their surroundings. Mounting configurations trap heat to different degrees. The climate itself is changing. Each factor shifts the yield an installation delivers.
 
-This work maps urban heat islands at territorial scale using unsupervised learning, then couples that thermal environment to electrical and thermal models of photovoltaic systems — in Geneva, in the Greater Sydney area, and across French cities under climate change scenarios.
+We map urban heat islands at territorial scale using unsupervised learning. We then couple the thermal environment to electrical and thermal models of photovoltaic systems. Geneva, the Greater Sydney area, and French cities under climate change scenarios.
 
-Upstream of all this sits the physics of the envelope itself. A ventilated solar façade works by letting heated air rise in the channel behind it, and predicting that flow rate is what decides whether the envelope cools the modules or traps heat against them. Experiments and direct numerical simulation showed that the thermal stratification of the surrounding air changes the mass flow rate substantially, and must be represented in prediction models rather than replaced by a single outdoor temperature.
+Upstream sits the physics of the envelope. A ventilated solar façade lets heated air rise in the channel behind. The flow rate decides whether the envelope cools the modules or traps heat against them. Experiments and direct numerical simulation gave a clear result. Thermal stratification of the surrounding air changes the mass flow rate substantially. Models need to represent the stratification, not reduce the air to one outdoor temperature.
 
-Related strands look at the boundary conditions of floating photovoltaics, at optimal tilt angles for bifacial plants across Europe, and at where the uncertainty in a predicted hourly yield really comes from.
+Related work covers the boundary conditions of floating photovoltaics, optimal tilt angles for bifacial plants across Europe, and the origin of uncertainty in a predicted hourly yield.

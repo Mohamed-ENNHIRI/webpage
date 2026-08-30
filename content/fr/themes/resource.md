@@ -3,13 +3,13 @@ title: Estimer et analyser la ressource solaire dans les territoires
 key: resource
 order: 10
 featured: true
-excerpt: Combien de soleil arrive réellement sur une façade, une toiture, une vallée — et
-  comment décrire cette variabilité sans simuler chaque heure de chaque année.
+excerpt: Combien de soleil atteint une façade, une toiture, une vallée. Et comment décrire
+  ces écarts sans simuler chaque heure de chaque année.
 image: ''
 ---
 
-En plein champ, la ressource solaire se résume presque à une seule série temporelle. En ville, c’est un champ à quatre dimensions : chaque façade et chaque toiture voit un ciel différent, masqué par des voisins différents à des heures différentes, et l’ensemble du motif tourne avec les saisons. En montagne, le relief ajoute sa propre géométrie d’ombres portées.
+En plein champ, la ressource solaire tient dans une seule série temporelle. En ville, elle devient un champ à quatre dimensions. Chaque façade et chaque toiture voit un ciel différent. Les bâtiments voisins portent leur ombre à des heures différentes. Le motif entier tourne avec les saisons. En montagne, le relief ajoute ses propres ombres portées.
 
-Cet axe caractérise cette variabilité et cherche des représentations compactes. L’analyse en composantes principales, la décomposition orthogonale aux valeurs propres et les décompositions multilinéaires d’ordre supérieur séparent les structures spatiales et temporelles du champ de rayonnement urbain, de sorte qu’un petit nombre de modes puisse se substituer à une simulation complète coûteuse.
+Cet axe mesure ces écarts et cherche des descriptions compactes. L'analyse en composantes principales, la décomposition orthogonale aux valeurs propres et les décompositions multilinéaires d'ordre supérieur séparent les structures spatiales et temporelles du champ de rayonnement urbain. Un petit nombre de modes remplace alors une simulation complète.
 
-En parallèle, les chaînes de calcul de l’irradiation à l’échelle d’un territoire sont construites à partir d’outils et de données ouverts — modèles numériques d’élévation, BD TOPO, QGIS et UMEP, années météorologiques typiques issues de PVGIS — et les outils de simulation de l’irradiation des façades sont comparés entre eux et validés. Un modèle que personne n’a vérifié n’est pas un modèle sur lequel planifier.
+Les chaînes de calcul reposent sur des outils et des données ouverts. Modèles numériques d'élévation, BD TOPO, QGIS avec le greffon UMEP, années météorologiques typiques issues de PVGIS. Nous comparons les outils de simulation d'irradiation des façades entre eux et nous les validons. Un modèle non vérifié ne sert pas à planifier.

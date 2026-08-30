@@ -28,7 +28,7 @@ const NAV_KEYS = ['research', 'projects', 'publications', 'tools', 'team', 'news
 export function layout({ ctx, title, description, body, url, alternates = {}, bodyClass = '', home = false }) {
   const { site, lang, t } = ctx;
   const profile = site.languages[lang];
-  const fullTitle = home ? `${site.name} — ${profile.position}` : `${title} — ${site.name}`;
+  const fullTitle = home ? `${site.name} · ${profile.position}` : `${title} · ${site.name}`;
   const canonical = `https://${site.domain}${url}`;
 
   const hreflang = Object.entries(alternates)

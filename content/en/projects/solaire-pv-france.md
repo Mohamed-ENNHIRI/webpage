@@ -1,10 +1,10 @@
 ---
-title: Photovoltaic solar energy in France — a collective assessment
+title: Photovoltaic solar energy in France, a collective assessment
 slug: solaire-pv-france
 order: 30
 featured: false
-excerpt: A collectively written CNRS report answering, with sources, the questions the public
-  debate on photovoltaics keeps returning to.
+excerpt: A collective CNRS report. Answering the recurring questions of the public debate
+  on photovoltaics, with sources.
 role: Contributing author
 start_year: '2023'
 end_year: ''
@@ -20,6 +20,6 @@ themes:
 image: ''
 ---
 
-Photovoltaics attracts a large number of recurring public questions — about land use, materials, carbon payback, intermittency, recycling — that deserve answers grounded in the literature rather than in position-taking. This collective CNRS document, written with researchers from across the French photovoltaic community, sets out the reality, the potential and the genuine difficulties of photovoltaic solar energy in France.
+Photovoltaics attracts the same public questions year after year. Land use, materials, carbon payback, intermittency, recycling. These questions deserve answers grounded in the literature, not in position-taking.
 
-The report has been updated and enriched across successive versions and is freely available.
+This collective CNRS document brings together researchers from across the French photovoltaic community. The report sets out the reality, the potential and the real difficulties of photovoltaic solar energy in France. Successive versions have updated the text, and the report stays freely available.

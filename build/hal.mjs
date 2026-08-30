@@ -100,7 +100,7 @@ function mapRecord(doc) {
   let title = first(doc.title_s);
   const subtitle = first(doc.subTitle_s);
   if (subtitle && subtitle.toLowerCase() !== title.toLowerCase()) {
-    title += ` — ${subtitle}`;
+    title += `. ${subtitle}`;
   }
 
   // Where it appeared: journal, then conference, then book, then publisher.

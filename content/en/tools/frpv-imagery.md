@@ -1,9 +1,9 @@
 ---
-title: FRPV — Aerial imagery of French rooftops
+title: FRPV, aerial imagery of French rooftops
 slug: frpv-imagery
 order: 30
 kind: dataset
-excerpt: The rooftop image tiles extracted from aerial imagery that feed the detection.
+excerpt: Rooftop image tiles extracted from aerial imagery. They feed the detection step.
 year: '2024'
 url: ''
 doi: 10.57745/V2LFQS

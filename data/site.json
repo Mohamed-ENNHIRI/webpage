@@ -18,13 +18,13 @@
     "en": {
       "label": "English",
       "position": "CNRS Research Scientist",
-      "affiliation": "LOCIE UMR 5271 — CNRS / Université Savoie Mont Blanc",
+      "affiliation": "LOCIE UMR 5271, CNRS / Université Savoie Mont Blanc",
       "address": "LOCIE UMR 5271\nCampus Scientifique Savoie Technolac\n73376 Le Bourget-du-Lac\nFrance"
     },
     "fr": {
       "label": "Français",
       "position": "Chargé de recherche CNRS",
-      "affiliation": "LOCIE UMR 5271 — CNRS / Université Savoie Mont Blanc",
+      "affiliation": "LOCIE UMR 5271, CNRS / Université Savoie Mont Blanc",
       "address": "LOCIE UMR 5271\nCampus Scientifique Savoie Technolac\n73376 Le Bourget-du-Lac\nFrance"
     }
   }

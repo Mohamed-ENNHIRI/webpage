@@ -84,7 +84,8 @@ const STRINGS = {
     nothingYet: 'Nothing here yet.',
 
     sunPathTitle: 'The sun over Le Bourget-du-Lac',
-    sunPathCaption: 'Where the sun stands in the sky through the year, at the latitude of the laboratory. Every curve is one month; the marked path is today. This geometry is where all of the work below begins.',
+    sunPathCaption: 'Where the sun stands through the year, at the latitude of the laboratory. Each curve is one month. The marked path is today. All the work below starts from this geometry.',
+    undated: 'No date',
     sunPathToday: 'today',
 
     kinds: { platform: 'Platform', code: 'Code', dataset: 'Dataset' },
@@ -95,7 +96,7 @@ const STRINGS = {
     sunPathWinter: 'December solstice',
 
     notFoundTitle: 'This page does not exist',
-    notFoundBody: 'The address may have changed. Start again from the home page.',
+    notFoundBody: 'The address has changed, or the page no longer exists. Start again from the home page.',
   },
 
   fr: {
@@ -158,7 +159,8 @@ const STRINGS = {
     nothingYet: 'Rien pour l’instant.',
 
     sunPathTitle: 'Le soleil au Bourget-du-Lac',
-    sunPathCaption: 'La position du soleil dans le ciel au fil de l’année, à la latitude du laboratoire. Chaque courbe est un mois ; le tracé marqué est celui d’aujourd’hui. C’est de cette géométrie que partent tous les travaux ci-dessous.',
+    sunPathCaption: 'La position du soleil au fil de l’année, à la latitude du laboratoire. Chaque courbe est un mois. Le tracé marqué est celui d’aujourd’hui. Tous les travaux ci-dessous partent de cette géométrie.',
+    undated: 'Sans date',
     sunPathToday: 'aujourd’hui',
 
     kinds: { platform: 'Plateforme', code: 'Code', dataset: 'Jeu de données' },
