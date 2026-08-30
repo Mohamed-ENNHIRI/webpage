@@ -11,8 +11,8 @@ cosupervisors: Marco Fossa, Christophe Ménézo
 alumni: true
 current_position: Chaire de professeur junior, Université Savoie Mont Blanc
 themes:
-- pv-performance
-- urban-solar
+- integration
+- performance
 photo: ''
 email: ''
 website: ''

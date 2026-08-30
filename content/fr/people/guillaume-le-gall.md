@@ -11,7 +11,7 @@ cosupervisors: Julien Ramousse
 alumni: true
 current_position: Postdoctorat, Université Savoie Mont Blanc puis Mines Paris
 themes:
-- urban-radiation
+- resource
 photo: ''
 email: ''
 website: ''

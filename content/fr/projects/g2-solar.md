@@ -3,8 +3,8 @@ title: G2 Solar — un cadastre solaire pour le Grand Genève
 slug: g2-solar
 order: 20
 featured: true
-excerpt: Un projet Interreg transfrontalier qui a construit, validé et mis en usage
-  un cadastre solaire bâtiment par bâtiment couvrant l’agglomération du Grand Genève.
+excerpt: Un projet Interreg transfrontalier qui a construit, validé et mis en usage un cadastre
+  solaire bâtiment par bâtiment couvrant l’agglomération du Grand Genève.
 role: Researcher
 start_year: '2019'
 end_year: '2022'
@@ -16,8 +16,7 @@ partners:
 - LOCIE, Université Savoie Mont Blanc / CNRS
 - Canton de Genève
 themes:
-- urban-solar
-- decision-aiding
+- integration
 image: ''
 ---
 

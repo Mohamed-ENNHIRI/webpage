@@ -5,7 +5,9 @@
     "code": "",
     "data": "",
     "image": "",
-    "themes": []
+    "themes": [
+      "integration"
+    ]
   },
   "hal-04249780": {
     "featured": true,
@@ -13,7 +15,9 @@
     "code": "",
     "data": "",
     "image": "",
-    "themes": []
+    "themes": [
+      "integration"
+    ]
   },
   "hal-03703326": {
     "featured": true,
@@ -21,7 +25,9 @@
     "code": "",
     "data": "",
     "image": "",
-    "themes": []
+    "themes": [
+      "resource"
+    ]
   },
   "hal-03650892": {
     "featured": true,
@@ -29,7 +35,9 @@
     "code": "",
     "data": "",
     "image": "",
-    "themes": []
+    "themes": [
+      "integration"
+    ]
   },
   "hal-03135327": {
     "featured": true,
@@ -37,7 +45,9 @@
     "code": "",
     "data": "",
     "image": "",
-    "themes": []
+    "themes": [
+      "integration"
+    ]
   },
   "hal-02950931": {
     "featured": true,
@@ -45,6 +55,510 @@
     "code": "",
     "data": "",
     "image": "",
-    "themes": []
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-05645791": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "resource"
+    ]
+  },
+  "tel-05722580": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance",
+      "integration"
+    ]
+  },
+  "hal-05124379": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "resource"
+    ]
+  },
+  "hal-05386114": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "resource",
+      "integration"
+    ]
+  },
+  "hal-05281508": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-04913403": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-05124370": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "resource"
+    ]
+  },
+  "hal-05028604": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "resource",
+      "performance"
+    ]
+  },
+  "hal-04574393": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-04714653": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-04273385": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-04596091": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "resource",
+      "integration"
+    ]
+  },
+  "hal-04634477": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-04574618": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-04793278": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "resource",
+      "performance"
+    ]
+  },
+  "hal-04256979": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-04112033": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance",
+      "integration"
+    ]
+  },
+  "hal-04357303": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "resource"
+    ]
+  },
+  "hal-04845130": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-04845112": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "resource",
+      "performance"
+    ]
+  },
+  "hal-04238984": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-04273307": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-04793232": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-04235538": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-04234820": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "resource"
+    ]
+  },
+  "hal-04234874": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-03500270": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-04234685": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-03134928": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-02472158": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-02111480": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-02271594": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-04909994": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-03501770": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-02099467": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "resource",
+      "performance"
+    ]
+  },
+  "hal-02097374": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "tel-02006828": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "resource",
+      "performance"
+    ]
+  },
+  "hal-02097293": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "resource",
+      "performance"
+    ]
+  },
+  "hal-01727714": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-02097307": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-02099462": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-02097314": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-01479064": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-01479029": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-01479012": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "performance"
+    ]
+  },
+  "hal-05281520": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration",
+      "performance"
+    ]
+  },
+  "hal-05393255": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration",
+      "performance"
+    ]
+  },
+  "hal-04427396": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
+  },
+  "hal-05006011": {
+    "featured": false,
+    "summary": "",
+    "code": "",
+    "data": "",
+    "image": "",
+    "themes": [
+      "integration"
+    ]
   }
 }

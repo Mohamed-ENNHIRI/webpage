@@ -11,8 +11,8 @@ cosupervisors: Christophe Ménézo
 alumni: false
 current_position: ''
 themes:
-- pv-performance
-- decision-aiding
+- integration
+- performance
 photo: ''
 email: ''
 website: ''

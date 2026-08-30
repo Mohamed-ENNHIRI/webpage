@@ -3,8 +3,8 @@ title: Photovoltaic solar energy in France — a collective assessment
 slug: solaire-pv-france
 order: 30
 featured: false
-excerpt: A collectively written CNRS report answering, with sources, the questions
-  the public debate on photovoltaics keeps returning to.
+excerpt: A collectively written CNRS report answering, with sources, the questions the public
+  debate on photovoltaics keeps returning to.
 role: Contributing author
 start_year: '2023'
 end_year: ''
@@ -15,8 +15,8 @@ partners:
 - CNRS
 - Fédération FédéSol
 themes:
-- urban-solar
-- pv-performance
+- integration
+- performance
 image: ''
 ---
 

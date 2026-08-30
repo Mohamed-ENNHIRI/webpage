@@ -3,8 +3,8 @@ title: Le solaire photovoltaïque en France — une expertise collective
 slug: solaire-pv-france
 order: 30
 featured: false
-excerpt: Un rapport collectif du CNRS qui répond, sources à l’appui, aux questions
-  auxquelles le débat public sur le photovoltaïque revient sans cesse.
+excerpt: Un rapport collectif du CNRS qui répond, sources à l’appui, aux questions auxquelles
+  le débat public sur le photovoltaïque revient sans cesse.
 role: Contributing author
 start_year: '2023'
 end_year: ''
@@ -15,8 +15,8 @@ partners:
 - CNRS
 - Fédération FédéSol
 themes:
-- urban-solar
-- pv-performance
+- integration
+- performance
 image: ''
 ---
 

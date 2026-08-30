@@ -3,8 +3,8 @@ title: IEA SHC Task 63 — Solar Neighborhood Planning
 slug: iea-shc-task-63
 order: 10
 featured: true
-excerpt: An international collaboration across ten countries on how neighbourhoods
-  should be planned so that solar access survives the next round of construction.
+excerpt: An international collaboration across ten countries on how neighbourhoods should
+  be planned so that solar access survives the next round of construction.
 role: Subtask C leader, Subtask D co-leader
 start_year: '2020'
 end_year: '2024'
@@ -23,8 +23,7 @@ partners:
 - Sweden
 - Switzerland
 themes:
-- urban-solar
-- decision-aiding
+- integration
 image: ''
 ---
 

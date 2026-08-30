@@ -11,8 +11,7 @@ cosupervisors: Lamia Berrah, Christophe Ménézo
 alumni: true
 current_position: Kilowattsol
 themes:
-- urban-solar
-- decision-aiding
+- integration
 photo: ''
 email: ''
 website: ''

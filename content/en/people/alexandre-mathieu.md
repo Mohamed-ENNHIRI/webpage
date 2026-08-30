@@ -11,7 +11,7 @@ cosupervisors: Gilles Fraisse, CEA-INES
 alumni: true
 current_position: Postdoctorat, DTU / TU Delft
 themes:
-- pv-performance
+- performance
 photo: ''
 email: ''
 website: ''

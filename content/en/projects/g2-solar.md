@@ -16,8 +16,7 @@ partners:
 - LOCIE, Université Savoie Mont Blanc / CNRS
 - Canton de Genève
 themes:
-- urban-solar
-- decision-aiding
+- integration
 image: ''
 ---
 

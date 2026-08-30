@@ -23,8 +23,7 @@ partners:
 - Sweden
 - Switzerland
 themes:
-- urban-solar
-- decision-aiding
+- integration
 image: ''
 ---
 
