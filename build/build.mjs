@@ -19,8 +19,13 @@ import {
   projectCard, themeCard, newsItem, profileLinks, publicationLinks, toolCard, personLinks,
 } from './lib/components.mjs';
 
-const OUT = '_site.tmp';
+/*
+ * Build into a scratch directory unique to this process, then swap it in. Two
+ * builds running at once (a manual one and the dev server's watcher, say) must
+ * not share the scratch path or they overwrite each other.
+ */
 const FINAL = '_site';
+const OUT = `_site.tmp.${process.pid}`;
 const written = [];
 
 /**
@@ -201,8 +206,6 @@ function main() {
   const contexts = {};
   for (const lang of LANGUAGES) contexts[lang] = buildContext(lang, site, publications);
 
-  // Build into a scratch directory and swap it in at the end, so a watcher or
-  // a running server never sees a half-written site.
   if (existsSync(OUT)) rmSync(OUT, { recursive: true });
   mkdirSync(OUT, { recursive: true });
 
@@ -359,8 +362,11 @@ function main() {
     });
   }
 
-  if (existsSync(FINAL)) rmSync(FINAL, { recursive: true });
+  // Swap the finished build in, then clear the old one away.
+  const previous = `${FINAL}.old.${process.pid}`;
+  if (existsSync(FINAL)) renameSync(FINAL, previous);
   renameSync(OUT, FINAL);
+  if (existsSync(previous)) rmSync(previous, { recursive: true });
 
   const html = written.filter((p) => p.endsWith('.html')).length;
   console.log(`Built ${html} pages in ${Date.now() - started} ms`);
