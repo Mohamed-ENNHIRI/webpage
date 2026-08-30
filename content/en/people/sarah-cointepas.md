@@ -10,7 +10,7 @@ cosupervisors: ''
 alumni: false
 current_position: ''
 themes: []
-photo: ''
+photo: /uploads/sarah-cointepas.jpg
 email: ''
 website: ''
 scholar: ''

@@ -10,7 +10,7 @@ cosupervisors: ''
 alumni: false
 current_position: ''
 themes: []
-photo: ''
+photo: /uploads/ananda-krishnan.jpg
 email: ''
 website: ''
 scholar: ''
