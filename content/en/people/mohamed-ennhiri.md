@@ -12,7 +12,7 @@ current_position: ''
 themes: []
 photo: /uploads/mohamed-ennhiri.jpg
 email: ''
-website: https://www.univ-smb.fr/locie/presentation-2/mohamed-ennhiri-doctorant-membre-du-locie/
+website: https://www.univ-smb.fr/locie/en/presentation-2/mohamed-ennhiri-doctorant-membre-du-locie/
 scholar: ''
 orcid: ''
 hal: ''

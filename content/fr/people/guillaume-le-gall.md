@@ -4,7 +4,7 @@ slug: guillaume-le-gall
 order: 40
 role: phd
 topic: Caractérisation et modélisation de la variabilité de la ressource solaire en milieu
-  urbain, par décomposition modale d'ordre supérieur.
+  urbain.
 start_year: '2022'
 end_year: '2025'
 cosupervisors: Julien Ramousse
@@ -12,9 +12,9 @@ alumni: true
 current_position: Postdoctorat, Université Savoie Mont Blanc puis Mines Paris
 themes:
 - resource
-photo: ''
+photo: /uploads/guillaume-le-gall.jpg
 email: ''
-website: ''
+website: https://www.univ-smb.fr/locie/guillaume-doctorant-membre-du-locie/
 scholar: ''
 orcid: ''
 hal: https://cv.hal.science/guillaume-le-gall

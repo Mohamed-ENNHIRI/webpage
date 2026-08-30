@@ -3,19 +3,20 @@ name: Alessia Boccalatte
 slug: alessia-boccalatte
 order: 10
 role: phd
-topic: Urban climate, built morphology and photovoltaic performance at city scale. Mapping
-  urban heat islands, and the combined effects of local climate and mounting configuration.
+topic: Influence of urban morphology and district design on urban solar potential, microclimate
+  and building energy demand.
 start_year: '2020'
 end_year: '2023'
 cosupervisors: Marco Fossa, Christophe Ménézo
 alumni: true
-current_position: Chaire de professeur junior, Université Savoie Mont Blanc
+current_position: Junior professor chair, Polytech Annecy Chambéry. She holds the SOLSTIS
+  chair.
 themes:
 - integration
 - performance
-photo: ''
+photo: /uploads/alessia-boccalatte.png
 email: ''
-website: ''
+website: https://www.univ-smb.fr/locie/en/alessia-boccalatte-membre-du-locie/
 scholar: https://scholar.google.com/citations?user=SB_wq2kAAAAJ
 orcid: ''
 hal: https://cv.hal.science/alessia-boccalatte

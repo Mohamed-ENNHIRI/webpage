@@ -3,8 +3,8 @@ name: Apolline Ferry
 slug: apolline-ferry
 order: 20
 role: phd
-topic: Rooftop solar potential in highland and lowland territories. Effect of topography on
-  the match between solar supply and energy demand.
+topic: Integrated solar energy production within a renewable energy mix. Matching supply and
+  demand for an attractive rural and urban territory.
 start_year: '2021'
 end_year: '2025'
 cosupervisors: Lamia Berrah, Christophe Ménézo
@@ -12,7 +12,7 @@ alumni: true
 current_position: Kilowattsol
 themes:
 - integration
-photo: ''
+photo: /uploads/apolline-ferry.jpg
 email: ''
 website: https://www.univ-smb.fr/locie/en/apolline-ferry-doctorante-membre-du-locie/
 scholar: ''
