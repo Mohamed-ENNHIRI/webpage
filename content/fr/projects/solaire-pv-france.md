@@ -5,7 +5,7 @@ order: 30
 featured: false
 excerpt: Un rapport collectif du CNRS qui répond, sources à l’appui, aux questions auxquelles
   le débat public sur le photovoltaïque revient sans cesse.
-role: Contributing author
+role: Co-auteur
 start_year: '2023'
 end_year: ''
 status: ongoing

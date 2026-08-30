@@ -86,6 +86,11 @@ const STRINGS = {
     sunPathTitle: 'The sun over Le Bourget-du-Lac',
     sunPathCaption: 'Where the sun stands in the sky through the year, at the latitude of the laboratory. Every curve is one month; the marked path is today. This geometry is where all of the work below begins.',
     sunPathToday: 'today',
+
+    kinds: { platform: 'Platform', code: 'Code', dataset: 'Dataset' },
+    openIt: 'Open',
+    viewCode: 'Source code',
+    viewDataset: 'Dataset',
     sunPathSummer: 'June solstice',
     sunPathWinter: 'December solstice',
 
@@ -155,6 +160,11 @@ const STRINGS = {
     sunPathTitle: 'Le soleil au Bourget-du-Lac',
     sunPathCaption: 'La position du soleil dans le ciel au fil de l’année, à la latitude du laboratoire. Chaque courbe est un mois ; le tracé marqué est celui d’aujourd’hui. C’est de cette géométrie que partent tous les travaux ci-dessous.',
     sunPathToday: 'aujourd’hui',
+
+    kinds: { platform: 'Plateforme', code: 'Code', dataset: 'Jeu de données' },
+    openIt: 'Ouvrir',
+    viewCode: 'Code source',
+    viewDataset: 'Jeu de données',
     sunPathSummer: 'solstice de juin',
     sunPathWinter: 'solstice de décembre',
 

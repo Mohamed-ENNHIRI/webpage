@@ -233,6 +233,44 @@ export function themeCard(theme, ctx, index = 0) {
 }
 
 /**
+ * One tool, dataset or platform.
+ *
+ * These all point outwards — to a repository, a DOI, a running site — so the
+ * card is the whole thing; there is no detail page behind it.
+ *
+ * @param {object} tool Tool entry.
+ * @param {object} ctx  Rendering context.
+ * @returns {string}
+ */
+export function toolCard(tool, ctx) {
+  const kind = ctx.t.kinds[tool.kind] ?? tool.kind;
+  const href = tool.doi ? `https://doi.org/${tool.doi}` : tool.url;
+  const label = tool.kind === 'code' ? ctx.t.viewCode
+    : tool.kind === 'dataset' ? ctx.t.viewDataset
+    : ctx.t.openIt;
+
+  const facts = [
+    tool.year && esc(tool.year),
+    tool.licence && esc(tool.licence),
+    tool.publisher && esc(tool.publisher),
+  ].filter(Boolean).join(' · ');
+
+  return `
+<article class="card card--tool">
+  <div class="card__body">
+    <p class="card__badges">
+      <span class="badge badge--${esc(tool.kind)}">${esc(kind)}</span>
+      ${facts ? `<span class="card__years">${facts}</span>` : ''}
+    </p>
+    <h3 class="card__title">${href ? `<a href="${esc(href)}" rel="noopener">${esc(tool.title)}</a>` : esc(tool.title)}</h3>
+    ${tool.excerpt ? `<p class="card__text">${esc(tool.excerpt)}</p>` : ''}
+    ${tool.doi ? `<p class="card__doi"><code>${esc(tool.doi)}</code></p>` : ''}
+    ${href ? `<p class="chips"><a class="chip" href="${esc(href)}" rel="noopener">${icon(tool.kind === 'code' ? 'github' : 'link')}<span>${esc(label)}</span></a></p>` : ''}
+  </div>
+</article>`.trim();
+}
+
+/**
  * One news entry.
  *
  * @param {object} item News item.

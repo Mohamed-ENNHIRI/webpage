@@ -414,6 +414,22 @@ b, strong { font-weight: 600; }
   font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
 }
 .badge--ongoing { background: var(--accent-dim); color: var(--accent); }
+.badge--platform { background: var(--accent-dim); color: var(--accent); }
+.badge--code { background: color-mix(in srgb, var(--ink) 8%, transparent); color: var(--ink-2); }
+.badge--dataset { background: color-mix(in srgb, var(--solar) 40%, transparent); color: #6b5a10; }
+:root[data-theme="dark"] .badge--dataset { background: var(--solar-soft); color: var(--solar); }
+
+.card--tool .card__doi {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+}
+.card--tool .card__doi code {
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  background: var(--surface-2);
+  color: var(--ink-3);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
 
 .iconlink {
   display: inline-grid; place-items: center; width: 2.15rem; height: 2.15rem;

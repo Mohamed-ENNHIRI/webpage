@@ -5,7 +5,7 @@ order: 20
 featured: true
 excerpt: Un projet Interreg transfrontalier qui a construit, validé et mis en usage un cadastre
   solaire bâtiment par bâtiment couvrant l’agglomération du Grand Genève.
-role: Researcher
+role: Chercheur
 start_year: '2019'
 end_year: '2022'
 status: completed

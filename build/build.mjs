@@ -16,7 +16,7 @@ import { esc, icon, plain, join as joinParts } from './lib/html.mjs';
 import { layout } from './lib/layout.mjs';
 import {
   sectionHeading, publicationList, publicationItem, personCard, peopleByRole,
-  projectCard, themeCard, newsItem, profileLinks, publicationLinks,
+  projectCard, themeCard, newsItem, profileLinks, publicationLinks, toolCard,
 } from './lib/components.mjs';
 
 const OUT = '_site';
@@ -57,6 +57,7 @@ function buildContext(lang, site, pubs) {
     projects: loadCollection(lang, 'projects'),
     people: loadCollection(lang, 'people'),
     news: loadCollection(lang, 'news').sort((a, b) => String(b.date).localeCompare(String(a.date))),
+    tools: loadCollection(lang, 'tools'),
     publications: pubs,
   };
 }
@@ -249,6 +250,12 @@ function main() {
       publicationList(ctx.publications, ctx, { groupByYear: true, filters: true, showAbstract: true }),
       'page-publications'));
 
+    // Tools, datasets and platforms
+    pages.push(listPage(ctx, contexts, 'tools',
+      ctx.tools.length
+        ? `<div class="grid grid--projects">${ctx.tools.map((t) => toolCard(t, ctx)).join('')}</div>`
+        : `<p class="empty">${esc(ctx.t.nothingYet)}</p>`));
+
     // Team
     const current = ctx.people.filter((p) => !p.alumni);
     const alumni = ctx.people.filter((p) => p.alumni);
@@ -269,7 +276,14 @@ function main() {
     ${person.html}
   </article>
   ${related.length ? `<section class="section">${sectionHeading(ctx.pages.publications.title)}${publicationList(related, ctx, { groupByYear: false })}</section>` : ''}`,
-        { title: person.name, description: plain(person.topic || person.name) }));
+        {
+          title: person.name,
+          // Without a stated topic, say who they are rather than repeat the name.
+          description: plain(
+            person.topic
+            || `${person.name} — ${roleLabel(ctx.lang, person.role)}, ${ctx.site.languages[ctx.lang].affiliation}`,
+          ),
+        }));
     }
 
     // News

@@ -5,11 +5,11 @@ order: 10
 featured: true
 excerpt: Une collaboration internationale réunissant dix pays sur la manière de planifier
   les quartiers pour que l’accès au soleil survive à la prochaine vague de construction.
-role: Subtask C leader, Subtask D co-leader
+role: Animateur du sous-projet C, co-animateur du sous-projet D
 start_year: '2020'
 end_year: '2024'
 status: completed
-funder: IEA Solar Heating and Cooling Programme
+funder: Programme Solar Heating and Cooling de l’AIE
 url: https://task63.iea-shc.org/
 partners:
 - Australia

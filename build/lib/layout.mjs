@@ -9,7 +9,7 @@ import { esc, icon, cls } from './html.mjs';
 import { LANGUAGES } from './i18n.mjs';
 
 /** Pages that appear in the navigation, in order. */
-const NAV_KEYS = ['research', 'projects', 'publications', 'team', 'news', 'contact'];
+const NAV_KEYS = ['research', 'projects', 'publications', 'tools', 'team', 'news', 'contact'];
 
 /**
  * Render a complete HTML document.
