@@ -16,5 +16,5 @@ website: ''
 scholar: ''
 orcid: ''
 hal: ''
-linkedin: ''
+linkedin: https://www.linkedin.com/in/sarah-cointepas-831159196/
 ---

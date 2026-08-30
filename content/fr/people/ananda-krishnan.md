@@ -1,6 +1,6 @@
 ---
-name: K. Ananda
-slug: k-ananda
+name: Ananda Krishnan
+slug: ananda-krishnan
 order: 50
 role: phd
 topic: ''
@@ -16,5 +16,5 @@ website: ''
 scholar: ''
 orcid: ''
 hal: ''
-linkedin: ''
+linkedin: https://www.linkedin.com/in/ananda-krishnan11/
 ---
