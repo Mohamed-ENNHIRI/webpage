@@ -27,15 +27,18 @@ jobs:
       - name: Read HAL
         run: node build/hal.mjs
 
+      - name: Fetch first-page previews for any new deposits
+        run: node build/thumbnails.mjs
+
       - name: Commit if anything changed
         run: |
-          if git diff --quiet -- data/publications.json; then
+          if git diff --quiet -- data/publications.json static/img/publications; then
             echo "No change in HAL."
             exit 0
           fi
           COUNT=$(node -e "console.log(require('./data/publications.json').count)")
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/publications.json
+          git add data/publications.json static/img/publications
           git commit -m "Update publications from HAL (${COUNT} records)"
           git push

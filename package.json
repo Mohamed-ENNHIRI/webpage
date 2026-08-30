@@ -6,9 +6,10 @@
   "description": "Personal research site for Martin Thebault — static HTML/CSS/JS, built from Markdown.",
   "scripts": {
     "build": "node build/build.mjs",
-    "hal": "node build/hal.mjs",
+    "hal": "node build/hal.mjs && node build/thumbnails.mjs",
     "dev": "node build/serve.mjs",
-    "clean": "rm -rf _site"
+    "clean": "rm -rf _site",
+    "thumbnails": "node build/thumbnails.mjs"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",

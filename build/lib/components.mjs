@@ -63,14 +63,22 @@ export function publicationItem(pub, ctx, { showAbstract = false } = {}) {
     ? `<details class="pub__abstract"><summary>${esc(ctx.t.abstract)}</summary><p>${esc(pub.abstract)}</p></details>`
     : '';
 
+  // HAL renders the first page of each deposit. Three quarters of them have one.
+  const preview = pub.thumb
+    ? `<div class="pub__thumb"><img src="/img/publications/${esc(pub.id)}.png" alt="" loading="lazy" width="170" height="240" /></div>`
+    : '';
+
   return `
-<article class="pub ${cls(`pub--${pub.type}`)}" data-type="${esc(pub.type)}">
-  <h3 class="pub__title">${pub.featured ? `<span class="pub__star" aria-hidden="true">${icon('star')}</span>` : ''}${esc(pub.title)}</h3>
-  ${pub.authors?.length ? `<p class="pub__authors">${formatAuthors(pub.authors, ctx.site.name)}</p>` : ''}
-  ${meta ? `<p class="pub__meta">${meta}</p>` : ''}
-  ${pub.summary ? `<p class="pub__summary">${esc(pub.summary)}</p>` : ''}
-  ${publicationLinks(pub, ctx)}
-  ${abstract}
+<article class="pub ${cls(`pub--${pub.type}`, preview && 'pub--illustrated')}" data-type="${esc(pub.type)}">
+  ${preview}
+  <div class="pub__body">
+    <h3 class="pub__title">${pub.featured ? `<span class="pub__star" aria-hidden="true">${icon('star')}</span>` : ''}${esc(pub.title)}</h3>
+    ${pub.authors?.length ? `<p class="pub__authors">${formatAuthors(pub.authors, ctx.site.name)}</p>` : ''}
+    ${meta ? `<p class="pub__meta">${meta}</p>` : ''}
+    ${pub.summary ? `<p class="pub__summary">${esc(pub.summary)}</p>` : ''}
+    ${publicationLinks(pub, ctx)}
+    ${abstract}
+  </div>
 </article>`.trim();
 }
 

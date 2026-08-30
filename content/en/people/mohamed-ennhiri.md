@@ -10,7 +10,7 @@ cosupervisors: ''
 alumni: false
 current_position: ''
 themes: []
-photo: ''
+photo: /uploads/mohamed-ennhiri.jpg
 email: ''
 website: ''
 scholar: ''

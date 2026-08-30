@@ -1,6 +1,6 @@
 {
   "source": "https://cv.hal.science/martin-thebault",
-  "fetched": "2026-08-30T16:55:22.492Z",
+  "fetched": "2026-08-30T19:00:47.815Z",
   "count": 55,
   "items": [
     {
@@ -20,6 +20,7 @@
       "pdf": "https://hal.science/hal-05645791/document",
       "hal": "https://hal.science/hal-05645791v1",
       "openAccess": true,
+      "thumb": 9929518,
       "abstract": "The three-dimensional urban geometry induces complex variations of incident solar radiation spanning multiple spatial and temporal scales, which need to be characterised. Benefits of higher-order orthogonal decomposition over conventional linear low-rank approximation methods for the detailed analysis of irradiance variability in urban fabrics is investigated. A backward Monte Carlo method is used to estimate the annual shortwave radiative flux density on the envelope of a cubic building at the centre of a theoretical district presenting regional variations in its total site coverage and global aspect ratio. The simulated field is represented as a three-way array from its a priori known temporal patterns (daily, seasonal) and decomposed by Tucker Higher-Order Singular Value Decomposition (HOSVD), for comparison with Principal Component Analysis (PCA). Dominant modes of variation are extracted and ordered by maximum influence. Both methods show complementary advantages for the identification of intra-urban regions subject to specific variations of irradiance in space and time. Information about daily and seasonal periods of high variability is provided, and corresponding disruptions to its spatial distribution are portrayed. The influence of prominent geometries on the direct radiative component variation is especially highlighted. Findings eventually pave the way to applications in urban planning (e.g. implementation of decision support systems for the optimal positioning of solar collectors) and studies (e.g. improvement of solar cadastres, definition of low-rank surrogates for large-scale microclimate models).",
       "keywords": [
         "Higher-Order Singular Value Decomposition",
@@ -43,6 +44,7 @@
       "pdf": "https://hal.science/tel-05722580/document",
       "hal": "https://hal.science/tel-05722580v1",
       "openAccess": true,
+      "thumb": 9961417,
       "abstract": "The energy transition relies on an increased deployment of renewable energy sources, such as solar energy. This abundant and widely distributed resource is especially relevant for use within inhabited territories, where most of the population and energy demand are concentrated. However, the complexity of these environments, combined with the intermittent and variable nature of the solar resource, shapes its spatio-temporal integration through local constraints and opportunities, whether they are energetic, climatic, technical, environmental, economic, or social. Such integration therefore requires a comprehensive, multi-criteria, and multi-stakeholder approach that takes all these aspects into account. To address these scientific and technical challenges, my research has been structured around three complementary areas. The first focuses on the detailed characterization of the spatio-temporal distribution of solar resources within inhabited territories. The second aims to assess the performance of photovoltaic systems in their specific environments. Finally, the third seeks to develop strategies for the large-scale integration of solar energy into territories by identifying technical, sociological, and economic constraints and opportunities. This research is based on methods combining physics and energy science, applied mathematics, data science, geomatics, and information sciences, with the objective of bridging the gap between the fundamental understanding of phenomena and practical solutions for the energy transition.",
       "keywords": [
         "Photovoltaic performance",
@@ -72,6 +74,7 @@
       "pdf": "https://cnrs.hal.science/hal-04980397/document",
       "hal": "https://cnrs.hal.science/hal-04980397v1",
       "openAccess": true,
+      "thumb": 9801667,
       "abstract": "With the rapid expansion of Rooftop Photovoltaic (RPV) systems, accurately identifying the location of these installations has become essential for urban planning, grid management, and socio-economic analysis. However, existing European datasets of RPV systems are often limited in both spatial coverage and precision, especially in regions with diverse architectural styles. This study presents a novel methodology for identifying RPV systems by employing a convolutional neural network (CNN) trained on high-resolution aerial imagery and building registry data. Alternatively to traditional tile-based methods, we propose a building-by-building approach, ensuring that each building is individually assessed. The model was trained and validated on five French departments representing a variety of roofing materials and urban typologies. It demonstrates a high correlation between predicted and registered RPV systems, though detection performance varies with roofing materials—achieving better accuracy on tiled roofs than slate roofs. When applied to the entire metropolitan French territory, the model processed images of more than 40 million buildings, identifying approximately 600,000 RPV systems. The results’ accuracy is evaluated, taking into account factors such as data quality and local urban characteristics. All data and the model are publicly available for further research and applications.",
       "keywords": []
     },
@@ -92,6 +95,7 @@
       "pdf": "https://hal.science/hal-05124379/document",
       "hal": "https://hal.science/hal-05124379v1",
       "openAccess": true,
+      "thumb": 9716445,
       "abstract": "La décomposition de la variabilité spatio-temporelle du rayonnement en milieu urbain par approche modale multilinéaire est explorée. Le champ annuel d'irradiance sur un bâtiment cubique au centre d'un quartier théorique présentant une hétérogénéité structurelle est estimé par méthodes Monte Carlo. Celui-ci est organisé en tenseur d'ordre N = 3 sur la base de ses spécificités temporelles a priori, puis factorisé par décomposition en valeurs singulières multilinéaire (Tucker HOSVD). Les modes extraient facilitent l'identification des régions de l'enveloppe sujettes à des variations d'irradiance. Les périodes journalières et saisonnières de forte variabilité sont identifiées, et les perturbations connexes de la distribution spatiale du rayonnement direct par les obstructions dominantes sont décrites.",
       "keywords": [
         "Higher-Order Singular Value Decomposition HOSVD",
@@ -117,6 +121,7 @@
       "pdf": "https://hal.science/hal-05386114/document",
       "hal": "https://hal.science/hal-05386114v1",
       "openAccess": true,
+      "thumb": 9804347,
       "abstract": "The three-dimensional urban geometry introduces complex variations in incident solar radiation across multiple spatiotemporal scales. This study relies on multilinear modal decomposition for characterising the simultaneous variability of the urban solar resource in space and time. The annual irradiance on building envelopes in a theoretical district granted structural and material heterogeneity is estimated using a backward Monte Carlo method. The simulated field is arranged as a three-way tensor from its known temporal characteristics and decomposed using Higher-Order Singular Value Decomposition (HOSVD). Dominant spatial and temporal (daily and seasonal) modes of variation are extracted and ranked according to their influence, enabling the identification of main variability-prone intra-urban regions. The approach provides insights into specific periods of heightened irradiance variations throughout the year and day, while revealing corresponding disruptions to its spatial distribution. The impact of prominent features on the direct sunlight obstruction is especially portrayed.",
       "keywords": []
     },
@@ -137,6 +142,7 @@
       "pdf": "https://cnrs.hal.science/hal-05281508/document",
       "hal": "https://cnrs.hal.science/hal-05281508v1",
       "openAccess": true,
+      "thumb": 9765627,
       "abstract": "Solar panels represent one of the main technologies within the renewable energy category; among them, Floating Photovoltaics panels (FPV) are attracting increasing interest on the market. This study aims to explore the behaviour of FPV compared to Ground mounted PV and its Energy Yield gains; this was done by varying parameters that best represent different operating conditions influenced by the presence of water. The analysis was conducted using a Python code and its Pvlib library for solar panels and was developed for four different locations: France, Italy, Singapore, Netherlands.",
       "keywords": [
         "Panneaux photovoltaïques flottants",
@@ -164,6 +170,7 @@
       "pdf": "https://cnrs.hal.science/hal-04913403/document",
       "hal": "https://cnrs.hal.science/hal-04913403v1",
       "openAccess": true,
+      "thumb": 9715955,
       "abstract": "",
       "keywords": []
     },
@@ -184,6 +191,7 @@
       "pdf": "https://hal.science/hal-05124370/document",
       "hal": "https://hal.science/hal-05124370v1",
       "openAccess": true,
+      "thumb": 9716903,
       "abstract": "",
       "keywords": [
         "Modal decomposition",
@@ -211,6 +219,7 @@
       "pdf": "https://univ-smb.hal.science/hal-05028604/document",
       "hal": "https://univ-smb.hal.science/hal-05028604v1",
       "openAccess": true,
+      "thumb": 9676679,
       "abstract": "The European targets for the Energy Transition by 2030 are strongly oriented toward the massive diffusion of PV plants, both at the building level and in large-scale utility systems on land. The expected PV capacity in Europe by 2030 is 900 GW, 4.3 times the 2022 level. Bifacial modules are currently the best solution for utility-scale PV systems, offering higher solar energy yields with minimal additional costs. This paper helps improve the efficiency of bifacial PV power plants at the European scale through the optimization of tilt angles in various configurations. Typical Meteorological Year data are retrieved from the PVGIS platform for a series of 2382 points uniformly distributed across Europe according to a regular 50 km × 50 km grid. A cumulative sky radiance is built for each location and an iterative search for the best tilt angle is performed to maximize the annual energy yield (on both front and back surfaces considering direct, diffuse and reflected energy) of south-facing modules, with both ground albedo and PV row spacing taken as parameters. Latitude is the primary influencing factor for optimal tilt angles, with an average value ranging from 26 • for Greece to 36 • for Finland. The results indicate that the Ground Coverage Ratio is also a significant parameter, while albedo has only a minor effect. The study of an Alpine region with a finer grid shows that mountainous terrain leads to reduced optimal tilt angles. A free web-based tool has been developed to provide optimal tilt angles for any location in Europe.",
       "keywords": [
         "Bifacial PV plants",
@@ -237,6 +246,7 @@
       "pdf": "https://cnrs.hal.science/hal-05281520/document",
       "hal": "https://cnrs.hal.science/hal-05281520v1",
       "openAccess": true,
+      "thumb": 9765626,
       "abstract": "As energy prices rise, solar photovoltaic (PV) has become an attractive option for residential buildings. However, their integration can pose challenges due to mismatches between energy supply and demand. This study investigates the optimal placement of PV panels on building envelope, considering various load profiles. Energy objective (e.g., load-matching (kWh)) and economic objectives (e.g., net present value (C)) are optimized. Results show that load profiles influence optimal solutions, with faccades enhancing energy objective, while roofs are more favorable for economic objectives. Further findings are discussed.",
       "keywords": [
         "Economy",
@@ -262,6 +272,7 @@
       "pdf": "https://cnrs.hal.science/hal-05393255/document",
       "hal": "https://cnrs.hal.science/hal-05393255v1",
       "openAccess": true,
+      "thumb": 9808481,
       "abstract": "With the increasing integration of photovoltaic (PV) systems in residential buildings and their growing deployment in urban areas, it is essential to adopt a bottomup approach and systematically examine the optimal placement of PV panels at the building scale. This study evaluates key building criteria and analyzes the correlation between energy production and consumption across different orientations. To determine the optimal placement of PV panels, a holistic approach is adopted, incorporating energy, economic, and environmental indicators such as load matching, net present value, payback period, levelized cost of energy, and annual carbon emissions. Additionally, a new flexibility factor, load-Match pricing, is utilized to assess the influence of electricity pricing on the load matching factor. Each indicator is first optimized as a single objective, followed by a multi-objective optimization approach to balance trade-offs between energy, economic, and environmental indicators. The results highlight that façades are more effective in enhancing load matching, whereas roofs offer greater economic benefits. Further insights of optimization process are discussed.",
       "keywords": []
     },
@@ -289,6 +300,7 @@
       "pdf": "https://hal.science/hal-04574393/document",
       "hal": "https://hal.science/hal-04574393v1",
       "openAccess": true,
+      "thumb": 9444346,
       "abstract": "The present report proposes an integrated framework for stakeholder engagement in solar neighborhoods, informed by practical insights from behavioral science (a practice known as behavioral design). The report bookends a series of three workshops on these topics with Task 63 experts, as well as follow-up discussions in general task meetings where the topics of stakeholder analysis and behavioral design were discussed, and case studies collected. All these activities informed the design of our proposed framework.We first report the state-of-the-art on stakeholder engagement methods in urban planning practice in Section 3. In Section 4 we present insights from behavioral science and detail how their application can enrich participatory processes, contextualizing these insights to the case of solar neighborhoodplanning. This discussion culminates in the development of a stakeholder ENGAGEment-behavioral Design framework (ENGAGED), which we detail in Section 5. The framework is intended to inform engagement processes in solar neighborhood planning and highlight how several phases in the development of a solar project can be informed by engagement activities and citizen participation. In Section 6 we report a series of solar neighborhood stakeholder engagement case studies collected from Task experts. We discuss the reported activities through the lens of our ENGAGED framework, highlighting strengths and limitations. We then present in Section 7 some overall conclusions. Our report highlights that stakeholder engagement activities in solar neighborhoods at present can take many different forms. In some cases, these activities are central to the planning process, while in others their role is primarily to inform citizens and other stakeholders. By adopting a multi-stage approach, such as in our ENGAGED framework, engagement activities can be enriched throughout the life cycle of a solar project, leading to co-created outcomes that are informed by a participatory process. Finally, while behaviors of end-users are often considered, there is still ample opportunity to integrate behaviorchangeconsiderations in a wider engagement process. Insights from behavioral science could be leveraged not only to promote virtuous energy behaviors that support the integration of solar technologies (as is the case in a few of the reported case studies), but also to increase participation inoutreach events targeting citizens. Ultimately, our goal with this report is to bring further awareness to the importance of engaging with different stakeholder groups in the context of solar neighborhood planning, and provide practical guidance in this direction.",
       "keywords": []
     },
@@ -312,6 +324,7 @@
       "pdf": "https://hal.science/hal-04714653/document",
       "hal": "https://hal.science/hal-04714653v1",
       "openAccess": true,
+      "thumb": 9809107,
       "abstract": "",
       "keywords": []
     },
@@ -335,6 +348,7 @@
       "pdf": "https://hal.science/hal-04273385/document",
       "hal": "https://hal.science/hal-04273385v1",
       "openAccess": true,
+      "thumb": 9315620,
       "abstract": "With the photovoltaic (PV) market significantly growing thanks to the support of environmental incentives, it is essential to address the influence of climate change on PV performances. In the literature, several methodologies have been suggested to measure the effect of climate change through module temperature losses and natural degradation rates, but no work has been found to combine both of them. This paper tackles this issue through a numerical approach in order to quantify to which extent climate change impacts the performance of a PV installation over its lifetime. The methodology has been applied in different French cities where climate change is found to have a moderate effect on the Performance Ratio.",
       "keywords": [
         "Climate change",
@@ -361,6 +375,7 @@
       "pdf": "https://hal.science/hal-04596091/document",
       "hal": "https://hal.science/hal-04596091v1",
       "openAccess": true,
+      "thumb": 9455998,
       "abstract": "The spatial quantification of solar resources is necessary for the deployment of solar systems and must consider the local specificities of territories, such as complex topography in mountainous areas. This paper presents a methodology for obtaining solar cadastres, based on the Solar Energy on Building Envelopes (SEBE) model incorporated in QGIS and applied to French municipalities. The differences in solar potential between plain and mountain villages are analyzed through the simulation of 92 carefully selected villages located in these two types of regions. The distributions of annual rooftop irradiation per building are obtained for each studied village and approximated with a Johnson’s SU density function. From this arises the definition of two statistical indicators: the mode and the spread at one-third maximum. Main results include a mean decrease in the mode of 189 kWh/m² and a higher dispersion of 69 kWh/m² between mountain and plain villages. Two physical indicators, the Sky View Index (SVI) and the Diffuse Fraction Index (DFI), are defined to explain these differences in the shape of the distributions. Higher cloud covers (high DFI) and the presence of distant shading effects (low SVI), caused by terrain relief, explains respectively the smaller modes and the higher dispersion observed in mountainous areas. SVI, DFI and latitude are fed to a multiple linear regression model, allowing the estimation of distributions with smaller computational costs than the developed methodology. Overall, this analysis demonstrates that the characteristics of mountainous environments greatly influence solar resources and should be considered in energy planning.",
       "keywords": [
         "Rooftop solar radiation",
@@ -396,6 +411,7 @@
       "pdf": "https://hal.science/hal-04634477/document",
       "hal": "https://hal.science/hal-04634477v1",
       "openAccess": true,
+      "thumb": 9475603,
       "abstract": "Harnessing incoming solar energy could mitigate the environmental impact of urban development while ensuring a sustainable energy future. This goal is attainable through both passive and active methods of solar energy utilization, including optimizing daylighting, facilitating direct sunlight access, and generating heat and electricity.In the strategic planning of new urban areas and the expansion of existing ones, it is crucial to integrate solar energy early in the decision-making process. This can be effectively achieved using simulation tools. Recent advancements in simulation technology have empowered planners to make informed choices regarding solar integration in neighborhood design.Consideration of the current use of tools clearly shows that throughout the different planning stages, the Level of Detail of all aspects -data availability, KPIs, and analyses- increases. During the first stage of the Urban Planning Process, there is little known about the planned (solar) neighborhood. Simple tools or even rules of thumb are often used to gain an understanding of how much solar energy could contribute to these goals. In the next stage of the Urban Planning Process, building volumes are known, enabling a deeper analysis of the role of solar energy to the neighborhood. As you progress to the Building Design Process, more details about the buildings and requirements from the building occupants are known. With the help of tools, details on a system level can be studied.A large part of the building stock is already existing, and the planning strategies for solar deployment then relies on efficient mapping of the existing opportunities. To that aim, solar cadasters are tools used to evaluate the potential for solar installations on buildings, catering to various users including homeowners and city planners. They compile data on energy production, technical feasibility, economic viability, and environmental benefits using a range of indicators. Key metrics include potential electrical output, installation costs, and CO2 savings. These tools support decision-making for solar projects by providing essential information on the economic and environmental impacts of solar energy, while also considering local constraints such as heritage preservation. Overall, solar cadasters are instrumental in advancing the adoption of solar technology.There are increasing opportunities for using tools. Advanced tools can be of added value to improve living and working conditions in neighborhoods and buildings. It is, for instance, advantageous to be able to perform multiple types of simulations (e.g. daylight provision, irradiation analysis, direct solar access, energy performance) based on one geometric model. For key actors in the planning and building design process, advanced simulations could provide not only a set of design solutions to meet current legislation, but also assess solutions that go beyond what is legislatively mandated. Some advanced tools, however, still require a high proficiency of skills to master.This report highlights opportunities for maximizing the use of tools for solar neighborhood planning by analyzing the current use of tools in the design process, the mapping",
       "keywords": []
     },
@@ -414,6 +430,7 @@
       "pdf": "https://hal.science/hal-04574618/document",
       "hal": "https://hal.science/hal-04574618v1",
       "openAccess": true,
+      "thumb": 9518952,
       "abstract": "As cities are major energy consumers challenges arise in densely populated areas that limit solar resources, hindering the deployment of urban solar power plants. To address this, the paper underscores the importance of digital tools for modeling solar energy accessibility within the urban fabric, focusing on rooftops, building facades, and other relevant locations. In this context, the development of the solar cadaster in Greater Geneva is presented in the paper within the framework of the European INTERREG G2 Solar project (2019–2022). The solar cadaster relies on a rich database from the Geneva Land Information System (SITG), offering comprehensive data on Digital Surface Models, building and roof cadasters, land cover, and more. Notably, this data, including the solar cadaster outputs, is accessible to the public as open data, fostering its extensive use in academia for teaching and research. It serves as a living laboratory for urban solar studies, with its open data approach contributing to widespread adoption. The project, a collaborative effort involving academia, energy utilities, and public institutions on both sides of the border, aims to unite stakeholders and foster a dialogue on solar energy in the region, in line with its commitment to addressing climate change, striving for carbon neutrality by 2050. The paper articulates the steps, methods, and outcomes of the project, offering insights into the challenges of implementing a shared online application tool in a cross-border territory. The propositions are based on feedbacks from stakeholders and lessons learned from case studies. The paper also delves into the shift in the business model for solar photovoltaic installations, emphasizing the need to model self-consumption in buildings. It concludes by highlighting the solar cadaster as a unifying means, fostering cohesion among diverse stakeholders in the region’s energy sector and propelling them toward common governance around solar energy.",
       "keywords": [
         "Stakeholder engagement",
@@ -444,6 +461,7 @@
       "pdf": "https://cnrs.hal.science/hal-04793278/document",
       "hal": "https://cnrs.hal.science/hal-04793278v1",
       "openAccess": true,
+      "thumb": 9561601,
       "abstract": "",
       "keywords": []
     },
@@ -467,6 +485,7 @@
       "pdf": "https://hal.science/hal-04256979/document",
       "hal": "https://hal.science/hal-04256979v1",
       "openAccess": true,
+      "thumb": 9305381,
       "abstract": "Extremely high urban temperatures adversely affect photovoltaic (PV) system performance. Accurate PV cell temperature assessment relies on local weather conditions, exacerbated by urban overheating, often overlooked by inadequate temperature models and non-local data. This study investigates the electrical and thermal PV performance, considering mounting configurations and local conditions. Data from ten weather stations in Greater Sydney (NSW) during 2016-2017, including a hot summer, are used. The Sandia model is used to predict cell temperatures and power output for four mounting configurations, from open rack to building-integrated (BIPV). A PV thermal model is implemented to analyse daytime convection, crucial for understanding PV impact on local climate. Results show peak cell temperatures of 60°C (open rack) to over 90°C (BIPV), causing up to 50% power loss and 11% reduction in monthly performance ratio. Local climate variations impact PV energy output up to 6%, with mounting configuration effects up to 11%. Daytime convective flux averages 150-180 W/m², peaking at 700 W/m². Convective release varies up to 22% based on local climate, generally higher for open rack than close roof mounts, with potential reversals under low wind speed conditions. These findings can improve the knowledge of PV performances in urban areas facing extreme temperatures.",
       "keywords": [
         "Urban Overheating",
@@ -504,6 +523,7 @@
       "pdf": "",
       "hal": "https://hal.science/hal-04427396v1",
       "openAccess": false,
+      "thumb": null,
       "abstract": "L’origine anthropique du réchauffement climatique ne fait plus de doute, et l’accord de Paris adopté en 2015 par la quasi-totalité des pays du monde a fixé l’objectif d’une augmentation moyenne de la température inférieure à 2°C. La transition énergétique est ainsi devenue un sujet de société majeur.Différents scénarios énergétiques sont à l’étude pour parvenir à une neutralité carbone en 2050. Ils nécessitent tous une société plus sobre en énergie, une plus grande électrification des usages énergétiques, et un développement des énergies renouvelables. Mais dans le détail, les poids respectifs des économies d’énergie, des énergies renouvelables et du nucléaire varient d’un scénario à l’autre. La société doit choisir un modèle et une trajectoire de développement d’un nouveau mix énergétique. Ce choix aura des impacts sur nos modes de vie, et supposera d’accepter des contraintes, des risques ou des coûts différents. Il nécessite un débat éclairé par les connaissances les plus récentes.Quelle place le solaire photovoltaïque peut-il prendre dans le futur mix énergétique français ?L’énergie solaire photovoltaïque (PV) a progressé au cours des 10 dernières années à une vitesse fulgurante, que personne n’avait prédite : la capacité des installations photovoltaïques dans le monde a été multipliée par 20, le prix des panneaux photovoltaïques a été divisé par 10, et leur rendement est passé de 15% à 20%. Le rôle que le solaire photovoltaïque peut jouer dans la transition énergétique en est bouleversé. Malheureusement, ces changements ne sont souvent pas pris correctement en compte dans les débats, trop souvent biaisés par des arguments approximatifs ou erronés lorsqu’il s’agit du solaire photovoltaïque.Un petit groupe de chercheuses et de chercheurs du Centre National de la Recherche Scientifique (CNRS) et de la Fédération de Recherche Photovoltaïque (FedPV) a formé un atelier pour travailler collectivement sur les questions posées par le développement du solaire photovoltaïque en France. Quelle est sa réalité ? Où en est-on ? Quels sont les objectifs à court, moyen et long terme ? Sont-ils atteignables ? Le photovoltaïque coûte-t-il cher ? Est-il polluant, émetteur de CO2, dépendant de matériaux rares ?…L’ambition de ce travail est d’apporter des réponses simples et factuelles mais précises et documentées, en utilisant les données les plus récentes, issues si possible de la littérature scientifique relue par les pairs. Ce document propose plusieurs niveaux de lecture. Pour chaque question, nous proposons une première réponse courte pour faire simple, puis des éléments complémentaires pour aller plus loin. Les sources indiquent l’origine des données utilisées, et des documents ou sites web permettant d’approfondir les questions abordées.",
       "keywords": []
     },
@@ -525,6 +545,7 @@
       "pdf": "https://hal.science/hal-04112033/document",
       "hal": "https://hal.science/hal-04112033v1",
       "openAccess": true,
+      "thumb": 9232902,
       "abstract": "This study presents a fully reproducible clustering-based methodology for the assessment of the urban heat island intensity (UHII) at the territory scale, using parametric microclimate models and limited computational resources. In large-scale climate modeling, a common preliminary operation is to utilize the well-established Local Climate Zone classification to characterize the thermal response of urban areas based on morphology. With the increasing availability of urban datasets, data-driven approaches can be implemented to quantitatively derive meaningful urban features without relying on a standardized classification. The proposed methodology employs a Gaussian Mixture Model clustering algorithm to partition the urban territory into a suitable number of homogeneous microclimate zones, enabling the calculation and mapping of the UHII for each zone through the Urban Weather Generator (UWG) tool. The developed approach is applied to the Canton of Geneva, Switzerland, identifying ten microclimatic areas and analyzing the spatiotemporal variation of UHII. Results show yearly average values of UHII ranging from 1.7°C to 2.2°C, depending on urban morphology. The simulated values are partially validated by comparison with on-site measurements from two urban weather stations, yielding a satisfactory agreement. The methodology can support urban planning with the goal of avoid overheating through a large-scale mapping.",
       "keywords": [
         "GIS-data",
@@ -551,6 +572,7 @@
       "pdf": "https://hal.science/hal-04357303/document",
       "hal": "https://hal.science/hal-04357303v1",
       "openAccess": true,
+      "thumb": 9349187,
       "abstract": "Urban areas are serious candidates for the production of solar energy but their intrinsic complexity makes it challenging. The heterogeneity in the geometries and radiative properties of the different elements composing the urban fabric, specifically induces important spatiotemporal variations of the distribution of incident solar radiations. Besides, Principal Component Analysis (PCA) has been widely validated as an efficient tool to identify the principal behavioural features of a high-dimensional physical model. This paper proposes a novel approach to analyse and characterise the spatiotemporal variability of the solar resource within an urban context by means of PCA. A theoretical 100 × 100 m² asymmetric urban district made of nine cuboids with various heights is studied. The distribution of the incident field of irradiances is modelled via backward Monte-Carlo ray tracing over a full year on the facets of the central building under a clear sky, with a 15 min timestep and 1 m spatial resolution. PCA is subsequently applied to the simulated model to analyse its spatial and temporal variabilities. First results validate modal decomposition as a powerful technique for the analysis of the variability distribution, allowing the identification of the district areas subjected to important spatial and temporal variations of the solar resource. Characteristic scales are clearly represented by orders of decomposition. The contribution of surrounding geometries is also transcribed by particular spatial modes and similar influential variables are encountered across multiple evaluated surfaces but at different modal ranks.",
       "keywords": [
         "Model Order Reduction",
@@ -578,6 +600,7 @@
       "pdf": "https://cnrs.hal.science/hal-04845130/document",
       "hal": "https://cnrs.hal.science/hal-04845130v1",
       "openAccess": true,
+      "thumb": 9585624,
       "abstract": "This study examines the performance of photovoltaic (PV) installations in different areas near Sydney (NSW) by analyzing meteorological data from ten weather stations. The Sandia PV array performance model is utilized to analyze the thermal and electrical performance of four distinct PV module installation conditions. Results indicate that extremely hot weather conditions significantly reduce module efficiency, with close roof mount and insulated back configurations exhibiting lower performance than the open-rack configuration. PV cell operating temperatures can reach hourly peaks ranging from 60°C, for the open rack mount, to more than 90°C for the insulated back. Temperature derating, defined as the deviation of PV power output from the standard test cell temperature conditions (Tc=25°C), can reach hourly peaks of about -40% for the insulated back configuration. A strong negative linear correlation (R-Pearson=-0.79) is observed between PV performance ratio and cooling degree hours, with extreme hot weather conditions having a significant impact on both PV performance and demand for cooling. The open rack configuration demonstrates the highest power production, while the insulated back configuration leads to decreased power production up to 9.5% in summer and 8.3% annually in relation to Sydney, NSW.",
       "keywords": [
         "PV Performance",
@@ -610,6 +633,7 @@
       "pdf": "https://hal.science/hal-04249780/document",
       "hal": "https://hal.science/hal-04249780v1",
       "openAccess": true,
+      "thumb": 9304665,
       "abstract": "",
       "keywords": []
     },
@@ -631,6 +655,7 @@
       "pdf": "https://cnrs.hal.science/hal-04845112/document",
       "hal": "https://cnrs.hal.science/hal-04845112v1",
       "openAccess": true,
+      "thumb": 9585097,
       "abstract": "This study presents a comprehensive analysis of energy demand and supply in energy efficient urban districts by integrating building energy simulations with Building Integrated Photovoltaic (BIPV) power generation models, while considering Urban Heat Island (UHI) and radiation conditions. EnergyPlus simulation tool is used to assess the building energy demand of a multi thermal zone residential building within a district ideally located in Rome, Italy. The impact of UHI intensity on building energy demand predictions is evaluated using the Urban Weather Generator (UWG) tool, which shows an overall underestimation of 8% when using the rural weather file for building performance simulations. The study evaluates the productivity of vertical BIPV using the Sandia photovoltaic array performance model and shows that it is not significantly affected by UHI. However, progressively adding PV surfaces on building façades of the entire district to attain nearly zero objectives at the district scale reduces their conversion capacity due to the darkening effect. The study demonstrates that significant PV energy production increases can be achieved in the reference district until 60% of PV coverage on façades, beyond which there is a lower further increase due to global \"darkening\" at the district level.",
       "keywords": [
         "Urban Microclimate",
@@ -658,6 +683,7 @@
       "pdf": "https://hal.science/hal-04238984/document",
       "hal": "https://hal.science/hal-04238984v1",
       "openAccess": true,
+      "thumb": 9296258,
       "abstract": "The development of renewable energy is urgent given the current climate change and Europe energy supply contexts. Among the renewable sources, solar energy is promising and solar technologies spread quickly in the last years. The local production matching with the local energy demand is possible with these technologies and needs to be promoted in the next years to limit the loss induced by the transportation and storage of energy. However, solar potential (irradiation received on a surface) as well as demand are complex to model with accuracy, as many phenomena impact it (shading…). This study proposes a methodology to map solar potential in a rural area, considering several aspects such as the local climate, topography and global climate change. A first overview of the workflow developed is presented, combining several software in order to study the solar potential and its influence on the energy mix at the scale of a village located in a rural area. In particular, the focus is made on mountainous regions which are isolated areas with strong environmental constraints. This work will present a short state of the art, a first overview of the workflow developed which presents the tools that will be used to investigate the solar potential and the territory that will be studied.",
       "keywords": [
         "Software",
@@ -685,6 +711,7 @@
       "pdf": "",
       "hal": "https://univ-smb.hal.science/hal-05006011v1",
       "openAccess": false,
+      "thumb": null,
       "abstract": "",
       "keywords": []
     },
@@ -706,6 +733,7 @@
       "pdf": "https://hal.science/hal-03703326/document",
       "hal": "https://hal.science/hal-03703326v1",
       "openAccess": true,
+      "thumb": 9232779,
       "abstract": "Building rooftops represent one of the most valuable resources to harvest solar energy in cities. Nevertheless, this potential is limited by the urban morphology impacting the shading conditions. This study suggests a general methodology to assess the impact of urban form on solar harvesting. To this aim, a new GIS-based approach is developed to extract meaningful morphological parameters at a very large scale. The rooftop overall shading rate is here defined as a benchmark, and it is measured through a scaled insolation representing the ratio between the insolation of a surface within the urban context and its unshaded theoretical maximum. A set of 40 morphological features is calculated for 60,000 buildings in the Canton of Geneva (Switzerland), and the scaled solar insolation of about 350,000 roof pieces is derived from the Solar Cadaster of Geneva. The results outline the insolation distribution within the city and as a function of urban morphology. The rooftop overall shading rate shows moderate Pearson coefficients (r = 0.2/0.4) towards some parameters, namely building height, volume, and height difference with surroundings, while others seem irrelevant. Analysing the 48 Geneva municipalities one at a time, the denser downtown areas reach higher correlation levels (r = 0.4/0.6) compared to the suburban ones.",
       "keywords": []
     },
@@ -728,6 +756,7 @@
       "pdf": "https://hal.science/hal-04273307/document",
       "hal": "https://hal.science/hal-04273307v1",
       "openAccess": true,
+      "thumb": 9314127,
       "abstract": "In the context of the quick expansion of photovoltaic (PV) capacity, monitoring and correcting system failures are crucial to maximize the performance. To reduce these sources of underperformance, a well-rounded knowledge of failures becomes essential. This paper highlights the most critical photovoltaic failure modes by means of Failure Mode Effect and Criticality Analysis (FMECA) methodology with the combination of different literature data sources. A review on the current knowledge of failures in PV systems, their detection methods and their relationships is first performed. Then, this study ranks the failures based on their Risk Priority Number (RPN) deducted from their severity, occurrence, and detection scores from different sources. The failure risk analysis outlines that critical failure modes occur in any component of the PV installation and every single part of the system needs special attention to manage underperformances.",
       "keywords": []
     },
@@ -750,6 +779,7 @@
       "pdf": "https://cnrs.hal.science/hal-04793232/document",
       "hal": "https://cnrs.hal.science/hal-04793232v1",
       "openAccess": true,
+      "thumb": 9561210,
       "abstract": "<div><p>In the context of the quick expansion of photovoltaic (PV) capacity, monitoring and correcting system failures are crucial to maximize the performance. To reduce these sources of underperformance, a well-rounded knowledge of failures becomes essential. This paper highlights the most critical photovoltaic failure modes by means of Failure Mode Effect and Criticality Analysis (FMECA) methodology with the combination of different literature data sources. A review on the current knowledge of failures in PV systems, their detection methods and their relationships is first performed. Then, this study ranks the failures based on their Risk Priority Number (RPN) deducted from their severity, occurrence, and detection scores from different sources. The failure risk analysis outlines that critical failure modes occur in any component of the PV installation and every single part of the system needs special attention to manage underperformances.</p></div>",
       "keywords": [
         "Failure risk analysis",
@@ -799,6 +829,7 @@
       "pdf": "https://hal.science/hal-04235538/document",
       "hal": "https://hal.science/hal-04235538v1",
       "openAccess": true,
+      "thumb": 9294873,
       "abstract": "The contents of this report do not necessarily reflect the viewpoints or policies of the International Energy Agency (IEA) or its member countries, the IEA Solar Heating and Cooling Technology Collaboration Programme (SHC TCP) members or the participating researchers.",
       "keywords": []
     },
@@ -819,6 +850,7 @@
       "pdf": "https://hal.science/hal-03650892/document",
       "hal": "https://hal.science/hal-03650892v1",
       "openAccess": true,
+      "thumb": 9019667,
       "abstract": "In the context of a rapid and massive deployment or renewable energy and in particular solar photovoltaic, it is necessary to develop methods and tools to guide this deployment. To this end, this work proposes a multicriteria approach for evaluating the suitability of a building to be equipped with photovoltaic (PV) systems (PV suitability). In the present case, technical (roof complexity), economic (payback period), environmental (CO2 reduction), energetic (self-consumption), as well as social (heritage constraint) criteria are considered. These criteria are evaluated for each building of the Greater Geneva Agglomeration (GGA), a cross-border French–Swiss territory of nearly 270 000 buildings. A multicriteria method, ELECTRE TRI, makes it possible to sort these buildings into three categories, A, B, and C, that correspond to “very high,” “high,” and “moderate” PV suitabilities, respectively. Large differences are observed within the 210 municipalities of the GGA since some of them have almost no A-ranked buildings whereas others comprise more than 70% of these buildings. It is shown that, by prioritizing the A-ranked buildings, almost 50% of the annual electricity consumption of the Geneva Canton could be produced by PV systems. Finally, the method developed here offers a decision-aiding tool that could be used at a territory scale to achieve energy transition goals in terms of solar PV deployment.",
       "keywords": [
         "Multicriteria decision aiding",
@@ -859,6 +891,7 @@
       "pdf": "https://hal.science/hal-04234820/document",
       "hal": "https://hal.science/hal-04234820v1",
       "openAccess": true,
+      "thumb": 9294225,
       "abstract": "",
       "keywords": []
     },
@@ -878,6 +911,7 @@
       "pdf": "https://hal.science/hal-04234874/document",
       "hal": "https://hal.science/hal-04234874v1",
       "openAccess": true,
+      "thumb": 9294221,
       "abstract": "This work proposes a multicriteria approach in order to evaluate the suitability of a building to be equipped with Photovoltaic (PV) systems. In the present case, technical (roof complexity), economic (payback period), environmental (CO2 reduction), energetic (selfconsumption) as well as social (heritage constraint) are considered. These criteria are evaluated for each building of the Great Geneva agglomeration, then a multicriteria methods, ELECTRE TRI, allows to sort these roofs in three categories that corresponds to \"Very High\", \"High\", \"Moderate\" suitability.",
       "keywords": []
     },
@@ -899,6 +933,7 @@
       "pdf": "",
       "hal": "https://hal.science/hal-03500270v1",
       "openAccess": false,
+      "thumb": null,
       "abstract": "",
       "keywords": []
     },
@@ -923,6 +958,7 @@
       "pdf": "https://hal.science/hal-04234685/document",
       "hal": "https://hal.science/hal-04234685v1",
       "openAccess": true,
+      "thumb": 9293283,
       "abstract": "The achievement of the targets for reducing greenhouse gas emissions set by the Paris Agreements and the Swiss federal law on the reduction of greenhouse gas emissions (CO2 law) requires massive use of renewable energies, which cannot be achieved without their adoption by the general public. The solar cadaster developed as part of the INTERREG G2 Solar project is intended to assess the solar potential of buildings at the scale of Greater Geneva—for both industrial buildings and for individual residential buildings—at a resolution of 1 m. The new version of the solar cadaster is intended to assess the solar potential of roofs, as well as that of vertical facades. The study presented here aims to validate this new version through a comparison with results obtained with two other simulation tools that are widely used and validated by the scientific community. The good accordance with the results obtained with ENVI-met and DIVA-for-Rhino demonstrates the capability of the radiative model developed for the solar cadaster of Greater Geneva to accurately predict the radiation levels of building facades in configurations with randomly distributed buildings (horizontally or vertically).",
       "keywords": [
         "Solar potential modeling",
@@ -944,6 +980,7 @@
       "pdf": "https://hal.science/hal-03135327/document",
       "hal": "https://hal.science/hal-03135327v1",
       "openAccess": true,
+      "thumb": 9016219,
       "abstract": "The massive deployment of Photovoltaic (PV) energy in cities, which is expected in the coming years, brings new challenges when it comes to controlling power variations inherent to the impact of high PV penetration on the economy, energy exchanges and grid stability. In this perspective, self-consumption, which consists in consuming locally a part of the produced PV energy, allows to smooth the variations in the solar power production, and therefore reduce the stress on the grid. Among other strategies, self-consumption can be enhanced by the adequate use of all the surfaces of a building (roof and façades). In the present work, the optimization of the PV integration on the roof and façades of a building, is performed in order to optimize objectives related to selfconsumption. These objectives are based on different aspects of self-consumption: minimizing the exchanges of energy with the grid, improving grid stability, or maximizing the economic profitability. The case of France will be considered. The influence of different parameters, namely, the load profile, the building consumption and height, on the optimal integration of PV will be investigated. It is shown that the optimal PV integration is drastically impacted by the studied parameters, and the goal of the optimization. Furthermore, integration on façades appears to be most of the time relevant in order to enhance self-consumption.",
       "keywords": [
         "Photovoltaic integration",
@@ -972,6 +1009,7 @@
       "pdf": "https://hal.science/hal-03134928/document",
       "hal": "https://hal.science/hal-03134928v1",
       "openAccess": true,
+      "thumb": 8778903,
       "abstract": "The current climate and energy context is triggering the massive deployment of solar energy technologies in the short term. As a consequence, the number of Photovoltaic (PV) systems that will be set up in urban areas will drastically increase. Such large-scale integration must be guided by careful consideration of a diverse set of criteria, including energy resources and demand, as well as socioeconomic and environmental factors. In this paper, a decision aiding approach is introduced to rank a set of buildings based on their suitability to host photovoltaic systems in the particular case of urban environments. The study takes place in the context of a Franco-Swiss project covering the Grand Genève (Greater Geneva) agglomeration. A list of decision criteria is defined and the ELECTRE III outranking method is used to solve the problem and provide efficient ranking of the different solutions.",
       "keywords": [
         "Multi-criteria decision aiding",
@@ -997,6 +1035,7 @@
       "pdf": "https://hal.science/hal-02950931/document",
       "hal": "https://hal.science/hal-02950931v1",
       "openAccess": true,
+      "thumb": 8730796,
       "abstract": "Authors would like to thanks the program INTERREG V Suisse-France for providing financial support to conduct this study in the framework of the project G2 Solar which aims at extending the solar cadaster to the Greater Geneva and intensify energy solar production at this level. We greatly acknowledge R. Giraudon at Urban Solar Energy, and B. Benchenafi at Reservoir Sun, for their helpful discussion and their expertise. We finally thank Manon Turban for her proofreading of the document.",
       "keywords": [
         "Suitability",
@@ -1025,6 +1064,7 @@
       "pdf": "https://hal.science/hal-02472158/document",
       "hal": "https://hal.science/hal-02472158v1",
       "openAccess": true,
+      "thumb": 8573031,
       "abstract": "The impact of the external thermal stratification on the flow behavior andthe mass flow rate in an open ended vertical channel with one side uniformlyheated is investigated experimentally and numerically. Both experimentaland numerical studies show that the increase of the external stratificationlowers the velocity and the mass flow rate but also displaces the transitionheight at a lower location in the channel. The numerical model was usedto study the cases of weak and negative thermal stratifications which arebarely achievable in non-controlled experimental laboratory conditions butare common in the atmosphere. Different flow regimes are identified with flowbeing fully laminar when the stratification is weak or negative and flow beingtransitional to turbulent for higher stratifications. Finally, the numericallyobtained mass flow rates with the various external thermal stratifications areshown to be in excellent agreement with a theoretical model developed in aprevious work.",
       "keywords": []
     },
@@ -1047,6 +1087,7 @@
       "pdf": "https://hal.science/hal-02111480/document",
       "hal": "https://hal.science/hal-02111480v1",
       "openAccess": true,
+      "thumb": 8456065,
       "abstract": "In the first decades of the 21 st century increasing concerns regarding the environmental issues caused by anthropogenic global warming have spurred a rethinking of the generation and consumption of energy, and the management of local resources. In part as a consequence of this trend, it is expected that solar PhotoVoltaic (PV) panels will lead future renewable electricity capacity growth in the next decade [1]. Another societal change is the worldwide rise in urbanization, with the expectation that two thirds of the global population will live in urban areas by 2050. As a result, the consideration of Building-Integrated PhotoVoltaic systems (BIPV) and their widespread adoption is of crucial importance. This work is part of the \"G2Solaire\" project, a Franco-Swiss project developing a solar cadastre (also called solar map) of the Genève agglomeration. The cadastre to be developed will take the form of a collaborative platform with objectives that are respectively related to:  the intensification of the use of solar energy;  the economic development of solar-related activities;  and in fine to the energy transition goals in a context of urban densification. The solar cadastre of a city comprises a representation of the solar energy that could be collected on each roof. Hence, one of the goals of the project is to develop an improved cadastre, considering façades, with more accurate predictions (considering local operating conditions, radiation reflexion, inter-buildings effects...). Performance Measurement Systems will then be defined in order to assess the suitability of a particular roof for PV integration.",
       "keywords": []
     },
@@ -1068,6 +1109,7 @@
       "pdf": "https://hal.science/hal-02271594/document",
       "hal": "https://hal.science/hal-02271594v1",
       "openAccess": true,
+      "thumb": 8495552,
       "abstract": "A spatially developing transitional flow in a vertical channel with one side heated uniformly and subjected to random velocity fluctuations at theinlet is investigated in this experimental and numerical study. Two Rayleigh numbers are studied. Experimentally, Particle Image Velocimetry is used to obtain a complete two-dimensional velocity field of the streamwise flow development. A three-dimensional Large-Eddy-Simulation investigation isalso performed to obtain a complete streamwise evolution of the flow. The results allow the denition of three transition indicators on the basis of thetime-averaged velocities and temperatures elds as well as on the turbulent statistics of the flow. The detailed experimental and numerical spatial development of the transitional natural convective flow is then presented and the ability of the indicators to capture the early and the advanced stages of the transition is assessed. The numerical simulations were performed on the assumptions of a thermally stratied environment, submitted to an environmental noise, and for which wall to wall radiations were considered. These conditions aim at representing realistic experimental conditions.",
       "keywords": [
         "Chimney effect",
@@ -1114,6 +1156,7 @@
       "pdf": "",
       "hal": "https://cstb.hal.science/hal-04909994v1",
       "openAccess": false,
+      "thumb": null,
       "abstract": "Dans quelle mesure la morphologie urbain peut-elle contribuer à une sensation de bien-être ou de mal-être pour les populations ? En milieu urbain, le «sport assisté» (vélos à assistance électrique, overboard, trottinette, etc.) encourage-t-il à une pratique sportive plus intense ? Dans quelle mesure l’offre alimentaire environnante a-t-elle un impact sur les comportements alimentaires des habitants ? Quel lien entre rénovation énergétique des bâtiments et santé de leurs usagers ? Tous les citadins ont-ils des opportunités égales de rencontre et d’interactions sociales ?",
       "keywords": [
         "Bâtiment",
@@ -1143,6 +1186,7 @@
       "pdf": "",
       "hal": "https://hal.science/hal-03501770v1",
       "openAccess": false,
+      "thumb": null,
       "abstract": "",
       "keywords": []
     },
@@ -1164,6 +1208,7 @@
       "pdf": "",
       "hal": "https://hal.science/hal-02099467v1",
       "openAccess": false,
+      "thumb": null,
       "abstract": "",
       "keywords": []
     },
@@ -1183,6 +1228,7 @@
       "pdf": "",
       "hal": "https://hal.science/hal-02097374v1",
       "openAccess": false,
+      "thumb": null,
       "abstract": "",
       "keywords": []
     },
@@ -1200,6 +1246,7 @@
       "pdf": "https://theses.hal.science/tel-02006828/document",
       "hal": "https://theses.hal.science/tel-02006828v1",
       "openAccess": true,
+      "thumb": 8402071,
       "abstract": "In natural convective flows, complex coherent structures develop whose the role in heat and mass transfer are not well understood. A numerical study, based on Large-Eddy-Simulations of a vertical channel with one side uniformly was therefore carried out. Different stages of transitional flow development were identified numerically with two characteristic frequency bands being observed in the flow, near the heated wall. Methods derived from the Proper Orthogonal Decomposition (POD) was also used and allows the most energetic modes to be separated accordingly to two characteristic frequency bands found numerically. As result, the contribution of the two families of modes to the near wall turbulent heat transfer and velocity-temperature correlation has been evaluated. POD was also performed on experimental measurements showing similarities with the numerically observed structures.In this work, variations of the external thermal stratification have been identified as one possible source of these differences and its influence was therefore investigated experimentally and numerically. It is shown that the increase in the positive gradient of the external stratification not only decreases the mass flow rate but also displaces the transition height to a lower location in the channel. Numerical simulations also allow the study of cases of weak and negative thermal stratifications which are difficult to achieve in laboratories. A theoretical model of the influence of the external thermal stratification on the mass flow rate was also developed. There is an excellent agreement between the theoretical predictions and the experimentally and numerically obtained mass flow rates. This clearly highlights that external temperature distributions are key driving factors and their influence is accurately quantified in this work",
       "keywords": [
         "Double-skin façade",
@@ -1232,6 +1279,7 @@
       "pdf": "",
       "hal": "https://hal.science/hal-02097293v1",
       "openAccess": false,
+      "thumb": null,
       "abstract": "",
       "keywords": []
     },
@@ -1253,6 +1301,7 @@
       "pdf": "https://hal.science/hal-01727714/document",
       "hal": "https://hal.science/hal-01727714v1",
       "openAccess": true,
+      "thumb": 8279878,
       "abstract": "Many works have been performed on heated vertical rectangular open-ended channels. Whilst in most cases, thermal fields are quite well predicted or reproducible, there were often large unexplained variations in the experimental flow rate for apparently the same conditions. An experimental and theoretical investigation has therefore been carried out to identify the effect of external thermal stratifications on the flow rate. Four values of steady and uniform heat flux, equivalent to Rayleigh numbers between 2.9×104 and 1.6×108 were imposed experimentally either on one or both sides of a vertical rectangular channel, with various ambient thermal gradients external to the channel. It was observed that the mass flow rate was significantly reduced as the positive upward, external thermal gradient increased. A theoretical model of the phenomenon was also developed. There is an excellent agreement between the theoretically predicted and experimentally measured mass flow rates. This clearly highlights that external temperature distributions are key driving factors and their influence is accurately quantified in this work.",
       "keywords": [
         "Experimental",
@@ -1280,6 +1329,7 @@
       "pdf": "",
       "hal": "https://hal.science/hal-02097307v1",
       "openAccess": false,
+      "thumb": null,
       "abstract": "",
       "keywords": []
     },
@@ -1301,6 +1351,7 @@
       "pdf": "",
       "hal": "https://hal.science/hal-02099462v1",
       "openAccess": false,
+      "thumb": null,
       "abstract": "",
       "keywords": []
     },
@@ -1321,6 +1372,7 @@
       "pdf": "",
       "hal": "https://hal.science/hal-02097314v1",
       "openAccess": false,
+      "thumb": null,
       "abstract": "",
       "keywords": []
     },
@@ -1341,6 +1393,7 @@
       "pdf": "",
       "hal": "https://hal.science/hal-01479064v1",
       "openAccess": false,
+      "thumb": null,
       "abstract": "",
       "keywords": []
     },
@@ -1360,6 +1413,7 @@
       "pdf": "",
       "hal": "https://hal.science/hal-01479029v1",
       "openAccess": false,
+      "thumb": null,
       "abstract": "",
       "keywords": []
     },
@@ -1379,6 +1433,7 @@
       "pdf": "",
       "hal": "https://hal.science/hal-01479012v1",
       "openAccess": false,
+      "thumb": null,
       "abstract": "Cet article présente une nouvelle approche de l’étude des écoulements de convection naturelle en canal pariétalement chauffé, par méthode de réduction. Deux principaux objectifs sont poursuivis. Le premier consiste à approfondir la connaissance de cet écoulement et notamment de ses caractéristiques instationnaires. L’élaboration de modèles d’ordre réduit pour des composants ventilés d’enveloppedu bâtiment est aussi visée. Dans un premier temps un référencement des différentes méthodes de réduction considérées sera exposé. Ensuite une première analyse par Proper Orthogonal Decomposition (POD) permettant l’observation de certaines structures cohérentes de l’écoulement est effectuée",
       "keywords": []
     }

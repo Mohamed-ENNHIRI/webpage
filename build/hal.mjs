@@ -21,7 +21,7 @@ const OUTPUT = 'data/publications.json';
 const FIELDS = [
   'halId_s', 'uri_s', 'title_s', 'subTitle_s', 'authFullName_s', 'producedDateY_i',
   'journalTitle_s', 'conferenceTitle_s', 'bookTitle_s', 'city_s', 'country_s',
-  'docType_s', 'doiId_s', 'fileMain_s', 'files_s', 'abstract_s', 'volume_s',
+  'docType_s', 'doiId_s', 'fileMain_s', 'files_s', 'abstract_s', 'volume_s', 'thumbId_i',
   'issue_s', 'page_s', 'publisher_s', 'openAccess_bool', 'keyword_s',
 ].join(',');
 
@@ -130,6 +130,8 @@ function mapRecord(doc) {
     pdf: first(doc.fileMain_s) || first(doc.files_s),
     hal: first(doc.uri_s),
     openAccess: Boolean(doc.openAccess_bool),
+    // HAL renders the first page of each deposit. Zero means no preview exists.
+    thumb: Number(doc.thumbId_i) || null,
     abstract: first(doc.abstract_s),
     keywords: Array.isArray(doc.keyword_s) ? doc.keyword_s.slice(0, 8).map(String) : [],
   };
