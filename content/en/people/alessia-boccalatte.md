@@ -16,8 +16,8 @@ themes:
 photo: ''
 email: ''
 website: ''
-scholar: ''
+scholar: https://scholar.google.com/citations?user=SB_wq2kAAAAJ
 orcid: ''
-hal: ''
+hal: https://cv.hal.science/alessia-boccalatte
 linkedin: ''
 ---

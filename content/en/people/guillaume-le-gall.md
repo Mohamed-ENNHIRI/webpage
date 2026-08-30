@@ -17,6 +17,6 @@ email: ''
 website: ''
 scholar: ''
 orcid: ''
-hal: ''
+hal: https://cv.hal.science/guillaume-le-gall
 linkedin: ''
 ---

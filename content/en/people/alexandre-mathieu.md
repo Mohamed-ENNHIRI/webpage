@@ -14,9 +14,9 @@ themes:
 - performance
 photo: ''
 email: ''
-website: ''
+website: https://www.univ-smb.fr/locie/en/alexandre-mathieu-doctorant-membre-du-locie/
 scholar: ''
 orcid: ''
-hal: ''
+hal: https://hal.science/search/index/?q=%2A&authIdHal_s=alexandre-hugo-mathieu
 linkedin: ''
 ---

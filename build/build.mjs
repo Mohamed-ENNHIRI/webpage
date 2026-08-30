@@ -16,7 +16,7 @@ import { esc, icon, plain, join as joinParts } from './lib/html.mjs';
 import { layout } from './lib/layout.mjs';
 import {
   sectionHeading, publicationList, publicationItem, personCard, peopleByRole,
-  projectCard, themeCard, newsItem, profileLinks, publicationLinks, toolCard,
+  projectCard, themeCard, newsItem, profileLinks, publicationLinks, toolCard, personLinks,
 } from './lib/components.mjs';
 
 const OUT = '_site';
@@ -273,6 +273,7 @@ function main() {
     ${person.topic ? `<p class="lede">${esc(person.topic)}</p>` : ''}
     ${person.cosupervisors ? `<p class="person__note">${esc(ctx.t.coSupervised)} ${esc(person.cosupervisors)}</p>` : ''}
     ${person.alumni && person.current_position ? `<p class="person__note">${esc(ctx.t.nowAt)}: ${esc(person.current_position)}</p>` : ''}
+    ${personLinks(person, ctx)}
     ${person.html}
   </article>
   ${related.length ? `<section class="section">${sectionHeading(ctx.pages.publications.title)}${publicationList(related, ctx, { groupByYear: false })}</section>` : ''}`,

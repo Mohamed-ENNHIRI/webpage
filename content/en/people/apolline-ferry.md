@@ -14,9 +14,9 @@ themes:
 - integration
 photo: ''
 email: ''
-website: ''
+website: https://www.univ-smb.fr/locie/en/apolline-ferry-doctorante-membre-du-locie/
 scholar: ''
 orcid: ''
-hal: ''
+hal: https://hal.science/search/index/?q=%2A&authIdHal_s=apolline-ferry
 linkedin: ''
 ---

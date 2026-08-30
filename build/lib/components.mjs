@@ -141,6 +141,33 @@ function filterBar(pubs, ctx) {
 }
 
 /**
+ * The icon links for one person.
+ *
+ * Only the fields filled in appear, so a person with no public profile shows
+ * no row at all.
+ *
+ * @param {object} person Person.
+ * @param {object} ctx    Rendering context.
+ * @returns {string}
+ */
+export function personLinks(person, ctx) {
+  const entries = [
+    person.email && { href: `mailto:${person.email}`, icon: 'email', label: ctx.t.email },
+    person.website && { href: person.website, icon: 'link', label: 'LOCIE' },
+    person.scholar && { href: person.scholar, icon: 'scholar', label: 'Google Scholar' },
+    person.orcid && { href: person.orcid, icon: 'orcid', label: 'ORCID' },
+    person.hal && { href: person.hal, icon: 'hal', label: 'HAL' },
+    person.linkedin && { href: person.linkedin, icon: 'linkedin', label: 'LinkedIn' },
+  ].filter(Boolean);
+
+  if (!entries.length) return '';
+
+  return `<p class="person__links">${entries.map((e) => (
+    `<a class="iconlink" href="${esc(e.href)}" rel="noopener" aria-label="${esc(e.label)}" title="${esc(e.label)}">${icon(e.icon)}</a>`
+  )).join('')}</p>`;
+}
+
+/**
  * One team member.
  *
  * @param {object} person Person.
@@ -165,6 +192,7 @@ export function personCard(person, ctx) {
     ${person.topic ? `<p class="person__topic">${esc(person.topic)}</p>` : ''}
     ${person.cosupervisors ? `<p class="person__note">${esc(ctx.t.coSupervised)} ${esc(person.cosupervisors)}</p>` : ''}
     ${person.alumni && person.current_position ? `<p class="person__note">${esc(ctx.t.nowAt)}: ${esc(person.current_position)}</p>` : ''}
+    ${personLinks(person, ctx)}
   </div>
 </article>`.trim();
 }
