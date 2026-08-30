@@ -1,15 +1,15 @@
 ---
-name: Appoline Ferry
-slug: appoline-ferry
+name: Apolline Ferry
+slug: apolline-ferry
 order: 20
 role: phd
 topic: Potentiel solaire en toiture des territoires de montagne et de plaine, et effet de
   la topographie sur l’adéquation entre ressource solaire et demande énergétique.
-start_year: ''
-end_year: ''
+start_year: '2021'
+end_year: '2025'
 cosupervisors: Lamia Berrah, Christophe Ménézo
 alumni: true
-current_position: ''
+current_position: Kilowattsol
 themes:
 - urban-solar
 - decision-aiding

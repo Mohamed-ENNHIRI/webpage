@@ -1,11 +1,11 @@
 ---
 name: Sarah Cointepas
 slug: sarah-cointepas
-order: 30
+order: 20
 role: phd
 topic: ''
-start_year: ''
-end_year: ''
+start_year: '2025'
+end_year: '2028'
 cosupervisors: ''
 alumni: false
 current_position: ''

@@ -1,12 +1,12 @@
 ---
 name: Farzaneh Changizi
 slug: farzaneh-changizi
-order: 20
+order: 10
 role: phd
 topic: Multi-objective optimisation of photovoltaic integration in residential buildings,
   across energy, economic, environmental and flexibility indicators.
-start_year: ''
-end_year: ''
+start_year: '2024'
+end_year: '2027'
 cosupervisors: Christophe Ménézo
 alumni: false
 current_position: ''

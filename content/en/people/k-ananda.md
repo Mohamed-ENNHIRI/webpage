@@ -1,11 +1,11 @@
 ---
-name: Sarah Cointepas
-slug: sarah-cointepas
-order: 20
+name: K. Ananda
+slug: k-ananda
+order: 50
 role: phd
 topic: ''
-start_year: '2025'
-end_year: '2028'
+start_year: '2026'
+end_year: '2029'
 cosupervisors: ''
 alumni: false
 current_position: ''

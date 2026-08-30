@@ -107,78 +107,118 @@
 
   /* ----------------------------------------------------- the hero visual */
 
-  const cadastre = document.querySelector('[data-cadastre]');
-  if (cadastre) drawCadastre(cadastre);
+  const sunpath = document.querySelector('[data-sunpath]');
+  if (sunpath) drawSunPath(sunpath);
 
   /**
-   * Draw a real rooftop solar cadastre.
+   * A sun path diagram: where the sun stands in the sky through the year.
    *
-   * Each shape is an actual roof surface in one Geneva neighbourhood, taken
-   * from the published roof-solar dataset, coloured by the annual irradiation
-   * it genuinely receives. A threshold sweeps across the range, dimming the
-   * roofs below it — which is the question a solar cadastre exists to answer:
-   * given a cut-off, which roofs are worth equipping?
+   * Nothing here is decorative or fetched. Solar declination, the equation of
+   * time and the hour angle are computed from the date and the latitude of the
+   * laboratory, and the curves fall out of the geometry — which is the same
+   * geometry every irradiation model on this site starts from.
    *
-   * @param {Element} root The [data-cadastre] container.
+   * @param {Element} root The [data-sunpath] container.
    */
-  async function drawCadastre(root) {
+  function drawSunPath(root) {
     const canvas = root.querySelector('canvas');
     const context = canvas?.getContext('2d');
     if (!context) return;
 
-    let data;
-    try {
-      const response = await fetch(root.dataset.src, { cache: 'force-cache' });
-      if (!response.ok) throw new Error(String(response.status));
-      data = await response.json();
-    } catch {
-      // The picture is illustrative; the page is fine without it.
-      root.setAttribute('hidden', '');
-      return;
+    const LAT = Number(root.dataset.lat) || 45.64;
+    const RAD = Math.PI / 180;
+
+    /**
+     * Solar declination and the equation of time for a day of the year.
+     *
+     * Spencer's Fourier expansion — a few terms, accurate to well under a
+     * degree, which is far finer than this drawing can show.
+     *
+     * @param {number} dayOfYear 1 to 365.
+     * @returns {{declination: number, equationOfTime: number}} Radians, minutes.
+     */
+    function solarDay(dayOfYear) {
+      const b = ((dayOfYear - 1) * 2 * Math.PI) / 365;
+      const declination =
+        0.006918
+        - 0.399912 * Math.cos(b) + 0.070257 * Math.sin(b)
+        - 0.006758 * Math.cos(2 * b) + 0.000907 * Math.sin(2 * b)
+        - 0.002697 * Math.cos(3 * b) + 0.001480 * Math.sin(3 * b);
+      const equationOfTime =
+        229.18 * (0.000075
+          + 0.001868 * Math.cos(b) - 0.032077 * Math.sin(b)
+          - 0.014615 * Math.cos(2 * b) - 0.040849 * Math.sin(2 * b));
+      return { declination, equationOfTime };
     }
 
-    const roofs = data.roofs ?? [];
-    if (!roofs.length) { root.setAttribute('hidden', ''); return; }
+    /**
+     * Where the sun is, for a day and a solar hour.
+     *
+     * @param {number} dayOfYear 1 to 365.
+     * @param {number} solarHour Solar time in hours, 12 being solar noon.
+     * @returns {{elevation: number, azimuth: number}} Degrees; azimuth from north, clockwise.
+     */
+    function sunPosition(dayOfYear, solarHour) {
+      const { declination } = solarDay(dayOfYear);
+      const hourAngle = (solarHour - 12) * 15 * RAD;
+      const lat = LAT * RAD;
 
-    const lo = data.min ?? Math.min(...roofs.map((r) => r.i));
-    const hi = data.max ?? Math.max(...roofs.map((r) => r.i));
+      const sinElevation =
+        Math.sin(lat) * Math.sin(declination)
+        + Math.cos(lat) * Math.cos(declination) * Math.cos(hourAngle);
+      const elevation = Math.asin(Math.max(-1, Math.min(1, sinElevation)));
 
-    const readout = root.querySelector('[data-cadastre-readout]');
-    const scale = root.querySelector('[data-cadastre-scale]');
-    if (scale) {
-      scale.querySelector('.cadastre__scale-min').textContent = String(lo);
-      scale.querySelector('.cadastre__scale-max').textContent = `${hi} ${data.unit ?? ''}`;
-      scale.hidden = false;
+      const azimuth = Math.atan2(
+        Math.sin(hourAngle),
+        Math.cos(hourAngle) * Math.sin(lat) - Math.tan(declination) * Math.cos(lat),
+      );
+
+      return {
+        elevation: elevation / RAD,
+        azimuth: ((azimuth / RAD) + 180 + 360) % 360,
+      };
     }
-    if (readout) readout.hidden = false;
+
+    /** Day of the year for a date. */
+    const dayOfYear = (date) =>
+      Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
+
+    /** One day's path, sampled where the sun is above the horizon. */
+    function pathForDay(day) {
+      const points = [];
+      for (let h = 0; h <= 24; h += 0.25) {
+        const p = sunPosition(day, h);
+        if (p.elevation >= -0.5) points.push(p);
+      }
+      return points;
+    }
+
+    // Twelve monthly paths, plus the two solstices to bound them.
+    const MONTH_DAYS = [17, 47, 75, 105, 135, 162, 198, 228, 258, 288, 318, 344];
+    const SUMMER = 172;
+    const WINTER = 355;
 
     let palette = readPalette();
     let width = 0;
     let height = 0;
-    let scaleFactor = 1;
-    let offsetX = 0;
-    let offsetY = 0;
+    let plot = { x: 0, y: 0, w: 0, h: 0 };
 
-    /** Colours come from the stylesheet, so the drawing follows the theme. */
     function readPalette() {
       const styles = getComputedStyle(document.documentElement);
       const get = (name, fallback) => (styles.getPropertyValue(name) || fallback).trim();
       return {
         accent: get('--accent', '#b8500c'),
         ink: get('--ink', '#14161a'),
-        line: get('--line', '#e7e3db'),
         muted: get('--ink-3', '#8b919a'),
-        surface: get('--surface-2', '#f6f4f0'),
+        line: get('--line', '#e7e3db'),
       };
     }
 
-    /**
-     * Position on the colour ramp for one irradiation value.
-     *
-     * @param {number} value Annual irradiation, kWh/m²/yr.
-     * @returns {number} 0 at the lowest roof, 1 at the highest.
-     */
-    const ramp = (value) => Math.max(0, Math.min(1, (value - lo) / Math.max(1, hi - lo)));
+    /** Azimuth and elevation to canvas coordinates. */
+    const project = (azimuth, elevation) => ({
+      x: plot.x + ((azimuth - 45) / 270) * plot.w,
+      y: plot.y + plot.h - (elevation / 70) * plot.h,
+    });
 
     function resize() {
       const rect = canvas.getBoundingClientRect();
@@ -189,99 +229,126 @@
       canvas.height = Math.round(height * ratio);
       context.setTransform(ratio, 0, 0, ratio, 0, 0);
 
-      // Fit the extent, preserving its aspect ratio, with a small margin.
-      const spanX = data.extent?.spanX ?? 1;
-      const spanY = data.extent?.spanY ?? 1;
-      const margin = 0.04;
-      scaleFactor = Math.min(width / spanX, height / spanY) * (1 - margin * 2);
-      offsetX = (width - spanX * scaleFactor) / 2;
-      offsetY = (height - spanY * scaleFactor) / 2;
+      const padX = Math.max(28, width * 0.07);
+      const padTop = Math.max(18, height * 0.09);
+      const padBottom = Math.max(26, height * 0.13);
+      plot = { x: padX, y: padTop, w: width - padX * 2, h: height - padTop - padBottom };
     }
 
-    function draw(threshold) {
+    /** Draw one path as a polyline. */
+    function stroke(points, colour, alpha, lineWidth) {
+      if (points.length < 2) return;
+      context.beginPath();
+      points.forEach((p, i) => {
+        const { x, y } = project(p.azimuth, p.elevation);
+        if (i === 0) context.moveTo(x, y);
+        else context.lineTo(x, y);
+      });
+      context.globalAlpha = alpha;
+      context.strokeStyle = colour;
+      context.lineWidth = lineWidth;
+      context.lineJoin = 'round';
+      context.lineCap = 'round';
+      context.stroke();
+      context.globalAlpha = 1;
+    }
+
+    function draw() {
       context.clearRect(0, 0, width, height);
+      if (plot.w <= 0) return;
 
-      let above = 0;
+      const smallText = Math.max(9, Math.min(11, width / 46));
+      context.font = `500 ${smallText}px Inter, system-ui, sans-serif`;
+      context.textBaseline = 'middle';
 
-      for (const roof of roofs) {
-        const points = roof.p;
+      // Elevation grid, every 15°.
+      context.textAlign = 'right';
+      for (let e = 0; e <= 60; e += 15) {
+        const { y } = project(0, e);
         context.beginPath();
-        context.moveTo(offsetX + points[0][0] * scaleFactor, offsetY + points[0][1] * scaleFactor);
-        for (let i = 1; i < points.length; i += 1) {
-          context.lineTo(offsetX + points[i][0] * scaleFactor, offsetY + points[i][1] * scaleFactor);
-        }
-        context.closePath();
-
-        const qualifies = roof.i >= threshold;
-        if (qualifies) above += 1;
-
-        const t = ramp(roof.i);
-        if (qualifies) {
-          // Warmer and more opaque the more sun the roof receives.
-          context.globalAlpha = 0.25 + t * 0.75;
-          context.fillStyle = palette.accent;
-        } else {
-          context.globalAlpha = 0.16;
-          context.fillStyle = palette.muted;
-        }
-        context.fill();
-
-        context.globalAlpha = qualifies ? 0.35 : 0.18;
-        context.strokeStyle = palette.ink;
-        context.lineWidth = 0.4;
+        context.moveTo(plot.x, y);
+        context.lineTo(plot.x + plot.w, y);
+        context.globalAlpha = e === 0 ? 0.85 : 0.4;
+        context.strokeStyle = palette.line;
+        context.lineWidth = 1;
         context.stroke();
+        context.globalAlpha = 0.75;
+        context.fillStyle = palette.muted;
+        context.fillText(`${e}°`, plot.x - 6, y);
       }
-
       context.globalAlpha = 1;
 
-      if (readout) {
-        const pct = Math.round((above / roofs.length) * 100);
-        readout.querySelector('.cadastre__threshold').textContent =
-          `≥ ${Math.round(threshold)} ${data.unit ?? ''}`;
-        readout.querySelector('.cadastre__count').textContent =
-          `${above} / ${roofs.length} · ${pct}%`;
+      // Compass points along the horizon.
+      context.textAlign = 'center';
+      context.fillStyle = palette.muted;
+      for (const [azimuth, label] of [[90, 'E'], [180, 'S'], [270, 'O']]) {
+        const { x } = project(azimuth, 0);
+        context.globalAlpha = 0.8;
+        context.fillText(label === 'O' && document.documentElement.lang !== 'fr' ? 'W' : label,
+          x, plot.y + plot.h + smallText + 6);
       }
-    }
+      context.globalAlpha = 1;
 
-    let frame = 0;
-    let running = false;
+      // The twelve monthly paths, faint.
+      for (const day of MONTH_DAYS) {
+        stroke(pathForDay(day), palette.ink, 0.16, 1);
+      }
 
-    function loop(time) {
-      // A slow sweep across the middle of the range, where the decision sits.
-      const low = lo + (hi - lo) * 0.35;
-      const high = lo + (hi - lo) * 0.92;
-      const phase = (Math.sin(time / 7000) + 1) / 2;
-      draw(low + (high - low) * phase);
-      frame = requestAnimationFrame(loop);
+      // The solstices bound the year: everything else falls between them.
+      stroke(pathForDay(SUMMER), palette.ink, 0.42, 1.25);
+      stroke(pathForDay(WINTER), palette.ink, 0.42, 1.25);
+
+      // Hour lines: the sun's position at the same solar hour, month by month.
+      for (let h = 5; h <= 19; h += 1) {
+        const points = [];
+        for (let d = 1; d <= 365; d += 5) {
+          const p = sunPosition(d, h);
+          if (p.elevation >= 0) points.push(p);
+        }
+        if (points.length > 3) stroke(points, palette.muted, 0.22, 0.9);
+      }
+
+      // Today, in the accent colour.
+      const now = new Date();
+      const today = dayOfYear(now);
+      stroke(pathForDay(today), palette.accent, 0.95, 2);
+
+      // And the sun itself, if it is up.
+      const { equationOfTime } = solarDay(today);
+      const localSolarHour =
+        now.getHours() + now.getMinutes() / 60
+        + equationOfTime / 60
+        + (Number(root.dataset.lon) || 0) / 15
+        - now.getTimezoneOffset() / -60;
+      const sun = sunPosition(today, localSolarHour);
+
+      if (sun.elevation > 0) {
+        const { x, y } = project(sun.azimuth, sun.elevation);
+        context.beginPath();
+        context.arc(x, y, Math.max(9, width / 62), 0, Math.PI * 2);
+        context.globalAlpha = 0.16;
+        context.fillStyle = palette.accent;
+        context.fill();
+
+        context.beginPath();
+        context.arc(x, y, Math.max(3.5, width / 150), 0, Math.PI * 2);
+        context.globalAlpha = 1;
+        context.fillStyle = palette.accent;
+        context.fill();
+      }
+      context.globalAlpha = 1;
     }
 
     function start() {
-      cancelAnimationFrame(frame);
       resize();
-      if (reducedMotion.matches) {
-        // A conventional suitability cut-off, held still.
-        draw(Math.min(1000, lo + (hi - lo) * 0.7));
-        running = false;
-      } else {
-        running = true;
-        frame = requestAnimationFrame(loop);
-      }
+      draw();
     }
 
-    function stop() {
-      cancelAnimationFrame(frame);
-      running = false;
-    }
+    window.addEventListener('resize', start, { passive: true });
+    window.addEventListener('themechange', () => { palette = readPalette(); draw(); });
 
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver((entries) => {
-        entries.forEach((entry) => (entry.isIntersecting ? start() : stop()));
-      }, { threshold: 0 }).observe(canvas);
-    }
-
-    window.addEventListener('resize', () => { resize(); if (!running) start(); }, { passive: true });
-    window.addEventListener('themechange', () => { palette = readPalette(); });
-    reducedMotion.addEventListener('change', start);
+    // The sun moves slowly enough that once a minute is generous.
+    setInterval(draw, 60_000);
 
     start();
   }

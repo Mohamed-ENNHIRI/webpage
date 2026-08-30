@@ -1,7 +1,7 @@
 ---
-name: Sarah Cointepas
-slug: sarah-cointepas
-order: 20
+name: Louis Parey
+slug: louis-parey
+order: 30
 role: phd
 topic: ''
 start_year: '2025'
