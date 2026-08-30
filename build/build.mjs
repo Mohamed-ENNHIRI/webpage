@@ -6,7 +6,7 @@
  * the output is plain HTML, CSS and JavaScript.
  */
 
-import { mkdirSync, writeFileSync, cpSync, rmSync, existsSync, readFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, cpSync, rmSync, renameSync, existsSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
 import { loadCollection, loadPages, loadSite, loadPublications, markdown } from './lib/content.mjs';
@@ -19,7 +19,8 @@ import {
   projectCard, themeCard, newsItem, profileLinks, publicationLinks, toolCard, personLinks,
 } from './lib/components.mjs';
 
-const OUT = '_site';
+const OUT = '_site.tmp';
+const FINAL = '_site';
 const written = [];
 
 /**
@@ -97,9 +98,18 @@ function homePage(ctx, contexts) {
       ${profileLinks(ctx)}
     </div>
     <figure class="hero__viz">
-      <div class="sunpath" data-sunpath data-lat="45.64" data-lon="5.87">
+      <div class="sunpath" data-sunpath data-lat="45.64" data-lon="5.87"
+        data-tz="Europe/Paris"
+        data-labels="${esc(JSON.stringify({
+          now: ctx.t.sunNow, atLab: ctx.t.sunAtLab, below: ctx.t.sunBelow,
+          height: ctx.t.sunHeight, bearing: ctx.t.sunBearing, compass: ctx.t.compass,
+        }))}">
         <canvas class="sunpath__canvas" role="img"
           aria-label="${esc(ctx.t.sunPathTitle)}"></canvas>
+        <div class="sunpath__now" data-sunpath-now hidden>
+          <p class="sunpath__now-label"></p>
+          <p class="sunpath__now-value"></p>
+        </div>
       </div>
       <figcaption class="hero__caption">
         <strong>${esc(ctx.t.sunPathTitle)}.</strong> ${esc(ctx.t.sunPathCaption)}
@@ -191,6 +201,8 @@ function main() {
   const contexts = {};
   for (const lang of LANGUAGES) contexts[lang] = buildContext(lang, site, publications);
 
+  // Build into a scratch directory and swap it in at the end, so a watcher or
+  // a running server never sees a half-written site.
   if (existsSync(OUT)) rmSync(OUT, { recursive: true });
   mkdirSync(OUT, { recursive: true });
 
@@ -346,6 +358,9 @@ function main() {
       filter: (src) => !src.endsWith('.md'),
     });
   }
+
+  if (existsSync(FINAL)) rmSync(FINAL, { recursive: true });
+  renameSync(OUT, FINAL);
 
   const html = written.filter((p) => p.endsWith('.html')).length;
   console.log(`Built ${html} pages in ${Date.now() - started} ms`);

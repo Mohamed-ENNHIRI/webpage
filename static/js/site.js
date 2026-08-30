@@ -128,6 +128,40 @@
     const LAT = Number(root.dataset.lat) || 45.64;
     const RAD = Math.PI / 180;
 
+    const readout = root.querySelector('[data-sunpath-now]');
+    let labels = {};
+    try {
+      labels = JSON.parse(root.dataset.labels || '{}');
+    } catch { /* the drawing works without the readout */ }
+
+    /**
+     * The clock at the laboratory, whatever timezone the visitor is in.
+     *
+     * @param {Date} when The moment.
+     * @returns {string} Hours and minutes.
+     */
+    function labClock(when) {
+      try {
+        return new Intl.DateTimeFormat(document.documentElement.lang || 'fr', {
+          hour: '2-digit', minute: '2-digit', timeZone: root.dataset.tz || 'Europe/Paris',
+        }).format(when);
+      } catch {
+        return `${String(when.getHours()).padStart(2, '0')}:${String(when.getMinutes()).padStart(2, '0')}`;
+      }
+    }
+
+    /**
+     * Turn a bearing into a compass name.
+     *
+     * @param {number} azimuth Degrees from north, clockwise.
+     * @returns {string}
+     */
+    function compass(azimuth) {
+      const names = labels.compass;
+      if (!Array.isArray(names) || names.length !== 8) return '';
+      return names[Math.round(((azimuth % 360) + 360) % 360 / 45) % 8];
+    }
+
     /**
      * Solar declination and the equation of time for a day of the year.
      *
@@ -321,6 +355,17 @@
         + (Number(root.dataset.lon) || 0) / 15
         - now.getTimezoneOffset() / -60;
       const sun = sunPosition(today, localSolarHour);
+
+      // Say in words what the dot means, and where the sun is when it is down.
+      if (readout && labels.now) {
+        const clock = labClock(now);
+        readout.querySelector('.sunpath__now-label').textContent =
+          `${labels.now} · ${clock} ${labels.atLab}`;
+        readout.querySelector('.sunpath__now-value').textContent = sun.elevation > 0
+          ? `${labels.height} ${Math.round(sun.elevation)}° · ${labels.bearing} ${Math.round(sun.azimuth)}° ${compass(sun.azimuth)}`
+          : labels.below;
+        readout.hidden = false;
+      }
 
       if (sun.elevation > 0) {
         const { x, y } = project(sun.azimuth, sun.elevation);

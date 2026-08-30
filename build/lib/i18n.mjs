@@ -84,9 +84,15 @@ const STRINGS = {
     nothingYet: 'Nothing here yet.',
 
     sunPathTitle: 'The sun over Le Bourget-du-Lac',
-    sunPathCaption: 'Where the sun stands through the year, at the latitude of the laboratory. Each curve is one month. The marked path is today. All the work below starts from this geometry.',
+    sunPathCaption: 'Where the sun stands through the year, at the latitude of the laboratory. Each curve is one month. The coloured path is today, and the dot is the sun at this moment. The height above the horizon runs up the side, the compass bearing along the bottom. All the work below starts from this geometry.',
     undated: 'No date',
     sunPathToday: 'today',
+    sunNow: 'The sun right now',
+    sunAtLab: 'at the laboratory',
+    sunBelow: 'below the horizon',
+    sunHeight: 'height',
+    sunBearing: 'bearing',
+    compass: ['north', 'north-east', 'east', 'south-east', 'south', 'south-west', 'west', 'north-west'],
 
     kinds: { platform: 'Platform', code: 'Code', dataset: 'Dataset' },
     openIt: 'Open',
@@ -159,9 +165,15 @@ const STRINGS = {
     nothingYet: 'Rien pour l’instant.',
 
     sunPathTitle: 'Le soleil au Bourget-du-Lac',
-    sunPathCaption: 'La position du soleil au fil de l’année, à la latitude du laboratoire. Chaque courbe est un mois. Le tracé marqué est celui d’aujourd’hui. Tous les travaux ci-dessous partent de cette géométrie.',
+    sunPathCaption: 'La position du soleil au fil de l’année, à la latitude du laboratoire. Chaque courbe est un mois. Le tracé coloré est celui d’aujourd’hui, et le point marque le soleil à cet instant. La hauteur au-dessus de l’horizon se lit sur le côté, l’orientation en bas. Tous les travaux ci-dessous partent de cette géométrie.',
     undated: 'Sans date',
     sunPathToday: 'aujourd’hui',
+    sunNow: 'Le soleil en ce moment',
+    sunAtLab: 'au laboratoire',
+    sunBelow: 'sous l’horizon',
+    sunHeight: 'hauteur',
+    sunBearing: 'azimut',
+    compass: ['nord', 'nord-est', 'est', 'sud-est', 'sud', 'sud-ouest', 'ouest', 'nord-ouest'],
 
     kinds: { platform: 'Plateforme', code: 'Code', dataset: 'Jeu de données' },
     openIt: 'Ouvrir',
