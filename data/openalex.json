@@ -3,17 +3,13 @@
   "orcid": "0000-0001-7846-8154",
   "fetched": "2026-08-31",
   "totals": {
-    "works": 58,
+    "works": 53,
+    "worksReportedByOpenAlex": 58,
     "citations": 516,
     "hIndex": 12,
     "i10": 15
   },
   "byYear": [
-    {
-      "year": 2013,
-      "works": 1,
-      "citations": 0
-    },
     {
       "year": 2016,
       "works": 2,
@@ -21,12 +17,12 @@
     },
     {
       "year": 2017,
-      "works": 3,
+      "works": 2,
       "citations": 13
     },
     {
       "year": 2018,
-      "works": 8,
+      "works": 7,
       "citations": 14
     },
     {
@@ -61,7 +57,7 @@
     },
     {
       "year": 2025,
-      "works": 10,
+      "works": 8,
       "citations": 43
     },
     {
@@ -95,7 +91,7 @@
   "countries": [
     {
       "code": "FR",
-      "count": 53
+      "count": 49
     },
     {
       "code": "IT",
@@ -103,7 +99,7 @@
     },
     {
       "code": "AU",
-      "count": 11
+      "count": 10
     },
     {
       "code": "CH",
@@ -145,27 +141,27 @@
   "institutions": [
     {
       "name": "Laboratoire Optimisation de la Conception et Ingénierie de l'Environnement",
-      "count": 40
+      "count": 38
     },
     {
       "name": "Centre National de la Recherche Scientifique",
-      "count": 37
+      "count": 34
     },
     {
       "name": "Université Savoie Mont Blanc",
-      "count": 35
+      "count": 32
     },
     {
       "name": "Centre d'Énergétique et de Thermique de Lyon",
-      "count": 20
+      "count": 18
     },
     {
       "name": "UNSW Sydney",
-      "count": 10
+      "count": 9
     },
     {
       "name": "Lyon 1 Université",
-      "count": 10
+      "count": 9
     },
     {
       "name": "University of Genoa",

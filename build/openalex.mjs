@@ -39,15 +39,38 @@ async function main() {
   const author = await get(`/authors/https://orcid.org/${ORCID}`);
   const works = await get(
     `/works?filter=author.orcid:${ORCID}&per-page=200`
-    + '&select=id,publication_year,cited_by_count,authorships,type,primary_topic',
+    + '&select=id,title,doi,publication_year,cited_by_count,authorships,type,primary_location',
   );
+
+  /*
+   * OpenAlex indexes some works twice, typically a repository copy beside the
+   * publisher's, and it carries anything claimed on the ORCID profile whether
+   * or not it was ever published. Both inflate a count of output. Records with
+   * neither a DOI nor a venue are dropped, and the rest are deduplicated on a
+   * normalised title, keeping the copy that carries a DOI.
+   */
+  const byTitle = new Map();
+  let dropped = 0;
+  for (const work of works.results) {
+    const venue = work.primary_location?.source?.display_name;
+    if (!work.doi && !venue) {
+      dropped += 1;
+      continue;
+    }
+    const key = (work.title ?? '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().slice(0, 70);
+    const held = byTitle.get(key);
+    if (!held || (!held.doi && work.doi)) byTitle.set(key, work);
+  }
+  const deduped = [...byTitle.values()];
+  console.log(`  ${works.results.length} records, ${dropped} without a DOI or venue, `
+    + `${works.results.length - dropped - deduped.length} duplicates, ${deduped.length} kept`);
 
   // Works and countries per year, counted once per work.
   const perYear = new Map();
   const countries = new Map();
   const institutions = new Map();
 
-  for (const work of works.results) {
+  for (const work of deduped) {
     const year = work.publication_year;
     if (year) perYear.set(year, (perYear.get(year) ?? 0) + 1);
 
@@ -77,12 +100,16 @@ async function main() {
   }
   byYear.sort((a, b) => a.year - b.year);
 
+  // A leading year with neither a work nor a citation is an empty bar.
+  while (byYear.length && byYear[0].works === 0 && byYear[0].citations === 0) byYear.shift();
+
   const output = {
     source: 'https://openalex.org',
     orcid: ORCID,
     fetched: new Date().toISOString().slice(0, 10),
     totals: {
-      works: author.works_count ?? works.results.length,
+      works: deduped.length,
+      worksReportedByOpenAlex: author.works_count ?? null,
       citations: author.cited_by_count ?? 0,
       hIndex: author.summary_stats?.h_index ?? null,
       i10: author.summary_stats?.i10_index ?? null,
