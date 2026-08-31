@@ -17,7 +17,9 @@ partners:
 - Canton de Genève
 themes:
 - integration
-image: ''
+image: /uploads/figures/geneva-irradiation.jpg
+image_credit: Yearly irradiation across Greater Geneva. Desthieux and Thebault, Frontiers
+  in Built Environment, 2024. CC BY.
 ---
 
 Greater Geneva forms a single functional territory split by a national border. Coordinated solar planning becomes difficult there, and valuable. G2 Solar developed a solar cadastre covering the building stock of the agglomeration, façades included.

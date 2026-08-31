@@ -14,7 +14,6 @@ import { LANGUAGES, DEFAULT_LANGUAGE, t, formatDate, yearRange, roleLabel, pubTy
 import { routesFor, outputPath } from './lib/routes.mjs';
 import { esc, icon, plain, join as joinParts } from './lib/html.mjs';
 import { layout } from './lib/layout.mjs';
-import { columnChart, barChart } from './lib/charts.mjs';
 import {
   sectionHeading, publicationList, publicationItem, personCard, peopleByRole,
   projectCard, themeCard, newsItem, profileLinks, publicationLinks, toolCard, personLinks,
@@ -197,9 +196,6 @@ function main() {
   const site = loadSite();
 
   const { items: rawPubs, fetched } = loadPublications();
-  const openalex = existsSync('data/openalex.json')
-    ? JSON.parse(readFileSync('data/openalex.json', 'utf8'))
-    : null;
   const extras = existsSync('data/publication-extras.json')
     ? JSON.parse(readFileSync('data/publication-extras.json', 'utf8'))
     : {};
@@ -208,10 +204,7 @@ function main() {
   const publications = rawPubs.map((pub) => ({ ...pub, ...(extras[pub.id] ?? {}) }));
 
   const contexts = {};
-  for (const lang of LANGUAGES) {
-    contexts[lang] = buildContext(lang, site, publications);
-    contexts[lang].openalex = openalex;
-  }
+  for (const lang of LANGUAGES) contexts[lang] = buildContext(lang, site, publications);
 
   if (existsSync(OUT)) rmSync(OUT, { recursive: true });
   mkdirSync(OUT, { recursive: true });
@@ -270,8 +263,7 @@ function main() {
 
     // Publications
     pages.push(listPage(ctx, contexts, 'publications',
-      citationCharts(ctx)
-      + publicationList(ctx.publications, ctx, { groupByYear: true, filters: true, showAbstract: true }),
+      publicationList(ctx.publications, ctx, { groupByYear: true, filters: true, showAbstract: true }),
       'page-publications'));
 
     // Tools, datasets and platforms
@@ -398,49 +390,6 @@ function figureWithCredit(item) {
     <img src="${esc(item.image)}" alt="" loading="lazy" />
     ${item.image_credit ? `<figcaption>${esc(item.image_credit)}</figcaption>` : ''}
   </figure>`;
-}
-
-/**
- * The three charts above the publication list.
- *
- * Drawn from OpenAlex, which records what the literature did with the work.
- * Absent that file the section simply does not appear.
- *
- * @param {object} ctx Rendering context.
- * @returns {string}
- */
-function citationCharts(ctx) {
-  const data = ctx.openalex;
-  if (!data?.byYear?.length) return '';
-
-  const thisYear = new Date().getFullYear();
-  const region = new Intl.DisplayNames([ctx.lang], { type: 'region' });
-
-  const citations = data.byYear.map((row) => ({
-    label: row.year,
-    value: row.citations,
-    // A year still in progress is drawn back, so nobody reads it as a fall.
-    note: row.year >= thisYear ? ctx.t.chartCitationsNote : '',
-  }));
-
-  const works = data.byYear.map((row) => ({ label: row.year, value: row.works }));
-
-  const countries = data.countries.filter((c) => c.count >= 2).map((c) => {
-    let name = c.code;
-    try {
-      name = region.of(c.code) ?? c.code;
-    } catch { /* an unknown code keeps its two letters */ }
-    return { label: name, value: c.count };
-  });
-
-  return `<section class="section charts">
-  ${columnChart({ id: 'cit', data: citations, unit: ctx.t.citations,
-    title: ctx.t.chartCitations, caption: ctx.t.chartCitationsNote })}
-  ${columnChart({ id: 'wrk', data: works, unit: ctx.t.worksUnit,
-    title: ctx.t.chartWorks, caption: ctx.t.chartWorksNote })}
-  ${barChart({ id: 'ctr', data: countries, unit: ctx.t.worksWith,
-    title: ctx.t.chartCountries, caption: `${ctx.t.chartCountriesNote} ${ctx.t.chartTail}` })}
-</section>`;
 }
 
 /** Whether two names refer to the same person, ignoring accents and initials. */

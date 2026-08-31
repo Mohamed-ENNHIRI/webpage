@@ -17,7 +17,9 @@ partners:
 - Canton de Genève
 themes:
 - integration
-image: ''
+image: /uploads/figures/geneva-irradiation.jpg
+image_credit: Irradiation annuelle sur le Grand Genève. Desthieux et Thebault, Frontiers in
+  Built Environment, 2024. CC BY.
 ---
 
 Le Grand Genève forme un territoire fonctionnel unique traversé par une frontière nationale. La planification solaire coordonnée y devient difficile, et précieuse. G2 Solar a développé un cadastre solaire couvrant le parc bâti de l'agglomération, façades comprises.
