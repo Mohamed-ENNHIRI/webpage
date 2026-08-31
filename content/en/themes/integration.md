@@ -5,7 +5,9 @@ order: 30
 featured: true
 excerpt: A municipality cannot equip every roof at once. You have to choose. The choice involves
   far more than sunlight.
-image: ''
+image: /uploads/figures/geneva-self-consumption.jpg
+image_credit: Self-consumption rate by municipality across Greater Geneva. Desthieux and Thebault,
+  Frontiers in Built Environment, 2024. CC BY.
 ---
 
 Massive photovoltaic deployment rarely runs short of resource. Sunlight is abundant and the available surface suffices. The problem sits in the decision. Which roofs, in what order, on what criteria, decided by whom.

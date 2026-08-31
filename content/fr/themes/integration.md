@@ -5,7 +5,9 @@ order: 30
 featured: true
 excerpt: Une collectivité ne peut équiper toutes les toitures en même temps. Elle choisit.
   Ce choix engage bien plus que l'ensoleillement.
-image: ''
+image: /uploads/figures/geneva-self-consumption.jpg
+image_credit: Taux d’autoconsommation par commune du Grand Genève. Desthieux et Thebault,
+  Frontiers in Built Environment, 2024. CC BY.
 ---
 
 Le déploiement massif du photovoltaïque bute rarement sur le gisement. La ressource est abondante et la surface disponible suffit. Le blocage porte sur la décision. Quelles toitures, dans quel ordre, selon quels critères, décidés par qui.

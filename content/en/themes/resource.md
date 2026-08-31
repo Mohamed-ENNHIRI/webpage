@@ -5,7 +5,9 @@ order: 10
 featured: true
 excerpt: How much sun reaches a façade, a rooftop, a valley. And how to describe the variation
   without simulating every hour of every year.
-image: ''
+image: /uploads/figures/geneva-irradiation.jpg
+image_credit: Yearly irradiation across Greater Geneva. Desthieux and Thebault, Frontiers
+  in Built Environment, 2024. CC BY.
 ---
 
 In an open field, the solar resource fits into a single time series. In a city, the resource becomes a four-dimensional field. Every façade and every roof sees a different sky. Neighbouring buildings cast shade at different hours. The whole pattern turns with the seasons. In mountains, terrain adds cast shadows of its own.

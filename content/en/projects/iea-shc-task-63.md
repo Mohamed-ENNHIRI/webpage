@@ -24,7 +24,10 @@ partners:
 - Switzerland
 themes:
 - integration
-image: ''
+image: /uploads/figures/solar-neighbourhoods.jpg
+image_credit: From traditional neighbourhoods to solar ones, and the obstacles between. Desthieux,
+  Manni, Lobaccaro, Hachem-Vermette, Croce, Thebault and Kanters, Frontiers in Built Environment,
+  2024. CC BY.
 ---
 
 Task 63 of the International Energy Agency Solar Heating and Cooling Programme brought together experts from ten countries. The Task supports developers, property owners, architects, urban planners and municipalities in designing solar neighbourhoods. The goal is long-term access to sunlight, for energy production and for daylight in buildings and outdoor spaces.

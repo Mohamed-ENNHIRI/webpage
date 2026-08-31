@@ -233,7 +233,7 @@ function main() {
   <article class="prose">
     <h1>${esc(theme.title)}</h1>
     ${theme.excerpt ? `<p class="lede">${esc(theme.excerpt)}</p>` : ''}
-    ${theme.image ? `<img class="prose__figure" src="${esc(theme.image)}" alt="" loading="lazy" />` : ''}
+    ${figureWithCredit(theme)}
     ${theme.html}
   </article>
   ${related.length ? `<section class="section">${sectionHeading(ctx.t.onThisTheme)}${publicationList(related, ctx, { groupByYear: false })}</section>` : ''}
@@ -261,6 +261,7 @@ function main() {
     <h1>${esc(project.title)}</h1>
     ${project.excerpt ? `<p class="lede">${esc(project.excerpt)}</p>` : ''}
     ${facts.length ? `<dl class="deflist">${facts.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${v}</dd>`).join('')}</dl>` : ''}
+    ${figureWithCredit(project)}
     ${project.html}
     ${project.url ? `<p class="chips"><a class="chip" href="${esc(project.url)}" rel="noopener">${icon('link')}<span>${esc(ctx.t.projectWebsite)}</span></a></p>` : ''}
   </article>`,
@@ -380,6 +381,23 @@ function main() {
   console.log(`Built ${html} pages in ${Date.now() - started} ms`);
   console.log(`  languages   ${LANGUAGES.join(', ')}`);
   console.log(`  publications ${publications.length}${fetched ? ` (HAL, ${fetched.slice(0, 10)})` : ''}`);
+}
+
+/**
+ * A figure with the credit its licence requires.
+ *
+ * These are reproduced from open-access papers under CC BY, which asks for
+ * attribution, so the credit is part of the figure rather than a footnote.
+ *
+ * @param {object} item Any item carrying image and image_credit.
+ * @returns {string}
+ */
+function figureWithCredit(item) {
+  if (!item.image) return '';
+  return `<figure class="figure">
+    <img src="${esc(item.image)}" alt="" loading="lazy" />
+    ${item.image_credit ? `<figcaption>${esc(item.image_credit)}</figcaption>` : ''}
+  </figure>`;
 }
 
 /**

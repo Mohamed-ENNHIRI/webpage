@@ -24,7 +24,10 @@ partners:
 - Switzerland
 themes:
 - integration
-image: ''
+image: /uploads/figures/solar-neighbourhoods.jpg
+image_credit: Des quartiers traditionnels aux quartiers solaires, et les obstacles sur le
+  chemin. Desthieux, Manni, Lobaccaro, Hachem-Vermette, Croce, Thebault et Kanters, Frontiers
+  in Built Environment, 2024. CC BY.
 ---
 
 La Tâche 63 du programme Solar Heating and Cooling de l'Agence internationale de l'énergie a réuni des experts de dix pays. Elle accompagne promoteurs, propriétaires, architectes, urbanistes et collectivités dans la conception de quartiers solaires. L'objectif porte sur l'accès durable à la lumière, pour la production d'énergie et pour l'éclairage naturel des bâtiments et des espaces extérieurs.
