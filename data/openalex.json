@@ -1,0 +1,179 @@
+{
+  "source": "https://openalex.org",
+  "orcid": "0000-0001-7846-8154",
+  "fetched": "2026-08-31",
+  "totals": {
+    "works": 58,
+    "citations": 516,
+    "hIndex": 12,
+    "i10": 15
+  },
+  "byYear": [
+    {
+      "year": 2013,
+      "works": 1,
+      "citations": 0
+    },
+    {
+      "year": 2016,
+      "works": 2,
+      "citations": 0
+    },
+    {
+      "year": 2017,
+      "works": 3,
+      "citations": 13
+    },
+    {
+      "year": 2018,
+      "works": 8,
+      "citations": 14
+    },
+    {
+      "year": 2019,
+      "works": 4,
+      "citations": 13
+    },
+    {
+      "year": 2020,
+      "works": 4,
+      "citations": 81
+    },
+    {
+      "year": 2021,
+      "works": 5,
+      "citations": 98
+    },
+    {
+      "year": 2022,
+      "works": 5,
+      "citations": 132
+    },
+    {
+      "year": 2023,
+      "works": 8,
+      "citations": 95
+    },
+    {
+      "year": 2024,
+      "works": 5,
+      "citations": 27
+    },
+    {
+      "year": 2025,
+      "works": 10,
+      "citations": 43
+    },
+    {
+      "year": 2026,
+      "works": 3,
+      "citations": 0
+    }
+  ],
+  "topics": [
+    {
+      "name": "Solar Radiation and Photovoltaics",
+      "count": 24
+    },
+    {
+      "name": "Building Energy and Comfort Optimization",
+      "count": 16
+    },
+    {
+      "name": "Urban Heat Island Mitigation",
+      "count": 13
+    },
+    {
+      "name": "Wind and Air Flow Studies",
+      "count": 9
+    },
+    {
+      "name": "Solar Thermal and Photovoltaic Systems",
+      "count": 8
+    }
+  ],
+  "countries": [
+    {
+      "code": "FR",
+      "count": 53
+    },
+    {
+      "code": "IT",
+      "count": 12
+    },
+    {
+      "code": "AU",
+      "count": 11
+    },
+    {
+      "code": "CH",
+      "count": 9
+    },
+    {
+      "code": "NO",
+      "count": 6
+    },
+    {
+      "code": "SE",
+      "count": 4
+    },
+    {
+      "code": "CA",
+      "count": 2
+    },
+    {
+      "code": "DE",
+      "count": 1
+    },
+    {
+      "code": "US",
+      "count": 1
+    },
+    {
+      "code": "ES",
+      "count": 1
+    },
+    {
+      "code": "NP",
+      "count": 1
+    },
+    {
+      "code": "MK",
+      "count": 1
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Laboratoire Optimisation de la Conception et Ingénierie de l'Environnement",
+      "count": 40
+    },
+    {
+      "name": "Centre National de la Recherche Scientifique",
+      "count": 37
+    },
+    {
+      "name": "Université Savoie Mont Blanc",
+      "count": 35
+    },
+    {
+      "name": "Centre d'Énergétique et de Thermique de Lyon",
+      "count": 20
+    },
+    {
+      "name": "UNSW Sydney",
+      "count": 10
+    },
+    {
+      "name": "Lyon 1 Université",
+      "count": 10
+    },
+    {
+      "name": "University of Genoa",
+      "count": 8
+    },
+    {
+      "name": "HES-SO University of Applied Sciences and Arts Western Switzerland",
+      "count": 7
+    }
+  ]
+}
