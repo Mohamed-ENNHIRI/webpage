@@ -13,7 +13,7 @@ current_position: Junior professor chair, Polytech Annecy Chambéry. She holds t
   chair.
 themes:
 - integration
-- performance
+- performance pv
 photo: /uploads/alessia-boccalatte.png
 email: ''
 website: https://www.univ-smb.fr/locie/en/alessia-boccalatte-membre-du-locie/
