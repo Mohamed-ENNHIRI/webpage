@@ -1,10 +1,11 @@
-# Refresh the publication list from HAL.
+# Met à jour la liste des publications depuis HAL.
 #
-# Runs every morning. When HAL has nothing new the script leaves the file
-# byte-identical, so no commit is made and no deploy is triggered — the repo
-# history stays meaningful rather than filling with daily noise.
+# Tourne chaque matin. Les deux scripts n'utilisent que Node, sans aucune
+# dépendance à installer. Quand HAL n'a rien de neuf, les fichiers restent
+# identiques au bit près : aucun commit n'est fait et le site ne se republie
+# pas, ce qui garde un historique lisible.
 
-name: Update publications from HAL
+name: Mettre à jour les publications depuis HAL
 
 on:
   schedule:
@@ -15,7 +16,7 @@ permissions:
   contents: write
 
 jobs:
-  sync:
+  hal:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -24,21 +25,21 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Read HAL
-        run: node build/hal.mjs
+      - name: Lire HAL
+        run: node tools/hal.mjs
 
-      - name: Fetch first-page previews for any new deposits
-        run: node build/thumbnails.mjs
+      - name: Récupérer l'image de première page des nouveaux dépôts
+        run: node tools/thumbnails.mjs
 
-      - name: Commit if anything changed
+      - name: Enregistrer si quelque chose a changé
         run: |
-          if git diff --quiet -- data/publications.json static/img/publications; then
-            echo "No change in HAL."
+          if git diff --quiet -- data/publications.json img/publications; then
+            echo "Rien de neuf dans HAL."
             exit 0
           fi
           COUNT=$(node -e "console.log(require('./data/publications.json').count)")
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/publications.json static/img/publications
-          git commit -m "Update publications from HAL (${COUNT} records)"
+          git add data/publications.json img/publications
+          git commit -m "Publications mises à jour depuis HAL (${COUNT} références)"
           git push

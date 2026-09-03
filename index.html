@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Le titre de l'onglet, et le résumé qu'affichent les moteurs de recherche. -->
+  <title>Martin Thebault · Chargé de recherche CNRS</title>
+  <meta name="description" content="Je suis chargé de recherche au CNRS au LOCIE, à l’Université Savoie Mont Blanc. J’étudie comment l’énergie solaire s’intègre aux bâtiments, aux villes et aux territoires. Cela va de l’air qui circule derrière une façade ventilée au choix des toitures à équiper en premier, à l’échelle d’une agglomération.">
+
+  <link rel="canonical" href="https://martin-thebault.fr/">
+  <link rel="alternate" hreflang="fr" href="https://martin-thebault.fr/">
+  <link rel="alternate" hreflang="en" href="https://martin-thebault.fr/en/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Martin Thebault · Chargé de recherche CNRS">
+  <meta property="og:description" content="Je suis chargé de recherche au CNRS au LOCIE, à l’Université Savoie Mont Blanc. J’étudie comment l’énergie solaire s’intègre aux bâtiments, aux villes et aux territoires. Cela va de l’air qui circule derrière une façade ventilée au choix des toitures à équiper en premier, à l’échelle d’une agglomération.">
+  <meta property="og:url" content="https://martin-thebault.fr/">
+  <meta property="og:locale" content="fr_FR">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/inter-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/site.css">
+  <script>
+    // Applique le thème retenu avant le premier affichage, pour que la page ne
+    // clignote pas en clair avant de passer au sombre.
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+    } catch (e) {}
+  </script>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     EN-TÊTE — identique sur les huit pages françaises.
+     Si vous changez le menu, faites la même correction dans les huit fichiers.
+     ═══════════════════════════════════════════════════════════════════════ -->
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="header">
+    <div class="header__inner wrap">
+      <a class="wordmark" href="index.html">
+        <span class="wordmark__name">Martin Thebault</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="site-nav" aria-label="Menu">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Menu">
+          <a class="nav__link" href="recherche.html">Recherche</a>
+          <a class="nav__link" href="projets.html">Projets</a>
+          <a class="nav__link" href="travaux.html">Publications</a>
+          <a class="nav__link" href="outils.html">Outils</a>
+          <a class="nav__link" href="equipe.html">Équipe</a>
+          <a class="nav__link" href="actualites.html">Actualités</a>
+          <a class="nav__link" href="me-contacter.html">Contact</a>
+
+        <div class="header__tools">
+          <nav class="lang" aria-label="Langue">
+            <span class="lang__item is-current" aria-current="true">FR</span>
+            <span class="lang__sep" aria-hidden="true">/</span>
+            <a class="lang__item" href="en/index.html" lang="en" hreflang="en">EN</a>
+          </nav>
+          <button class="theme-toggle" type="button"
+                  aria-label="Basculer entre le thème clair et sombre" title="Basculer entre le thème clair et sombre">
+            <svg class="icon icon--sun theme-toggle__sun" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-sun"/></svg><svg class="icon icon--moon theme-toggle__moon" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-moon"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Toutes les icônes du site, définies une seule fois. Le reste de la
+         page les appelle par leur identifiant, i-arrow, i-email, i-hal, et
+         ainsi de suite. Rien à modifier ici. -->
+    <svg class="sprite" hidden aria-hidden="true">
+      <symbol id="i-email" viewBox="0 0 24 24"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13Zm2.2-.3 7.8 6.1 7.8-6.1H4.2Z"/></symbol>
+      <symbol id="i-scholar" viewBox="0 0 24 24"><path d="M12 2 1 8.5l11 6.5 9-5.3v6.8h2V8.5L12 2Zm-6 11.2v3.9c0 1.9 2.7 3.4 6 3.4s6-1.5 6-3.4v-3.9l-6 3.5-6-3.5Z"/></symbol>
+      <symbol id="i-orcid" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20ZM8.4 6.2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Zm.9 3.3v8.1H7.5V9.5h1.8Zm2.3 0h3.2c2.6 0 4.2 1.7 4.2 4s-1.6 4.1-4.2 4.1h-3.2V9.5Zm1.8 1.6v4.9h1.3c1.6 0 2.5-1 2.5-2.5s-.9-2.4-2.5-2.4h-1.3Z"/></symbol>
+      <symbol id="i-hal" viewBox="0 0 24 24"><path d="M3 4h3.2v6.1h5.6V4H15v16h-3.2v-6.6H6.2V20H3V4Zm14.2 0H21l-3.4 16h-3.2L17.2 4Z"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.4 21V9.5h5.2V21H2.4Zm8 0V9.5h5v1.6c.7-1.2 2.1-1.9 3.8-1.9 3 0 4.8 1.9 4.8 5.5V21h-5.2v-5.5c0-1.5-.6-2.4-1.9-2.4-1.1 0-1.8.7-2.1 1.5-.1.3-.1.7-.1 1V21h-5.2Z"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 4.9.4.3.7 1 .7 2v3c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></symbol>
+      <symbol id="i-bluesky" viewBox="0 0 24 24"><path d="M12 10.8C10.9 8.6 7.9 4.6 5.2 2.7 2.6.9 1.6 1.2 1 1.5.2 1.9 0 3.1 0 3.8c0 .7.4 5.9.7 6.8.9 2.9 4 3.9 6.8 3.6h.4c-2.8.4-5.3 1.5-2 5.1 3.6 3.8 5-.8 5.7-3.2.7 2.4 1.5 6.8 5.6 3.2 3-3.3.8-4.6-2-5.1h.4c2.8.3 5.9-.7 6.8-3.6.3-.9.7-6.1.7-6.8 0-.7-.2-1.9-1-2.3-.6-.3-1.6-.6-4.2 1.2-2.7 1.9-5.7 5.9-6.9 8.1Z"/></symbol>
+      <symbol id="i-pdf" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm-1 7V3.5L18.5 9H13Zm-4 3h6v2H9v-2Zm0 4h6v2H9v-2Z"/></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l1.4-1.4a1 1 0 0 1 1.4 1.4l-1.4 1.4a1 1 0 0 1-1.4 0Zm-3 6a4.8 4.8 0 0 1 0-6.8l2.8-2.8 1.4 1.4-2.8 2.8a2.8 2.8 0 0 0 4 4l2.8-2.8 1.4 1.4-2.8 2.8a4.8 4.8 0 0 1-6.8 0Zm9.2-9.2-1.4-1.4 2.8-2.8a2.8 2.8 0 0 0-4-4L11.4 4.8 10 3.4l2.8-2.8a4.8 4.8 0 0 1 6.8 6.8l-2.8 2.8Z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M13.2 5.2 20 12l-6.8 6.8-1.4-1.4 4.4-4.4H4v-2h12.2l-4.4-4.4 1.4-1.4Z"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M11 3h2v9.2l3.6-3.6 1.4 1.4-6 6-6-6 1.4-1.4L11 12.2V3ZM4 19h16v2H4v-2Z"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-13.5V1h0v2.5Zm0 17V23v-2.5ZM3.5 12H1h2.5Zm19.5 0h-2.5H23ZM5.6 5.6 3.9 3.9l1.7 1.7Zm12.8 12.8 1.7 1.7-1.7-1.7Zm0-12.8 1.7-1.7-1.7 1.7ZM5.6 18.4l-1.7 1.7 1.7-1.7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 13.2A9 9 0 1 1 10.8 3a7 7 0 0 0 10.2 10.2Z"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.5 2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.8 6.1 21l1.2-6.7-4.8-4.7 6.6-.9L12 2.5Z"/></symbol>
+    </svg>
+  </header>
+<!-- ═══════════════════════════ FIN DE L'EN-TÊTE ═══════════════════════════ -->
+
+  <main id="main" class="main">
+
+    <!-- ══════════ Le bloc d'accueil ══════════ -->
+    <section class="hero">
+      <div class="wrap hero__inner">
+        <div class="hero__text">
+          <p class="hero__eyebrow">Chargé de recherche CNRS · LOCIE</p>
+          <h1 class="hero__title">Modélisation, analyse et intégration de l’énergie solaire dans les territoires</h1>
+          <p class="hero__lede">Je suis chargé de recherche au CNRS au LOCIE, à l’Université Savoie Mont Blanc. J’étudie comment l’énergie solaire s’intègre aux bâtiments, aux villes et aux territoires. Cela va de l’air qui circule derrière une façade ventilée au choix des toitures à équiper en premier, à l’échelle d’une agglomération.</p>
+          <p class="profile-links">
+            <a class="iconlink" href="mailto:martin.thebault@univ-smb.fr" rel="noopener" aria-label="Courriel" title="Courriel"><svg class="icon icon--email" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-email"/></svg></a>
+            <a class="iconlink" href="https://scholar.google.com/citations?user=8ePCJ3sAAAAJ" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg class="icon icon--scholar" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-scholar"/></svg></a>
+            <a class="iconlink" href="https://orcid.org/0000-0001-7846-8154" rel="noopener" aria-label="ORCID" title="ORCID"><svg class="icon icon--orcid" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-orcid"/></svg></a>
+            <a class="iconlink" href="https://cv.hal.science/martin-thebault" rel="noopener" aria-label="HAL" title="HAL"><svg class="icon icon--hal" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-hal"/></svg></a>
+          </p>
+        </div>
+
+        <!-- Le diagramme du soleil se calcule tout seul dans le navigateur.
+             Rien à mettre à jour. -->
+        <figure class="hero__viz">
+          <div class="sunpath" data-sunpath data-lat="45.64" data-lon="5.87"
+               data-tz="Europe/Paris"
+               data-labels='{"now":"Le soleil en ce moment","atLab":"au LOCIE","below":"sous l’horizon","height":"hauteur","bearing":"azimut","compass":["nord","nord-est","est","sud-est","sud","sud-ouest","ouest","nord-ouest"]}'>
+            <canvas class="sunpath__canvas" role="img" aria-label="Le soleil au Bourget-du-Lac"></canvas>
+            <div class="sunpath__now" data-sunpath-now hidden>
+              <p class="sunpath__now-label"></p>
+              <p class="sunpath__now-value"></p>
+            </div>
+          </div>
+          <figcaption class="hero__caption">
+            <strong>Le soleil au Bourget-du-Lac.</strong> La position du soleil au fil de l’année, à la latitude du LOCIE. Chaque courbe est un mois. Le tracé coloré est celui d’aujourd’hui, et le point marque le soleil à cet instant. La hauteur au-dessus de l’horizon se lit sur le côté, l’orientation en bas. Tous les travaux ci-dessous partent de cette géométrie.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="wrap">
+
+      <!-- ══════════ Les trois axes de recherche ══════════ -->
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">Recherche</h2>
+          <a class="section__more" href="recherche.html">En savoir plus <svg class="icon icon--arrow" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="grid grid--themes">
+      <article class="card card--theme">
+        <a class="card__link" href="recherche.html#resource">
+          <span class="card__index" aria-hidden="true">01</span>
+          <h3 class="card__title">Estimer et analyser la ressource solaire dans les territoires</h3>
+          <p class="card__text">Combien de soleil atteint une façade, une toiture, une vallée. Et comment décrire ces écarts sans simuler chaque heure de chaque année.</p>
+          <span class="card__cta">En savoir plus <svg class="icon icon--arrow" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-arrow"/></svg></span>
+        </a>
+      </article>
+      <article class="card card--theme">
+        <a class="card__link" href="recherche.html#performance">
+          <span class="card__index" aria-hidden="true">02</span>
+          <h3 class="card__title">Performance des systèmes photovoltaïques dans leur environnement</h3>
+          <p class="card__text">Un module dans une ville dense et chaude ne produit pas comme le même module sur un banc d'essai. L'écart compte si vous dimensionnez une installation.</p>
+          <span class="card__cta">En savoir plus <svg class="icon icon--arrow" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-arrow"/></svg></span>
+        </a>
+      </article>
+      <article class="card card--theme">
+        <a class="card__link" href="recherche.html#integration">
+          <span class="card__index" aria-hidden="true">03</span>
+          <h3 class="card__title">Intégrer le solaire dans les stratégies énergétiques territoriales</h3>
+          <p class="card__text">Une collectivité ne peut équiper toutes les toitures en même temps. Elle choisit. Ce choix engage bien plus que l'ensoleillement.</p>
+          <span class="card__cta">En savoir plus <svg class="icon icon--arrow" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-arrow"/></svg></span>
+        </a>
+      </article>
+        </div>
+      </section>
+
+      <!-- ══════════ Les projets mis en avant ══════════ -->
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">Projets</h2>
+          <a class="section__more" href="projets.html">En savoir plus <svg class="icon icon--arrow" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="grid grid--projects">
+      <article class="card card--project">
+        <div class="card__body">
+          <p class="card__badges">
+            <span class="badge badge--ongoing">En cours</span>
+            <span class="card__years">2025–aujourd’hui</span>
+          </p>
+          <h3 class="card__title"><a href="projets.html#dolmen">DOLMEN, ANR JCJC</a></h3>
+          <p class="card__text">Projet ANR Jeune Chercheur, dont je suis porteur. Recenser et analyser le photovoltaïque déjà installé à l'échelle nationale.</p>
+          <p class="card__foot">ANR, jeune Chercheuse Jeune Chercheur (JCJC)</p>
+        </div>
+      </article>
+      <article class="card card--project">
+        <div class="card__body">
+          <p class="card__badges">
+            <span class="badge badge--completed">Terminé</span>
+            <span class="card__years">2020–2024</span>
+          </p>
+          <h3 class="card__title"><a href="projets.html#iea-shc-task-63">AIE SHC Tâche 63, planification des quartiers solaires</a></h3>
+          <p class="card__text">Une collaboration internationale de dix pays. Planifier les quartiers pour préserver l'accès au soleil sur le long terme.</p>
+          <p class="card__foot">Programme Solar Heating and Cooling de l’AIE</p>
+        </div>
+      </article>
+      <article class="card card--project">
+        <div class="card__body">
+          <p class="card__badges">
+            <span class="badge badge--completed">Terminé</span>
+            <span class="card__years">2019–2022</span>
+          </p>
+          <h3 class="card__title"><a href="projets.html#g2-solar">G2 Solar, un cadastre solaire pour le Grand Genève</a></h3>
+          <p class="card__text">Un projet Interreg transfrontalier. Construire, valider et mettre en usage un cadastre solaire couvrant 265 000 bâtiments.</p>
+          <p class="card__foot">Interreg France–Suisse</p>
+        </div>
+      </article>
+        </div>
+      </section>
+
+      <!-- ══════════ Les publications choisies ══════════
+           Remplies par js/publications.js depuis data/publications.json.
+           Pour choisir lesquelles paraissent ici, mettez "featured": true dans
+           data/publication-extras.json. -->
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">Publications choisies</h2>
+          <a class="section__more" href="travaux.html">Toutes les publications <svg class="icon icon--arrow" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="pub-list" data-publications data-featured data-limit="5"></div>
+      </section>
+
+      <!-- ══════════ Les dernières actualités ══════════ -->
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">Actualités</h2>
+          <a class="section__more" href="actualites.html">Toutes les actualités <svg class="icon icon--arrow" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="news-list">
+          <article class="news">
+            <p class="news__date"><time datetime="2026-07-02">juillet 2026</time></p>
+            <h3 class="news__title"><a href="actualites.html#habilitation-defended">Soutenance d’HDR</a></h3>
+          </article>
+          <article class="news">
+            <p class="news__date"><time datetime="2026-06-10">juin 2026</time></p>
+            <h3 class="news__title"><a href="actualites.html#urban-radiation-decomposed">Décomposer la variabilité du rayonnement urbain</a></h3>
+          </article>
+          <article class="news">
+            <p class="news__date"><time datetime="2025-03-18">mars 2025</time></p>
+            <h3 class="news__title"><a href="actualites.html#rooftop-pv-detection">Cartographier le photovoltaïque déjà installé en France</a></h3>
+          </article>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     PIED DE PAGE — identique sur les huit pages françaises.
+     ═══════════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__block">
+        <p class="footer__name">Martin Thebault</p>
+        <p class="footer__line">Chargé de recherche CNRS</p>
+        <p class="footer__line">LOCIE UMR 5271, CNRS / Université Savoie Mont Blanc</p>
+      </div>
+      <div class="footer__block">
+        <p class="footer__line">LOCIE UMR 5271<br>Campus Scientifique Savoie Technolac<br>73376 Le Bourget-du-Lac<br>France</p>
+      </div>
+      <div class="footer__block footer__block--links">
+        <p class="profile-links">
+          <a class="iconlink" href="mailto:martin.thebault@univ-smb.fr" rel="noopener" aria-label="Courriel" title="Courriel"><svg class="icon icon--email" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-email"/></svg></a>
+          <a class="iconlink" href="https://scholar.google.com/citations?user=8ePCJ3sAAAAJ" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg class="icon icon--scholar" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-scholar"/></svg></a>
+          <a class="iconlink" href="https://orcid.org/0000-0001-7846-8154" rel="noopener" aria-label="ORCID" title="ORCID"><svg class="icon icon--orcid" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-orcid"/></svg></a>
+          <a class="iconlink" href="https://cv.hal.science/martin-thebault" rel="noopener" aria-label="HAL" title="HAL"><svg class="icon icon--hal" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-hal"/></svg></a>
+        </p>
+        <p class="footer__fine">© 2026 Martin Thebault</p>
+      </div>
+    </div>
+  </footer>
+<!-- ══════════════════════════ FIN DU PIED DE PAGE ══════════════════════════ -->
+
+  <script src="js/site.js" defer></script>
+  <script src="js/publications.js" defer></script>
+</body>
+</html>

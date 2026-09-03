@@ -1,9 +1,13 @@
-# Build the site and publish it to GitHub Pages.
+# Publie le site sur GitHub Pages.
 #
-# Runs on every push to main — including the commits the CMS makes when Martin
-# saves a page, so editing and publishing are the same action.
+# Il n'y a plus rien à construire : les pages HTML du dépôt sont le site. Ce
+# workflow ne fait que les remettre à GitHub Pages, à chaque poussée sur main.
+#
+# Vous pouvez même vous en passer : dans Settings > Pages, choisissez
+# « Deploy from a branch », branche main, dossier / (root). Le site sera servi
+# directement depuis le dépôt et ce fichier pourra être supprimé.
 
-name: Build and deploy
+name: Publier le site
 
 on:
   push:
@@ -15,37 +19,29 @@ permissions:
   pages: write
   id-token: write
 
-# Let a running deploy finish rather than cancelling it half-published.
+# On laisse une publication en cours se terminer plutôt que de l'interrompre.
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-
-      - uses: actions/setup-node@v7
-        with:
-          node-version: '24'
-          cache: npm
-
-      - run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - uses: actions/upload-pages-artifact@v5
-        with:
-          path: _site
-
-  deploy:
-    needs: build
+  publier:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v7
+
+      # Signale une phrase qui s'écarte du style du site, sans jamais bloquer :
+      # une tournure maladroite ne doit pas empêcher une correction de paraître.
+      - name: Style
+        run: node tools/style-check.mjs
+        continue-on-error: true
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
+
       - id: deployment
         uses: actions/deploy-pages@v5
