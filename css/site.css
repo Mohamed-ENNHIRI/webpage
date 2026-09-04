@@ -192,6 +192,12 @@ b, strong { font-weight: 600; }
 
 .wordmark { color: var(--ink); font-weight: 600; letter-spacing: -0.025em; font-size: 1.0625rem; }
 .wordmark:hover { text-decoration: none; color: var(--accent); }
+.wordmark__logo {
+  height: 45px;
+  width: auto;
+  margin-left: 10px;
+  vertical-align: middle;
+}
 
 .nav { display: flex; align-items: center; gap: 1.75rem; }
 
@@ -348,7 +354,7 @@ b, strong { font-weight: 600; }
 
 .main { padding-bottom: var(--gap-lg); }
 
-.section { margin-block: var(--gap-lg); }
+.section { margin-block: var(--gap-md); }
 
 .section__head {
   display: flex; align-items: baseline; justify-content: space-between;
@@ -663,8 +669,8 @@ b, strong { font-weight: 600; }
 /* ---------------------------------------------------------------- footer */
 
 .footer {
-  margin-top: var(--gap-lg);
-  padding-block: 3rem 2.5rem;
+  margin-top: var(--gap-sm);
+  padding-block: 1rem 1rem;
   border-top: 1px solid var(--line);
   background: var(--surface-2);
   color: var(--ink-2); font-size: var(--step--1);
