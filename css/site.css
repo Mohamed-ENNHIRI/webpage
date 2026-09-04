@@ -1,9 +1,6 @@
 /* =========================================================================
    Martin Thebault — martin-thebault.fr
 
-   A quiet, typographic site. One accent colour, borrowed from the subject
-   matter: the warm orange of low sun on a façade. Everything else is paper,
-   ink and rule.
    ========================================================================= */
 
 /* ----------------------------------------------------------------- fonts */
@@ -48,11 +45,7 @@
 /* ---------------------------------------------------------------- tokens */
 
 :root {
-  /*
-   * Taken from Martin's own HDR deck: deep CNRS navy for the ink, the violet
-   * he numbers his sections with, and the soft lemon field that bleeds off the
-   * edge of every slide.
-   */
+
   --paper:      #fdfcf6;
   --surface:    #ffffff;
   --surface-2:  #f7f4e8;
