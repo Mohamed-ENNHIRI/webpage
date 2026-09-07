@@ -1,11 +1,5 @@
 # Publie le site sur GitHub Pages.
 #
-# Il n'y a plus rien à construire : les pages HTML du dépôt sont le site. Ce
-# workflow ne fait que les remettre à GitHub Pages, à chaque poussée sur main.
-#
-# Vous pouvez même vous en passer : dans Settings > Pages, choisissez
-# « Deploy from a branch », branche main, dossier / (root). Le site sera servi
-# directement depuis le dépôt et ce fichier pourra être supprimé.
 
 name: Publier le site
 
@@ -32,9 +26,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
-
-      # Signale une phrase qui s'écarte du style du site, sans jamais bloquer :
-      # une tournure maladroite ne doit pas empêcher une correction de paraître.
+.
       - name: Style
         run: node tools/style-check.mjs
         continue-on-error: true
