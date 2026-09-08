@@ -6,66 +6,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://martin-thebault.fr/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
   </url>
   <url>
-    <loc>https://martin-thebault.fr/recherche.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://martin-thebault.fr/research.html</loc>
+    <lastmod>2026-09-08</lastmod>
   </url>
   <url>
-    <loc>https://martin-thebault.fr/projets.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://martin-thebault.fr/projects.html</loc>
+    <lastmod>2026-09-08</lastmod>
   </url>
   <url>
-    <loc>https://martin-thebault.fr/travaux.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://martin-thebault.fr/publications.html</loc>
+    <lastmod>2026-09-08</lastmod>
   </url>
   <url>
-    <loc>https://martin-thebault.fr/outils.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://martin-thebault.fr/tools.html</loc>
+    <lastmod>2026-09-08</lastmod>
   </url>
   <url>
-    <loc>https://martin-thebault.fr/equipe.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://martin-thebault.fr/team.html</loc>
+    <lastmod>2026-09-08</lastmod>
   </url>
   <url>
-    <loc>https://martin-thebault.fr/actualites.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://martin-thebault.fr/news.html</loc>
+    <lastmod>2026-09-08</lastmod>
   </url>
   <url>
-    <loc>https://martin-thebault.fr/me-contacter.html</loc>
-    <lastmod>2026-09-03</lastmod>
-  </url>
-  <url>
-    <loc>https://martin-thebault.fr/en/</loc>
-    <lastmod>2026-09-03</lastmod>
-  </url>
-  <url>
-    <loc>https://martin-thebault.fr/en/research.html</loc>
-    <lastmod>2026-09-03</lastmod>
-  </url>
-  <url>
-    <loc>https://martin-thebault.fr/en/projects.html</loc>
-    <lastmod>2026-09-03</lastmod>
-  </url>
-  <url>
-    <loc>https://martin-thebault.fr/en/publications.html</loc>
-    <lastmod>2026-09-03</lastmod>
-  </url>
-  <url>
-    <loc>https://martin-thebault.fr/en/tools.html</loc>
-    <lastmod>2026-09-03</lastmod>
-  </url>
-  <url>
-    <loc>https://martin-thebault.fr/en/team.html</loc>
-    <lastmod>2026-09-03</lastmod>
-  </url>
-  <url>
-    <loc>https://martin-thebault.fr/en/news.html</loc>
-    <lastmod>2026-09-03</lastmod>
-  </url>
-  <url>
-    <loc>https://martin-thebault.fr/en/contact.html</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://martin-thebault.fr/contact.html</loc>
+    <lastmod>2026-09-08</lastmod>
   </url>
 </urlset>

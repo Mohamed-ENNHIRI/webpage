@@ -22,10 +22,9 @@
   var slots = document.querySelectorAll('[data-publications]');
   if (!slots.length) return;
 
-  var EN = document.documentElement.lang === 'en';
-
-  // Les pages anglaises vivent dans en/, il leur faut remonter d'un cran.
-  var base = EN ? '../' : '';
+  // Le site est en anglais, et toutes les pages sont à la racine.
+  var EN = true;
+  var base = '';
 
   var LABELS = EN ? {
     types: {

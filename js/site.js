@@ -326,10 +326,10 @@
       // Compass points along the horizon.
       context.textAlign = 'center';
       context.fillStyle = palette.muted;
-      for (const [azimuth, label] of [[90, 'E'], [180, 'S'], [270, 'O']]) {
+      for (const [azimuth, label] of [[90, 'E'], [180, 'S'], [270, 'W']]) {
         const { x } = project(azimuth, 0);
         context.globalAlpha = 0.8;
-        context.fillText(label === 'O' && document.documentElement.lang !== 'fr' ? 'W' : label,
+        context.fillText(label,
           x, plot.y + plot.h + smallText + 6);
       }
       context.globalAlpha = 1;

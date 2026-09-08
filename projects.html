@@ -7,10 +7,17 @@
 
   <!-- Le titre de l'onglet, et le résumé qu'affichent les moteurs de recherche. -->
   <title>Martin Thebault | CNRS - Université Savoie Mont Blanc</title>
-  <link rel="icon" href="../img/logo/sun.svg" type="image/svg+xml">
-  <link rel="preload" href="../fonts/inter-latin-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../fonts/inter-latin-600.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/site.css">
+  <meta name="description" content="Collaborative projects on urban and territorial solar energy, and the part I play in them.">
+  <link rel="canonical" href="https://martin-thebault.fr/projects.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Martin Thebault | CNRS - Université Savoie Mont Blanc">
+  <meta property="og:description" content="Collaborative projects on urban and territorial solar energy, and the part I play in them.">
+  <meta property="og:url" content="https://martin-thebault.fr/projects.html">
+  <meta property="og:locale" content="en_GB">
+  <link rel="icon" href="img/logo/sun.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/inter-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/site.css">
   <script>
     // Applique le thème retenu avant le premier affichage, pour que la page ne
     // clignote pas en clair avant de passer au sombre.
@@ -28,48 +35,43 @@
      EN-TÊTE — identique sur les huit pages .
      Faire la même correction dans les autres pages.
      ═══════════════════════════════════════════════════════════════════════ -->
-     <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-     <header class="header">
-       <div class="header__inner wrap">
-         <a class="wordmark" href="index.html">
-           <span class="wordmark__name">Martin Thebault</span>
-         </a>
-         <a href="https://www.cnrs.fr/fr">
-         <img class="wordmark__logo" src="../img/logo/LOGO_CNRS_BLEU.png" alt="CNRS Logo";> 
-       </a>    
-       <a href="https://www.univ-smb.fr/locie/">
-         <img class="wordmark__logo" src="../img/logo/locie-logo-horiz.png" alt="LOCIE Logo";/>
-       </a>   
-         <button class="nav-toggle" type="button" aria-expanded="false"
-                 aria-controls="site-nav" aria-label="Menu">
-           <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
-         </button>
-   
-         <nav class="nav" id="site-nav" aria-label="Menu">
-             <a class="nav__link" href="research.html">Research</a>
-             <a class="nav__link" href="projects.html">Projects</a>
-             <a class="nav__link" href="team.html">People</a>
-             <a class="nav__link" href="publications.html">Publications</a>
-             <a class="nav__link" href="tools.html">Tools and Datasets</a>
-             <a class="nav__link" href="news.html">News</a>
-             <a class="nav__link" href="contact.html">Contact</a>
-   
-           <div class="header__tools">
-             <nav class="lang" aria-label="Language">
-               <span class="lang__item is-current" aria-current="true">EN</span>
-               <span class="lang__sep" aria-hidden="true">/</span>
-               <a class="lang__item" href="../index.html" lang="fr" hreflang="fr">FR</a>
-             </nav>
-             <button class="theme-toggle" type="button"
-                     aria-label="Switch between light and dark" title="Switch between light and dark">
-               <svg class="icon icon--sun theme-toggle__sun" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-sun"/></svg><svg class="icon icon--moon theme-toggle__moon" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-moon"/></svg>
-             </button>
-           </div>
-         </nav>
-       </div>
-   
-   <!-- Toutes les icônes du site -->
+  <header class="header">
+    <div class="header__inner wrap">
+      <a class="wordmark" href="index.html">
+        <span class="wordmark__name">Martin Thebault</span>
+      </a>
+      <a href="https://www.cnrs.fr/fr">
+      <img class="wordmark__logo" src="img/logo/LOGO_CNRS_BLEU.png" alt="CNRS"> 
+    </a>    
+    <a href="https://www.univ-smb.fr/locie/">
+      <img class="wordmark__logo" src="img/logo/locie-logo-horiz.png" alt="LOCIE">
+    </a>   
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="site-nav" aria-label="Menu">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Menu">
+          <a class="nav__link" href="research.html">Research</a>
+          <a class="nav__link is-active" aria-current="page" href="projects.html">Projects</a>
+          <a class="nav__link" href="team.html">People</a>
+          <a class="nav__link" href="publications.html">Publications</a>
+          <a class="nav__link" href="tools.html">Tools and Datasets</a>
+          <a class="nav__link" href="news.html">News</a>
+          <a class="nav__link" href="contact.html">Contact</a>
+
+        <div class="header__tools">
+          <button class="theme-toggle" type="button"
+                  aria-label="Switch between light and dark" title="Switch between light and dark">
+            <svg class="icon icon--sun theme-toggle__sun" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-sun"/></svg><svg class="icon icon--moon theme-toggle__moon" aria-hidden="true" focusable="false" fill="currentColor"><use href="#i-moon"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+<!-- Toutes les icônes du site -->
    <svg class="sprite" hidden aria-hidden="true">
      <symbol id="i-email" viewBox="0 0 24 24"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13Zm2.2-.3 7.8 6.1 7.8-6.1H4.2Z"/></symbol>
      <symbol id="i-scholar" viewBox="0 0 24 24"><path d="M12 2 1 8.5l11 6.5 9-5.3v6.8h2V8.5L12 2Zm-6 11.2v3.9c0 1.9 2.7 3.4 6 3.4s6-1.5 6-3.4v-3.9l-6 3.5-6-3.5Z"/></symbol>
@@ -147,7 +149,7 @@
           <dd><a href="https://task63.iea-shc.org/" rel="noopener">task63.iea-shc.org/</a></dd>
         </dl>
         <figure class="figure">
-          <img src="../uploads/figures/solar-neighbourhoods.jpg" alt="" loading="lazy">
+          <img src="img/figures/solar-neighbourhoods.jpg" alt="" loading="lazy">
           <figcaption>From traditional neighbourhoods to solar ones, and the obstacles between. Desthieux, Manni, Lobaccaro, Hachem-Vermette, Croce, Thebault and Kanters, Frontiers in Built Environment, 2024. CC BY.</figcaption>
         </figure>
 
@@ -180,7 +182,7 @@
           <dd>hepia / HES-SO Genève, LOCIE, Université Savoie Mont Blanc / CNRS, Canton de Genève</dd>
         </dl>
         <figure class="figure">
-          <img src="../uploads/figures/geneva-irradiation.jpg" alt="" loading="lazy">
+          <img src="img/figures/geneva-irradiation.jpg" alt="" loading="lazy">
           <figcaption>Yearly irradiation across Greater Geneva. Desthieux and Thebault, Frontiers in Built Environment, 2024. CC BY.</figcaption>
         </figure>
 
@@ -246,8 +248,8 @@
     </footer>
   <!-- ══════════════════════════ FIN DU PIED DE PAGE ══════════════════════════ -->
   
-    <script src="../js/site.js" defer></script>
-    <script src="../js/publications.js" defer></script>
+    <script src="js/site.js" defer></script>
+    <script src="js/publications.js" defer></script>
   </body>
   </html>
   

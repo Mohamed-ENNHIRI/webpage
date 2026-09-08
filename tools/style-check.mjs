@@ -11,8 +11,7 @@
  * elles viennent de HAL. Leurs titres appartiennent au dossier publié, et les
  * réécrire fausserait la référence.
  *
- * La liste de mots interdits est anglaise, elle ne s'applique donc qu'à en/.
- * Les règles de ponctuation valent pour les deux langues.
+ * Le site est en anglais : la liste de mots interdits s'applique partout.
  *
  *   node tools/style-check.mjs
  */
@@ -33,14 +32,11 @@ const PHRASES = [/shed light/i, /dive deep/i, /game-?changer/i, /not alone/i,
   /ever-?evolving/i, /opened up/i, /in conclusion/i, /in summary/i, /in closing/i,
   /not just .{1,40}, but also/i];
 
-/** Les pages du site : celles de la racine, et celles de en/. */
-function pages(dir = '.') {
-  return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
-    if (entry.name.startsWith('.')) return [];
-    const path = dir === '.' ? entry.name : join(dir, entry.name);
-    if (entry.isDirectory()) return entry.name === 'en' ? pages(path) : [];
-    return entry.name.endsWith('.html') ? [path] : [];
-  });
+/** Les pages du site. Elles sont toutes à la racine. */
+function pages() {
+  return readdirSync('.', { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.html'))
+    .map((entry) => entry.name);
 }
 
 /**
@@ -72,7 +68,8 @@ let warn = 0;
 
 for (const file of files) {
   const prose = visibleText(readFileSync(file, 'utf8'));
-  const english = file.startsWith('en/');
+  // Le site est entierement en anglais depuis septembre 2026.
+  const english = true;
   const problems = [];
 
   const em = (prose.match(/—/g) ?? []).length;
