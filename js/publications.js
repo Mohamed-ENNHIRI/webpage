@@ -62,12 +62,12 @@
     return node;
   }
 
-  /** Le nom de Martin ressort en gras au milieu de ses co-auteurs. */
+  /** Le nom de Martin ressort un peu plus sombre au milieu de ses co-auteurs, sans gras. */
   function authorLine(list) {
     var p = el('p', 'pub__authors');
     (list || []).forEach(function (name, i) {
       if (i) p.appendChild(document.createTextNode(', '));
-      if (name === OWNER) p.appendChild(el('b', 'author-self', name));
+      if (name === OWNER) p.appendChild(el('span', 'author-self', name));
       else p.appendChild(document.createTextNode(name));
     });
     return p;
