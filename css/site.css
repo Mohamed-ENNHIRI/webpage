@@ -60,6 +60,10 @@
   --solar:      #fbef7b;
   --solar-soft: #fdf7c4;
 
+  --sun-x: -8vw;
+  --sun-y: 12vh;
+  --sun-strength: 1;
+
   --wrap:        72rem;
   --wrap-narrow: 44rem;
   --measure:     38rem;
@@ -115,12 +119,13 @@ body {
   /*
    * The soft lemon field that bleeds off the edge of every slide in the HDR
    * deck, kept faint enough to sit behind text. Fixed, so it does not travel
-   * with the scroll.
+   * with the scroll — but it does drift with --sun-x/--sun-y/--sun-strength,
+   * which js/site.js updates to track the sun over the laboratory.
    */
   background:
-    radial-gradient(58vw 78vh at -8vw 12vh,
-      color-mix(in srgb, var(--solar) 62%, transparent),
-      color-mix(in srgb, var(--solar) 16%, transparent) 46%,
+    radial-gradient(58vw 78vh at var(--sun-x) var(--sun-y),
+      color-mix(in srgb, var(--solar) calc(62% * var(--sun-strength)), transparent),
+      color-mix(in srgb, var(--solar) calc(16% * var(--sun-strength)), transparent) 46%,
       transparent 70%),
     var(--paper);
   background-attachment: fixed;

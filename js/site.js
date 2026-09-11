@@ -116,6 +116,69 @@
     revealable.forEach((el) => observer.observe(el));
   }
 
+  /* ------------------------------------------------- shared solar geometry */
+
+  /*
+   * Solar declination, the equation of time, and the resulting elevation and
+   * azimuth of the sun for a given day, solar hour and latitude. Used by the
+   * sun path diagram below and by the ambient background further down — the
+   * same geometry, so the sun agrees with itself everywhere on the page.
+   */
+  const RAD = Math.PI / 180;
+
+  /**
+   * Solar declination and the equation of time for a day of the year.
+   *
+   * @param {number} dayOfYear 1 to 365.
+   * @returns {{declination: number, equationOfTime: number}} Radians, minutes.
+   */
+  function solarDay(dayOfYear) {
+    const b = ((dayOfYear - 1) * 2 * Math.PI) / 365;
+    const declination =
+      0.006918
+      - 0.399912 * Math.cos(b) + 0.070257 * Math.sin(b)
+      - 0.006758 * Math.cos(2 * b) + 0.000907 * Math.sin(2 * b)
+      - 0.002697 * Math.cos(3 * b) + 0.001480 * Math.sin(3 * b);
+    const equationOfTime =
+      229.18 * (0.000075
+        + 0.001868 * Math.cos(b) - 0.032077 * Math.sin(b)
+        - 0.014615 * Math.cos(2 * b) - 0.040849 * Math.sin(2 * b));
+    return { declination, equationOfTime };
+  }
+
+  /**
+   * Where the sun is, for a day, a solar hour and a latitude.
+   *
+   * @param {number} dayOfYear 1 to 365.
+   * @param {number} solarHour Solar time in hours, 12 being solar noon.
+   * @param {number} latDeg Latitude, in degrees.
+   * @returns {{elevation: number, azimuth: number}} Degrees; azimuth from north, clockwise.
+   */
+  function sunPosition(dayOfYear, solarHour, latDeg) {
+    const { declination } = solarDay(dayOfYear);
+    const hourAngle = (solarHour - 12) * 15 * RAD;
+    const lat = latDeg * RAD;
+
+    const sinElevation =
+      Math.sin(lat) * Math.sin(declination)
+      + Math.cos(lat) * Math.cos(declination) * Math.cos(hourAngle);
+    const elevation = Math.asin(Math.max(-1, Math.min(1, sinElevation)));
+
+    const azimuth = Math.atan2(
+      Math.sin(hourAngle),
+      Math.cos(hourAngle) * Math.sin(lat) - Math.tan(declination) * Math.cos(lat),
+    );
+
+    return {
+      elevation: elevation / RAD,
+      azimuth: ((azimuth / RAD) + 180 + 360) % 360,
+    };
+  }
+
+  /** Day of the year for a date. */
+  const dayOfYear = (date) =>
+    Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
+
   /* ----------------------------------------------------- the hero visual */
 
   const sunpath = document.querySelector('[data-sunpath]');
@@ -137,7 +200,6 @@
     if (!context) return;
 
     const LAT = Number(root.dataset.lat) || 45.64;
-    const RAD = Math.PI / 180;
 
     const readout = root.querySelector('[data-sunpath-now]');
     let labels = {};
@@ -173,66 +235,11 @@
       return names[Math.round(((azimuth % 360) + 360) % 360 / 45) % 8];
     }
 
-    /**
-     * Solar declination and the equation of time for a day of the year.
-     *
-     * Spencer's Fourier expansion — a few terms, accurate to well under a
-     * degree, which is far finer than this drawing can show.
-     *
-     * @param {number} dayOfYear 1 to 365.
-     * @returns {{declination: number, equationOfTime: number}} Radians, minutes.
-     */
-    function solarDay(dayOfYear) {
-      const b = ((dayOfYear - 1) * 2 * Math.PI) / 365;
-      const declination =
-        0.006918
-        - 0.399912 * Math.cos(b) + 0.070257 * Math.sin(b)
-        - 0.006758 * Math.cos(2 * b) + 0.000907 * Math.sin(2 * b)
-        - 0.002697 * Math.cos(3 * b) + 0.001480 * Math.sin(3 * b);
-      const equationOfTime =
-        229.18 * (0.000075
-          + 0.001868 * Math.cos(b) - 0.032077 * Math.sin(b)
-          - 0.014615 * Math.cos(2 * b) - 0.040849 * Math.sin(2 * b));
-      return { declination, equationOfTime };
-    }
-
-    /**
-     * Where the sun is, for a day and a solar hour.
-     *
-     * @param {number} dayOfYear 1 to 365.
-     * @param {number} solarHour Solar time in hours, 12 being solar noon.
-     * @returns {{elevation: number, azimuth: number}} Degrees; azimuth from north, clockwise.
-     */
-    function sunPosition(dayOfYear, solarHour) {
-      const { declination } = solarDay(dayOfYear);
-      const hourAngle = (solarHour - 12) * 15 * RAD;
-      const lat = LAT * RAD;
-
-      const sinElevation =
-        Math.sin(lat) * Math.sin(declination)
-        + Math.cos(lat) * Math.cos(declination) * Math.cos(hourAngle);
-      const elevation = Math.asin(Math.max(-1, Math.min(1, sinElevation)));
-
-      const azimuth = Math.atan2(
-        Math.sin(hourAngle),
-        Math.cos(hourAngle) * Math.sin(lat) - Math.tan(declination) * Math.cos(lat),
-      );
-
-      return {
-        elevation: elevation / RAD,
-        azimuth: ((azimuth / RAD) + 180 + 360) % 360,
-      };
-    }
-
-    /** Day of the year for a date. */
-    const dayOfYear = (date) =>
-      Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
-
     /** One day's path, sampled where the sun is above the horizon. */
     function pathForDay(day) {
       const points = [];
       for (let h = 0; h <= 24; h += 0.25) {
-        const p = sunPosition(day, h);
+        const p = sunPosition(day, h, LAT);
         if (p.elevation >= -0.5) points.push(p);
       }
       return points;
@@ -347,7 +354,7 @@
       for (let h = 5; h <= 19; h += 1) {
         const points = [];
         for (let d = 1; d <= 365; d += 5) {
-          const p = sunPosition(d, h);
+          const p = sunPosition(d, h, LAT);
           if (p.elevation >= 0) points.push(p);
         }
         if (points.length > 3) stroke(points, palette.muted, 0.22, 0.9);
@@ -365,7 +372,7 @@
         + equationOfTime / 60
         + (Number(root.dataset.lon) || 0) / 15
         - now.getTimezoneOffset() / -60;
-      const sun = sunPosition(today, localSolarHour);
+      const sun = sunPosition(today, localSolarHour, LAT);
 
       // Say in words what the dot means, and where the sun is when it is down.
       if (readout && labels.now) {
@@ -408,4 +415,46 @@
 
     start();
   }
+
+  /* ------------------------------------------------ the sun behind the page */
+
+  /*
+   * The soft field behind every page is not just decorative: its position
+   * and strength follow where the sun actually stands over the laboratory
+   * right now, using the same geometry as the sun path diagram above. This
+   * runs on every page, whether or not that diagram is present.
+   */
+  (function driftSunBackground() {
+    const LAT = 45.64;
+    const LON = 5.87;
+
+    function update() {
+      const now = new Date();
+      const today = dayOfYear(now);
+      const { equationOfTime } = solarDay(today);
+      const localSolarHour =
+        now.getHours() + now.getMinutes() / 60
+        + equationOfTime / 60
+        + LON / 15
+        - now.getTimezoneOffset() / -60;
+      const sun = sunPosition(today, localSolarHour, LAT);
+
+      // Same horizon-to-horizon window as the sun path diagram: due south
+      // (azimuth 180°) sits at mid-width, and 68° of elevation is close
+      // enough to overhead at this latitude.
+      const az = Math.max(0, Math.min(1, (sun.azimuth - 45) / 270));
+      const el = Math.max(0, Math.min(1, sun.elevation / 68));
+
+      const style = document.documentElement.style;
+      style.setProperty('--sun-x', `${(-10 + az * 120).toFixed(1)}vw`);
+      style.setProperty('--sun-y', `${(58 - el * 46).toFixed(1)}vh`);
+      // Below the horizon the field does not vanish, it only fades: there is
+      // still a sky, just no direct sun in it.
+      style.setProperty('--sun-strength', sun.elevation > 0 ? (0.35 + el * 0.65).toFixed(2) : '0.12');
+    }
+
+    update();
+    // The sun moves slowly enough that once a minute is generous.
+    setInterval(update, 60_000);
+  })();
 })();
