@@ -129,6 +129,9 @@
   /**
    * Solar declination and the equation of time for a day of the year.
    *
+   * Spencer's Fourier expansion — a few terms, accurate to well under a
+   * degree, which is far finer than either use here needs.
+   *
    * @param {number} dayOfYear 1 to 365.
    * @returns {{declination: number, equationOfTime: number}} Radians, minutes.
    */
@@ -448,6 +451,11 @@
       const style = document.documentElement.style;
       style.setProperty('--sun-x', `${(-10 + az * 120).toFixed(1)}vw`);
       style.setProperty('--sun-y', `${(58 - el * 46).toFixed(1)}vh`);
+      // Same origin, expressed as a position inside the sun path card rather
+      // than across the viewport — so its own glow starts from where the
+      // sun sits on the curve, not from a point on the page.
+      style.setProperty('--sun-box-x', `${(az * 100).toFixed(1)}%`);
+      style.setProperty('--sun-box-y', `${(4 + (1 - el) * 88).toFixed(1)}%`);
       // Below the horizon the field does not vanish, it only fades: there is
       // still a sky, just no direct sun in it.
       style.setProperty('--sun-strength', sun.elevation > 0 ? (0.35 + el * 0.65).toFixed(2) : '0.12');
